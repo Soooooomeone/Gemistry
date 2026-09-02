@@ -3,8 +3,11 @@ package com.danako.gemistry.core;
 import com.danako.gemistry.Gemistry;
 import com.danako.gemistry.item.GemistryArmorMaterial;
 import com.danako.gemistry.item.GemistryToolMaterial;
+import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.HoeItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ShovelItem;
 import net.minecraft.world.item.equipment.ArmorType;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -18,9 +21,9 @@ public final class GemistryItems {
     public static final DeferredItem<BlockItem> RUBY_BLOCK = ITEMS.registerSimpleBlockItem(GemistryBlocks.RUBY_BLOCK);
     public static final DeferredItem<Item> RUBY_SWORD = ITEMS.registerItem("ruby_sword", properties -> new Item(properties.sword(GemistryToolMaterial.RUBY, 3.0F, -2.4F)));
     public static final DeferredItem<Item> RUBY_PICKAXE = ITEMS.registerItem("ruby_pickaxe", properties -> new Item(properties.pickaxe(GemistryToolMaterial.RUBY, 1.0F, -2.8F)));
-    public static final DeferredItem<Item> RUBY_AXE = ITEMS.registerItem("ruby_axe", properties -> new Item(properties.axe(GemistryToolMaterial.RUBY, 5.0F, -3.0F)));
-    public static final DeferredItem<Item> RUBY_SHOVEL = ITEMS.registerItem("ruby_shovel", properties -> new Item(properties.shovel(GemistryToolMaterial.RUBY, 1.5F, -3.0F)));
-    public static final DeferredItem<Item> RUBY_HOE = ITEMS.registerItem("ruby_hoe", properties -> new Item(properties.hoe(GemistryToolMaterial.RUBY, -4.0F, 0.0F)));
+    public static final DeferredItem<Item> RUBY_AXE = ITEMS.registerItem("ruby_axe", properties -> new AxeItem(GemistryToolMaterial.RUBY, 5.0F, -3.0F, properties));
+    public static final DeferredItem<Item> RUBY_SHOVEL = ITEMS.registerItem("ruby_shovel", properties -> new ShovelItem(GemistryToolMaterial.RUBY, 1.5F, -3.0F, properties));
+    public static final DeferredItem<Item> RUBY_HOE = ITEMS.registerItem("ruby_hoe", properties -> new HoeItem(GemistryToolMaterial.RUBY, -4.0F, 0.0F, properties));
     public static final DeferredItem<Item> RUBY_SPEAR = ITEMS.registerItem("ruby_spear", properties -> new Item(properties.spear(GemistryToolMaterial.RUBY, 1.15F,
             1.2F,
             0.4F,

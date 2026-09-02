@@ -1,0 +1,19 @@
+{
+  "block.gemistry.deepslate_ruby_ore": "Deepslate Ruby Ore",
+  "block.gemistry.ruby_block": "Block of Ruby",
+  "block.gemistry.ruby_ore": "Ruby Ore",
+  "item.gemistry.ruby": "Ruby",
+  "item.gemistry.ruby_axe": "Ruby Axe",
+  "item.gemistry.ruby_boots": "Ruby Boots",
+  "item.gemistry.ruby_chestplate": "Ruby Chestplate",
+  "item.gemistry.ruby_helmet": "Ruby Helmet",
+  "item.gemistry.ruby_hoe": "Ruby Hoe",
+  "item.gemistry.ruby_horse_armor": "Ruby Horse Armor",
+  "item.gemistry.ruby_leggings": "Ruby Leggings",
+  "item.gemistry.ruby_nautilus_armor": "Ruby Nautilus Armor",
+  "item.gemistry.ruby_pickaxe": "Ruby Pickaxe",
+  "item.gemistry.ruby_shovel": "Ruby Shovel",
+  "item.gemistry.ruby_spear": "Ruby Spear",
+  "item.gemistry.ruby_sword": "Ruby Sword",
+  "itemGroup.gemistry": "Gemistry"
+}

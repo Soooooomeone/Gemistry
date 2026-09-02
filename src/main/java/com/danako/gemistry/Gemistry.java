@@ -4,6 +4,7 @@ import com.danako.gemistry.config.Config;
 import com.danako.gemistry.core.GemistryBlocks;
 import com.danako.gemistry.core.GemistryItems;
 import com.danako.gemistry.core.GemistryTabs;
+import com.danako.gemistry.datagen.DataGenerators;
 import com.mojang.logging.LogUtils;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
@@ -24,6 +25,8 @@ public class Gemistry {
         GemistryBlocks.BLOCKS.register(modEventBus);
         GemistryItems.ITEMS.register(modEventBus);
         GemistryTabs.CREATIVE_MODE_TABS.register(modEventBus);
+
+        DataGenerators.register(modEventBus);
 
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }

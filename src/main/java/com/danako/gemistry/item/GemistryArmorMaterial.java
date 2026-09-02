@@ -15,8 +15,8 @@ import java.util.Map;
 
 public final class GemistryArmorMaterial {
 
-    public static final ResourceKey<EquipmentAsset> RUBY_ASSET = ResourceKey.create(EquipmentAssets.ROOT_ID, Identifier.fromNamespaceAndPath(Gemistry.MODID, "ruby"));
-    public static final ArmorMaterial RUBY = new ArmorMaterial(35, makeDefense(3, 6, 8, 3, 19), 15, SoundEvents.ARMOR_EQUIP_NETHERITE, 3.0F, 0.0F, GemistryTags.REPAIRS_RUBY_ARMOR, RUBY_ASSET);
+    public static final ResourceKey<EquipmentAsset> RUBY_ARMOR_ASSET = ResourceKey.create(EquipmentAssets.ROOT_ID, Identifier.fromNamespaceAndPath(Gemistry.MODID, "ruby"));
+    public static final ArmorMaterial RUBY = new ArmorMaterial(35, makeDefense(3, 6, 8, 3, 19), 15, SoundEvents.ARMOR_EQUIP_NETHERITE, 3.0F, 0.0F, GemistryTags.REPAIRS_RUBY_ARMOR, RUBY_ARMOR_ASSET);
 
     private GemistryArmorMaterial() {
     }

@@ -1,0 +1,19 @@
+package com.danako.gemistry.core;
+
+import com.danako.gemistry.Gemistry;
+
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.Identifier;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
+
+public final class GemistryTags {
+
+    public static final TagKey<Block> INCORRECT_FOR_RUBY_TOOL = TagKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(Gemistry.MODID, "incorrect_for_ruby_tool"));
+    public static final TagKey<Item> RUBY_TOOL_MATERIALS = TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(Gemistry.MODID, "ruby_tool_materials"));
+    public static final TagKey<Item> REPAIRS_RUBY_ARMOR = TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(Gemistry.MODID, "repairs_ruby_armor"));
+
+    private GemistryTags() {
+    }
+}

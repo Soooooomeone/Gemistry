@@ -1,5 +1,6 @@
 {
   "values": [
-    "gemistry:ruby_hoe"
+    "gemistry:ruby_hoe",
+    "gemistry:sapphire_hoe"
   ]
 }

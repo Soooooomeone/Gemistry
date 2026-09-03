@@ -1,6 +1,8 @@
 {
   "values": [
     "gemistry:ruby_ore",
-    "gemistry:deepslate_ruby_ore"
+    "gemistry:deepslate_ruby_ore",
+    "gemistry:sapphire_ore",
+    "gemistry:deepslate_sapphire_ore"
   ]
 }

@@ -21,6 +21,10 @@ public class GemistryBlockLootSubProvider extends BlockLootSubProvider {
         add(GemistryBlocks.RUBY_ORE.get(), block -> createOreDrop(block, GemistryItems.RUBY.get()));
         add(GemistryBlocks.DEEPSLATE_RUBY_ORE.get(), block -> createOreDrop(block, GemistryItems.RUBY.get()));
         dropSelf(GemistryBlocks.RUBY_BLOCK.get());
+
+        add(GemistryBlocks.SAPPHIRE_ORE.get(), block -> createOreDrop(block, GemistryItems.SAPPHIRE.get()));
+        add(GemistryBlocks.DEEPSLATE_SAPPHIRE_ORE.get(), block -> createOreDrop(block, GemistryItems.SAPPHIRE.get()));
+        dropSelf(GemistryBlocks.SAPPHIRE_BLOCK.get());
     }
 
     @Override

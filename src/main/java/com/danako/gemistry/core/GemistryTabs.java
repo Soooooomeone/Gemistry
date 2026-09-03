@@ -31,6 +31,25 @@ public final class GemistryTabs {
         output.accept(GemistryItems.RUBY_BOOTS.get());
         output.accept(GemistryItems.RUBY_HORSE_ARMOR.get());
         output.accept(GemistryItems.RUBY_NAUTILUS_ARMOR.get());
+
+        output.accept(GemistryItems.SAPPHIRE.get());
+        output.accept(GemistryItems.SAPPHIRE_ORE.get());
+        output.accept(GemistryItems.DEEPSLATE_SAPPHIRE_ORE.get());
+        output.accept(GemistryItems.SAPPHIRE_BLOCK.get());
+
+        output.accept(GemistryItems.SAPPHIRE_SWORD.get());
+        output.accept(GemistryItems.SAPPHIRE_SPEAR.get());
+        output.accept(GemistryItems.SAPPHIRE_PICKAXE.get());
+        output.accept(GemistryItems.SAPPHIRE_AXE.get());
+        output.accept(GemistryItems.SAPPHIRE_SHOVEL.get());
+        output.accept(GemistryItems.SAPPHIRE_HOE.get());
+
+        output.accept(GemistryItems.SAPPHIRE_HELMET.get());
+        output.accept(GemistryItems.SAPPHIRE_CHESTPLATE.get());
+        output.accept(GemistryItems.SAPPHIRE_LEGGINGS.get());
+        output.accept(GemistryItems.SAPPHIRE_BOOTS.get());
+        output.accept(GemistryItems.SAPPHIRE_HORSE_ARMOR.get());
+        output.accept(GemistryItems.SAPPHIRE_NAUTILUS_ARMOR.get());
     }).build());
 
     private GemistryTabs() {

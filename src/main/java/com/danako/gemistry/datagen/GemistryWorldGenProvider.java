@@ -28,6 +28,8 @@ public class GemistryWorldGenProvider {
 
     private static void registerConfiguredFeatures(BootstrapContext<ConfiguredFeature<?, ?>> context) {
         context.register(GemistryConfiguredFeatures.RUBY_ORE, new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(List.of(OreConfiguration.target(new TagMatchTest(BlockTags.STONE_ORE_REPLACEABLES), GemistryBlocks.RUBY_ORE.get().defaultBlockState()), OreConfiguration.target(new TagMatchTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES), GemistryBlocks.DEEPSLATE_RUBY_ORE.get().defaultBlockState())), 8)));
+
+        context.register(GemistryConfiguredFeatures.SAPPHIRE_ORE, new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(List.of(OreConfiguration.target(new TagMatchTest(BlockTags.STONE_ORE_REPLACEABLES), GemistryBlocks.SAPPHIRE_ORE.get().defaultBlockState()), OreConfiguration.target(new TagMatchTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES), GemistryBlocks.DEEPSLATE_SAPPHIRE_ORE.get().defaultBlockState())), 8)));
     }
 
     private static void registerPlacedFeatures(BootstrapContext<PlacedFeature> context) {
@@ -36,6 +38,10 @@ public class GemistryWorldGenProvider {
         List<PlacementModifier> placement = List.of(CountPlacement.of(7), InSquarePlacement.spread(), HeightRangePlacement.triangle(VerticalAnchor.absolute(-80), VerticalAnchor.absolute(24)), BiomeFilter.biome());
 
         context.register(GemistryPlacedFeatures.RUBY_ORE_PLACED, new PlacedFeature(configuredFeatures.getOrThrow(GemistryConfiguredFeatures.RUBY_ORE), placement));
+
+        List<PlacementModifier> sapphirePlacement = List.of(CountPlacement.of(7), InSquarePlacement.spread(), HeightRangePlacement.triangle(VerticalAnchor.absolute(-80), VerticalAnchor.absolute(24)), BiomeFilter.biome());
+
+        context.register(GemistryPlacedFeatures.SAPPHIRE_ORE_PLACED, new PlacedFeature(configuredFeatures.getOrThrow(GemistryConfiguredFeatures.SAPPHIRE_ORE), sapphirePlacement));
     }
 
     private static void registerBiomeModifiers(BootstrapContext<BiomeModifier> context) {
@@ -43,5 +49,7 @@ public class GemistryWorldGenProvider {
         HolderGetter<PlacedFeature> placedFeatures = context.lookup(Registries.PLACED_FEATURE);
 
         context.register(GemistryBiomeModifiers.ADD_RUBY_ORE, new BiomeModifiers.AddFeaturesBiomeModifier(biomes.getOrThrow(Tags.Biomes.IS_HOT_OVERWORLD), HolderSet.direct(placedFeatures.getOrThrow(GemistryPlacedFeatures.RUBY_ORE_PLACED)), GenerationStep.Decoration.UNDERGROUND_ORES));
+
+        context.register(GemistryBiomeModifiers.ADD_SAPPHIRE_ORE, new BiomeModifiers.AddFeaturesBiomeModifier(biomes.getOrThrow(Tags.Biomes.IS_COLD_OVERWORLD), HolderSet.direct(placedFeatures.getOrThrow(GemistryPlacedFeatures.SAPPHIRE_ORE_PLACED)), GenerationStep.Decoration.UNDERGROUND_ORES));
     }
 }

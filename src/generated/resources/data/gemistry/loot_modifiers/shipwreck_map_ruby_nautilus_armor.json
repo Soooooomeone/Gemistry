@@ -1,0 +1,14 @@
+{
+  "type": "gemistry:add_item",
+  "conditions": [
+    {
+      "condition": "neoforge:loot_table_id",
+      "loot_table_id": "minecraft:chests/shipwreck_map"
+    },
+    {
+      "chance": 0.008,
+      "condition": "minecraft:random_chance"
+    }
+  ],
+  "item": "gemistry:ruby_nautilus_armor"
+}

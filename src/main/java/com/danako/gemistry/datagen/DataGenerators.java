@@ -16,6 +16,7 @@ public class DataGenerators {
         event.createDatapackRegistryObjects(GemistryWorldGenProvider.BUILDER);
         event.createBlockAndItemTags(GemistryBlockTagsProvider::new, GemistryItemTagsProvider::new);
         event.createProvider(GemistryLootTableProvider::new);
+        event.createProvider(GemistryGlobalLootModifierProvider::new);
         event.createProvider(GemistryRecipeProvider.Runner::new);
     }
 }

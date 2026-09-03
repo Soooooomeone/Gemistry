@@ -32,5 +32,17 @@ public class GemistryEquipmentAssetProvider extends EquipmentAssetProvider {
                 .addLayers(EquipmentClientInfo.LayerType.HORSE_BODY, new EquipmentClientInfo.Layer(rubyTexture, Optional.empty(), false))
 
                 .addLayers(EquipmentClientInfo.LayerType.NAUTILUS_BODY, new EquipmentClientInfo.Layer(rubyTexture, Optional.empty(), false)).build());
+
+        Identifier sapphireTexture = Identifier.fromNamespaceAndPath(Gemistry.MODID, "sapphire");
+
+        output.accept(GemistryArmorMaterial.SAPPHIRE_ARMOR_ASSET, EquipmentClientInfo.builder()
+
+                .addLayers(EquipmentClientInfo.LayerType.HUMANOID, new EquipmentClientInfo.Layer(sapphireTexture, Optional.empty(), false))
+
+                .addLayers(EquipmentClientInfo.LayerType.HUMANOID_LEGGINGS, new EquipmentClientInfo.Layer(sapphireTexture, Optional.empty(), false))
+
+                .addLayers(EquipmentClientInfo.LayerType.HORSE_BODY, new EquipmentClientInfo.Layer(sapphireTexture, Optional.empty(), false))
+
+                .addLayers(EquipmentClientInfo.LayerType.NAUTILUS_BODY, new EquipmentClientInfo.Layer(sapphireTexture, Optional.empty(), false)).build());
     }
 }

@@ -2,6 +2,9 @@
   "values": [
     "gemistry:ruby_ore",
     "gemistry:deepslate_ruby_ore",
-    "gemistry:ruby_block"
+    "gemistry:ruby_block",
+    "gemistry:sapphire_ore",
+    "gemistry:deepslate_sapphire_ore",
+    "gemistry:sapphire_block"
   ]
 }

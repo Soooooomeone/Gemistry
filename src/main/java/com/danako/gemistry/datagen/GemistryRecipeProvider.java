@@ -31,6 +31,7 @@ public class GemistryRecipeProvider extends RecipeProvider {
 
     private void buildStorage() {
         nineBlockStorageRecipes(RecipeCategory.MISC, GemistryItems.RUBY.get(), RecipeCategory.BUILDING_BLOCKS, GemistryItems.RUBY_BLOCK.get(), "gemistry:ruby_block", null, "gemistry:ruby_from_ruby_block", null);
+        nineBlockStorageRecipes(RecipeCategory.MISC, GemistryItems.SAPPHIRE.get(), RecipeCategory.BUILDING_BLOCKS, GemistryItems.SAPPHIRE_BLOCK.get(), "gemistry:sapphire_block", null, "gemistry:sapphire_from_sapphire_block", null);
     }
 
     private void buildTools() {
@@ -45,6 +46,18 @@ public class GemistryRecipeProvider extends RecipeProvider {
         ShapedRecipeBuilder.shaped(items, RecipeCategory.TOOLS, GemistryItems.RUBY_HOE.get()).pattern("XX").pattern(" S").pattern(" S").define('X', GemistryItems.RUBY.get()).define('S', Items.STICK).unlockedBy("has_ruby", has(GemistryItems.RUBY.get())).save(output);
 
         ShapedRecipeBuilder.shaped(items, RecipeCategory.COMBAT, GemistryItems.RUBY_SPEAR.get()).pattern("I").pattern("S").pattern("S").define('I', GemistryItems.RUBY.get()).define('S', Items.STICK).unlockedBy("has_ruby", has(GemistryItems.RUBY.get())).save(output);
+
+        ShapedRecipeBuilder.shaped(items, RecipeCategory.COMBAT, GemistryItems.SAPPHIRE_SWORD.get()).pattern("X").pattern("X").pattern("S").define('X', GemistryItems.SAPPHIRE.get()).define('S', Items.STICK).unlockedBy("has_sapphire", has(GemistryItems.SAPPHIRE.get())).save(output);
+
+        ShapedRecipeBuilder.shaped(items, RecipeCategory.TOOLS, GemistryItems.SAPPHIRE_PICKAXE.get()).pattern("XXX").pattern(" S ").pattern(" S ").define('X', GemistryItems.SAPPHIRE.get()).define('S', Items.STICK).unlockedBy("has_sapphire", has(GemistryItems.SAPPHIRE.get())).save(output);
+
+        ShapedRecipeBuilder.shaped(items, RecipeCategory.TOOLS, GemistryItems.SAPPHIRE_AXE.get()).pattern("XX").pattern("XS").pattern(" S").define('X', GemistryItems.SAPPHIRE.get()).define('S', Items.STICK).unlockedBy("has_sapphire", has(GemistryItems.SAPPHIRE.get())).save(output);
+
+        ShapedRecipeBuilder.shaped(items, RecipeCategory.TOOLS, GemistryItems.SAPPHIRE_SHOVEL.get()).pattern("X").pattern("S").pattern("S").define('X', GemistryItems.SAPPHIRE.get()).define('S', Items.STICK).unlockedBy("has_sapphire", has(GemistryItems.SAPPHIRE.get())).save(output);
+
+        ShapedRecipeBuilder.shaped(items, RecipeCategory.TOOLS, GemistryItems.SAPPHIRE_HOE.get()).pattern("XX").pattern(" S").pattern(" S").define('X', GemistryItems.SAPPHIRE.get()).define('S', Items.STICK).unlockedBy("has_sapphire", has(GemistryItems.SAPPHIRE.get())).save(output);
+
+        ShapedRecipeBuilder.shaped(items, RecipeCategory.COMBAT, GemistryItems.SAPPHIRE_SPEAR.get()).pattern("I").pattern("S").pattern("S").define('I', GemistryItems.SAPPHIRE.get()).define('S', Items.STICK).unlockedBy("has_sapphire", has(GemistryItems.SAPPHIRE.get())).save(output);
     }
 
     private void buildArmor() {
@@ -55,6 +68,14 @@ public class GemistryRecipeProvider extends RecipeProvider {
         ShapedRecipeBuilder.shaped(items, RecipeCategory.COMBAT, GemistryItems.RUBY_LEGGINGS.get()).pattern("XXX").pattern("X X").pattern("X X").define('X', GemistryItems.RUBY.get()).unlockedBy("has_ruby", has(GemistryItems.RUBY.get())).save(output);
 
         ShapedRecipeBuilder.shaped(items, RecipeCategory.COMBAT, GemistryItems.RUBY_BOOTS.get()).pattern("X X").pattern("X X").define('X', GemistryItems.RUBY.get()).unlockedBy("has_ruby", has(GemistryItems.RUBY.get())).save(output);
+
+        ShapedRecipeBuilder.shaped(items, RecipeCategory.COMBAT, GemistryItems.SAPPHIRE_HELMET.get()).pattern("XXX").pattern("X X").define('X', GemistryItems.SAPPHIRE.get()).unlockedBy("has_sapphire", has(GemistryItems.SAPPHIRE.get())).save(output);
+
+        ShapedRecipeBuilder.shaped(items, RecipeCategory.COMBAT, GemistryItems.SAPPHIRE_CHESTPLATE.get()).pattern("X X").pattern("XXX").pattern("XXX").define('X', GemistryItems.SAPPHIRE.get()).unlockedBy("has_sapphire", has(GemistryItems.SAPPHIRE.get())).save(output);
+
+        ShapedRecipeBuilder.shaped(items, RecipeCategory.COMBAT, GemistryItems.SAPPHIRE_LEGGINGS.get()).pattern("XXX").pattern("X X").pattern("X X").define('X', GemistryItems.SAPPHIRE.get()).unlockedBy("has_sapphire", has(GemistryItems.SAPPHIRE.get())).save(output);
+
+        ShapedRecipeBuilder.shaped(items, RecipeCategory.COMBAT, GemistryItems.SAPPHIRE_BOOTS.get()).pattern("X X").pattern("X X").define('X', GemistryItems.SAPPHIRE.get()).unlockedBy("has_sapphire", has(GemistryItems.SAPPHIRE.get())).save(output);
     }
 
 

@@ -1,6 +1,8 @@
 {
   "values": [
     "gemistry:ruby_sword",
-    "gemistry:ruby_axe"
+    "gemistry:ruby_axe",
+    "gemistry:sapphire_sword",
+    "gemistry:sapphire_axe"
   ]
 }

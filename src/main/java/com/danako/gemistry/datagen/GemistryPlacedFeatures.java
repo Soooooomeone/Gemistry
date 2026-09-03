@@ -11,6 +11,7 @@ import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 public class GemistryPlacedFeatures {
 
     public static final ResourceKey<PlacedFeature> RUBY_ORE_PLACED = registerKey("ruby_ore_placed");
+    public static final ResourceKey<PlacedFeature> SAPPHIRE_ORE_PLACED = registerKey("sapphire_ore_placed");
 
     private static ResourceKey<PlacedFeature> registerKey(String name) {
         return ResourceKey.create(Registries.PLACED_FEATURE, Identifier.fromNamespaceAndPath(Gemistry.MODID, name));

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "S": "minecraft:stick",
+    "X": "gemistry:sapphire"
+  },
+  "pattern": [
+    "XX",
+    " S",
+    " S"
+  ],
+  "result": {
+    "id": "gemistry:sapphire_hoe"
+  }
+}

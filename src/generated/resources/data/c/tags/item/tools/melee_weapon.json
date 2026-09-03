@@ -2,6 +2,9 @@
   "values": [
     "gemistry:ruby_sword",
     "gemistry:ruby_axe",
-    "gemistry:ruby_spear"
+    "gemistry:ruby_spear",
+    "gemistry:sapphire_sword",
+    "gemistry:sapphire_axe",
+    "gemistry:sapphire_spear"
   ]
 }

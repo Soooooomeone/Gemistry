@@ -25,6 +25,10 @@ public class GemistryBlockLootSubProvider extends BlockLootSubProvider {
         add(GemistryBlocks.SAPPHIRE_ORE.get(), block -> createOreDrop(block, GemistryItems.SAPPHIRE.get()));
         add(GemistryBlocks.DEEPSLATE_SAPPHIRE_ORE.get(), block -> createOreDrop(block, GemistryItems.SAPPHIRE.get()));
         dropSelf(GemistryBlocks.SAPPHIRE_BLOCK.get());
+
+        add(GemistryBlocks.AQUAMARINE_ORE.get(), block -> createOreDrop(block, GemistryItems.AQUAMARINE.get()));
+        add(GemistryBlocks.DEEPSLATE_AQUAMARINE_ORE.get(), block -> createOreDrop(block, GemistryItems.AQUAMARINE.get()));
+        dropSelf(GemistryBlocks.AQUAMARINE_BLOCK.get());
     }
 
     @Override

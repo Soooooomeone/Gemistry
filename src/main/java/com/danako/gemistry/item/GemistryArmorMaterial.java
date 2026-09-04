@@ -21,6 +21,9 @@ public final class GemistryArmorMaterial {
     public static final ResourceKey<EquipmentAsset> SAPPHIRE_ARMOR_ASSET = ResourceKey.create(EquipmentAssets.ROOT_ID, Identifier.fromNamespaceAndPath(Gemistry.MODID, "sapphire"));
     public static final ArmorMaterial SAPPHIRE = new ArmorMaterial(35, makeDefense(3, 6, 8, 3, 19), 15, SoundEvents.ARMOR_EQUIP_NETHERITE, 3.0F, 0.0F, GemistryTags.REPAIRS_SAPPHIRE_ARMOR, SAPPHIRE_ARMOR_ASSET);
 
+    public static final ResourceKey<EquipmentAsset> AQUAMARINE_ARMOR_ASSET = ResourceKey.create(EquipmentAssets.ROOT_ID, Identifier.fromNamespaceAndPath(Gemistry.MODID, "aquamarine"));
+    public static final ArmorMaterial AQUAMARINE = new ArmorMaterial(33, makeDefense(3, 6, 8, 3, 11), 10, SoundEvents.ARMOR_EQUIP_DIAMOND, 2.0F, 0.0F, GemistryTags.REPAIRS_AQUAMARINE_ARMOR, AQUAMARINE_ARMOR_ASSET);
+
     private GemistryArmorMaterial() {
     }
 

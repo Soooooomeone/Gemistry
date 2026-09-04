@@ -1,0 +1,11 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "#minecraft:is_ocean",
+  "features": [
+    "gemistry:aquamarine_ore_small",
+    "gemistry:aquamarine_ore_medium",
+    "gemistry:aquamarine_ore_large",
+    "gemistry:aquamarine_ore_buried"
+  ],
+  "step": "underground_ores"
+}

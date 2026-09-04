@@ -3,6 +3,8 @@
     "gemistry:ruby_ore",
     "gemistry:deepslate_ruby_ore",
     "gemistry:sapphire_ore",
-    "gemistry:deepslate_sapphire_ore"
+    "gemistry:deepslate_sapphire_ore",
+    "gemistry:aquamarine_ore",
+    "gemistry:deepslate_aquamarine_ore"
   ]
 }

@@ -1,0 +1,24 @@
+{
+  "layers": {
+    "horse_body": [
+      {
+        "texture": "gemistry:aquamarine"
+      }
+    ],
+    "humanoid": [
+      {
+        "texture": "gemistry:aquamarine"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "gemistry:aquamarine"
+      }
+    ],
+    "nautilus_body": [
+      {
+        "texture": "gemistry:aquamarine"
+      }
+    ]
+  }
+}

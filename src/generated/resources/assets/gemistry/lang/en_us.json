@@ -1,10 +1,26 @@
 {
+  "block.gemistry.aquamarine_block": "Block of Aquamarine",
+  "block.gemistry.aquamarine_ore": "Aquamarine Ore",
+  "block.gemistry.deepslate_aquamarine_ore": "Deepslate Aquamarine Ore",
   "block.gemistry.deepslate_ruby_ore": "Deepslate Ruby Ore",
   "block.gemistry.deepslate_sapphire_ore": "Deepslate Sapphire Ore",
   "block.gemistry.ruby_block": "Block of Ruby",
   "block.gemistry.ruby_ore": "Ruby Ore",
   "block.gemistry.sapphire_block": "Block of Sapphire",
   "block.gemistry.sapphire_ore": "Sapphire Ore",
+  "item.gemistry.aquamarine": "Aquamarine",
+  "item.gemistry.aquamarine_axe": "Aquamarine Axe",
+  "item.gemistry.aquamarine_boots": "Aquamarine Boots",
+  "item.gemistry.aquamarine_chestplate": "Aquamarine Chestplate",
+  "item.gemistry.aquamarine_helmet": "Aquamarine Helmet",
+  "item.gemistry.aquamarine_hoe": "Aquamarine Hoe",
+  "item.gemistry.aquamarine_horse_armor": "Aquamarine Horse Armor",
+  "item.gemistry.aquamarine_leggings": "Aquamarine Leggings",
+  "item.gemistry.aquamarine_nautilus_armor": "Aquamarine Nautilus Armor",
+  "item.gemistry.aquamarine_pickaxe": "Aquamarine Pickaxe",
+  "item.gemistry.aquamarine_shovel": "Aquamarine Shovel",
+  "item.gemistry.aquamarine_spear": "Aquamarine Spear",
+  "item.gemistry.aquamarine_sword": "Aquamarine Sword",
   "item.gemistry.ruby": "Ruby",
   "item.gemistry.ruby_axe": "Ruby Axe",
   "item.gemistry.ruby_boots": "Ruby Boots",
@@ -31,5 +47,5 @@
   "item.gemistry.sapphire_shovel": "Sapphire Shovel",
   "item.gemistry.sapphire_spear": "Sapphire Spear",
   "item.gemistry.sapphire_sword": "Sapphire Sword",
-  "itemGroup.gemistrygemistry": "Gemistry"
+  "itemGroup.gemistry.gemistry": "Gemistry"
 }

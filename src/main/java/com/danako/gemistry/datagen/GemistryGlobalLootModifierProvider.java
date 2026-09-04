@@ -25,13 +25,13 @@ public class GemistryGlobalLootModifierProvider extends GlobalLootModifierProvid
 
     @Override
     protected void start() {
-        addHorseArmor(BuiltInLootTables.END_CITY_TREASURE, "end_city_treasure", 0.008F);     // diamond 1/89   = 1.12%
-        addHorseArmor(BuiltInLootTables.NETHER_BRIDGE, "nether_bridge", 0.029F);              // diamond 3/78   = 3.85%
-        addHorseArmor(BuiltInLootTables.VILLAGE_WEAPONSMITH, "village_weaponsmith", 0.007F);  // diamond 1/107  = 0.93%
-        addHorseArmor(BuiltInLootTables.STRONGHOLD_CORRIDOR, "stronghold_corridor", 0.0075F); // diamond 1/101  = 0.99%
-        addHorseArmor(BuiltInLootTables.DESERT_PYRAMID, "desert_pyramid", 0.015F);            // diamond 5/247  = 2.02%
-        addHorseArmor(BuiltInLootTables.JUNGLE_TEMPLE, "jungle_temple", 0.008F);              // diamond 1/89   = 1.12%
-        addHorseArmor(BuiltInLootTables.ANCIENT_CITY, "ancient_city", 0.018F);                // diamond 2/84   = 2.38%
+        addHorseArmor(BuiltInLootTables.END_CITY_TREASURE, "end_city_treasure", 0.008F);
+        addHorseArmor(BuiltInLootTables.NETHER_BRIDGE, "nether_bridge", 0.029F);
+        addHorseArmor(BuiltInLootTables.VILLAGE_WEAPONSMITH, "village_weaponsmith", 0.007F);
+        addHorseArmor(BuiltInLootTables.STRONGHOLD_CORRIDOR, "stronghold_corridor", 0.0075F);
+        addHorseArmor(BuiltInLootTables.DESERT_PYRAMID, "desert_pyramid", 0.015F);
+        addHorseArmor(BuiltInLootTables.JUNGLE_TEMPLE, "jungle_temple", 0.008F);
+        addHorseArmor(BuiltInLootTables.ANCIENT_CITY, "ancient_city", 0.018F);
         addNautilusArmor(BuiltInLootTables.BURIED_TREASURE, "buried_treasure");
         addNautilusArmor(BuiltInLootTables.UNDERWATER_RUIN_BIG, "underwater_ruin_big");
         addNautilusArmor(BuiltInLootTables.UNDERWATER_RUIN_SMALL, "underwater_ruin_small");
@@ -43,11 +43,13 @@ public class GemistryGlobalLootModifierProvider extends GlobalLootModifierProvid
     private void addHorseArmor(ResourceKey<LootTable> table, String tableName, float chance) {
         addRareItem(table, tableName, "horse_armor", "ruby", GemistryItems.RUBY_HORSE_ARMOR.get(), chance);
         addRareItem(table, tableName, "horse_armor", "sapphire", GemistryItems.SAPPHIRE_HORSE_ARMOR.get(), chance);
+        addRareItem(table, tableName, "horse_armor", "aquamarine", GemistryItems.AQUAMARINE_HORSE_ARMOR.get(), chance);
     }
 
     private void addNautilusArmor(ResourceKey<LootTable> table, String tableName) {
         addRareItem(table, tableName, "nautilus_armor", "ruby", GemistryItems.RUBY_NAUTILUS_ARMOR.get(), 0.008F);
         addRareItem(table, tableName, "nautilus_armor", "sapphire", GemistryItems.SAPPHIRE_NAUTILUS_ARMOR.get(), 0.008F);
+        addRareItem(table, tableName, "nautilus_armor", "aquamarine", GemistryItems.AQUAMARINE_NAUTILUS_ARMOR.get(), 0.008F);
     }
 
     private void addRareItem(ResourceKey<LootTable> table, String tableName, String kind, String gem, Item item, float chance) {

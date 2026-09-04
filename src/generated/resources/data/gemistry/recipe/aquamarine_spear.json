@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "I": "gemistry:aquamarine",
+    "S": "minecraft:stick"
+  },
+  "pattern": [
+    "I",
+    "S",
+    "S"
+  ],
+  "result": {
+    "id": "gemistry:aquamarine_spear"
+  }
+}

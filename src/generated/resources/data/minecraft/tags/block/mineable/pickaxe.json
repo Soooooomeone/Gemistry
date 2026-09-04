@@ -5,6 +5,9 @@
     "gemistry:ruby_block",
     "gemistry:sapphire_ore",
     "gemistry:deepslate_sapphire_ore",
-    "gemistry:sapphire_block"
+    "gemistry:sapphire_block",
+    "gemistry:aquamarine_ore",
+    "gemistry:deepslate_aquamarine_ore",
+    "gemistry:aquamarine_block"
   ]
 }

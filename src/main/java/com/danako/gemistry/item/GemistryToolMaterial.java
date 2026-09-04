@@ -13,6 +13,10 @@ public final class GemistryToolMaterial {
 
             1900, 9.0F, 4.0F, 15, GemistryTags.SAPPHIRE_TOOL_MATERIALS);
 
+    public static final ToolMaterial AQUAMARINE = new ToolMaterial(GemistryTags.INCORRECT_FOR_AQUAMARINE_TOOL,
+
+            1561, 8.0F, 3.0F, 10, GemistryTags.AQUAMARINE_TOOL_MATERIALS);
+
     private GemistryToolMaterial() {
     }
 }

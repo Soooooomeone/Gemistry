@@ -58,5 +58,26 @@ public class GemistryLanguageProvider extends LanguageProvider {
 
         addItem(GemistryItems.SAPPHIRE_HORSE_ARMOR, "Sapphire Horse Armor");
         addItem(GemistryItems.SAPPHIRE_NAUTILUS_ARMOR, "Sapphire Nautilus Armor");
+
+        addBlock(GemistryBlocks.AQUAMARINE_ORE, "Aquamarine Ore");
+        addBlock(GemistryBlocks.DEEPSLATE_AQUAMARINE_ORE, "Deepslate Aquamarine Ore");
+        addBlock(GemistryBlocks.AQUAMARINE_BLOCK, "Block of Aquamarine");
+
+        addItem(GemistryItems.AQUAMARINE, "Aquamarine");
+
+        addItem(GemistryItems.AQUAMARINE_SWORD, "Aquamarine Sword");
+        addItem(GemistryItems.AQUAMARINE_PICKAXE, "Aquamarine Pickaxe");
+        addItem(GemistryItems.AQUAMARINE_AXE, "Aquamarine Axe");
+        addItem(GemistryItems.AQUAMARINE_SHOVEL, "Aquamarine Shovel");
+        addItem(GemistryItems.AQUAMARINE_HOE, "Aquamarine Hoe");
+        addItem(GemistryItems.AQUAMARINE_SPEAR, "Aquamarine Spear");
+
+        addItem(GemistryItems.AQUAMARINE_HELMET, "Aquamarine Helmet");
+        addItem(GemistryItems.AQUAMARINE_CHESTPLATE, "Aquamarine Chestplate");
+        addItem(GemistryItems.AQUAMARINE_LEGGINGS, "Aquamarine Leggings");
+        addItem(GemistryItems.AQUAMARINE_BOOTS, "Aquamarine Boots");
+
+        addItem(GemistryItems.AQUAMARINE_HORSE_ARMOR, "Aquamarine Horse Armor");
+        addItem(GemistryItems.AQUAMARINE_NAUTILUS_ARMOR, "Aquamarine Nautilus Armor");
     }
 }

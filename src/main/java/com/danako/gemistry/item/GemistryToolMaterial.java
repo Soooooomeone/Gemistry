@@ -17,6 +17,10 @@ public final class GemistryToolMaterial {
 
             1561, 8.0F, 3.0F, 10, GemistryTags.AQUAMARINE_TOOL_MATERIALS);
 
+    public static final ToolMaterial AMBER = new ToolMaterial(GemistryTags.INCORRECT_FOR_AMBER_TOOL,
+
+            1152, 7.5F, 2.5F, 9, GemistryTags.AMBER_TOOL_MATERIALS);
+
     private GemistryToolMaterial() {
     }
 }

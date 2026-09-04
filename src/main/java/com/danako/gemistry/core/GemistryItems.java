@@ -60,6 +60,22 @@ public final class GemistryItems {
     public static final DeferredItem<Item> AQUAMARINE_BOOTS = ITEMS.registerItem("aquamarine_boots", properties -> new Item(properties.humanoidArmor(GemistryArmorMaterial.AQUAMARINE, ArmorType.BOOTS)));
     public static final DeferredItem<Item> AQUAMARINE_HORSE_ARMOR = ITEMS.registerItem("aquamarine_horse_armor", properties -> new Item(properties.horseArmor(GemistryArmorMaterial.AQUAMARINE)));
     public static final DeferredItem<Item> AQUAMARINE_NAUTILUS_ARMOR = ITEMS.registerItem("aquamarine_nautilus_armor", properties -> new Item(properties.nautilusArmor(GemistryArmorMaterial.AQUAMARINE)));
+    public static final DeferredItem<Item> AMBER = ITEMS.registerItem("amber", Item::new);
+    public static final DeferredItem<BlockItem> AMBER_ORE = ITEMS.registerSimpleBlockItem(GemistryBlocks.AMBER_ORE);
+    public static final DeferredItem<BlockItem> DEEPSLATE_AMBER_ORE = ITEMS.registerSimpleBlockItem(GemistryBlocks.DEEPSLATE_AMBER_ORE);
+    public static final DeferredItem<BlockItem> AMBER_BLOCK = ITEMS.registerSimpleBlockItem(GemistryBlocks.AMBER_BLOCK);
+    public static final DeferredItem<Item> AMBER_SWORD = ITEMS.registerItem("amber_sword", properties -> new Item(properties.sword(GemistryToolMaterial.AMBER, 3.0F, -2.4F)));
+    public static final DeferredItem<Item> AMBER_PICKAXE = ITEMS.registerItem("amber_pickaxe", properties -> new Item(properties.pickaxe(GemistryToolMaterial.AMBER, 1.0F, -2.8F)));
+    public static final DeferredItem<Item> AMBER_AXE = ITEMS.registerItem("amber_axe", properties -> new AxeItem(GemistryToolMaterial.AMBER, 5.0F, -3.0F, properties));
+    public static final DeferredItem<Item> AMBER_SHOVEL = ITEMS.registerItem("amber_shovel", properties -> new ShovelItem(GemistryToolMaterial.AMBER, 1.5F, -3.0F, properties));
+    public static final DeferredItem<Item> AMBER_HOE = ITEMS.registerItem("amber_hoe", properties -> new HoeItem(GemistryToolMaterial.AMBER, -4.0F, 0.0F, properties));
+    public static final DeferredItem<Item> AMBER_SPEAR = ITEMS.registerItem("amber_spear", properties -> new Item(properties.spear(GemistryToolMaterial.AMBER, 1.15F, 1.2F, 0.4F, 2.5F, 9.0F, 5.5F, 5.1F, 8.75F, 4.6F)));
+    public static final DeferredItem<Item> AMBER_HELMET = ITEMS.registerItem("amber_helmet", properties -> new Item(properties.humanoidArmor(GemistryArmorMaterial.AMBER, ArmorType.HELMET)));
+    public static final DeferredItem<Item> AMBER_CHESTPLATE = ITEMS.registerItem("amber_chestplate", properties -> new Item(properties.humanoidArmor(GemistryArmorMaterial.AMBER, ArmorType.CHESTPLATE)));
+    public static final DeferredItem<Item> AMBER_LEGGINGS = ITEMS.registerItem("amber_leggings", properties -> new Item(properties.humanoidArmor(GemistryArmorMaterial.AMBER, ArmorType.LEGGINGS)));
+    public static final DeferredItem<Item> AMBER_BOOTS = ITEMS.registerItem("amber_boots", properties -> new Item(properties.humanoidArmor(GemistryArmorMaterial.AMBER, ArmorType.BOOTS)));
+    public static final DeferredItem<Item> AMBER_HORSE_ARMOR = ITEMS.registerItem("amber_horse_armor", properties -> new Item(properties.horseArmor(GemistryArmorMaterial.AMBER)));
+    public static final DeferredItem<Item> AMBER_NAUTILUS_ARMOR = ITEMS.registerItem("amber_nautilus_armor", properties -> new Item(properties.nautilusArmor(GemistryArmorMaterial.AMBER)));
 
     private GemistryItems() {
     }

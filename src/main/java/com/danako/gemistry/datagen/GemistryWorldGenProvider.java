@@ -12,6 +12,7 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.BiomeTags;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.biome.Biome;
+import net.minecraft.world.level.biome.Biomes;
 import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
@@ -28,43 +29,39 @@ import java.util.List;
 
 public class GemistryWorldGenProvider {
 
+    public static final RegistrySetBuilder BUILDER = new RegistrySetBuilder().add(Registries.CONFIGURED_FEATURE, GemistryWorldGenProvider::registerConfiguredFeatures).add(Registries.PLACED_FEATURE, GemistryWorldGenProvider::registerPlacedFeatures).add(NeoForgeRegistries.Keys.BIOME_MODIFIERS, GemistryWorldGenProvider::registerBiomeModifiers);
     private static final String MODID = "gemistry";
-
     private static final ResourceKey<ConfiguredFeature<?, ?>> RUBY_ORE_SMALL = configuredKey("ruby_ore_small");
     private static final ResourceKey<ConfiguredFeature<?, ?>> RUBY_ORE_MEDIUM = configuredKey("ruby_ore_medium");
     private static final ResourceKey<ConfiguredFeature<?, ?>> RUBY_ORE_LARGE = configuredKey("ruby_ore_large");
     private static final ResourceKey<ConfiguredFeature<?, ?>> RUBY_ORE_BURIED = configuredKey("ruby_ore_buried");
-
     private static final ResourceKey<ConfiguredFeature<?, ?>> SAPPHIRE_ORE_SMALL = configuredKey("sapphire_ore_small");
     private static final ResourceKey<ConfiguredFeature<?, ?>> SAPPHIRE_ORE_MEDIUM = configuredKey("sapphire_ore_medium");
     private static final ResourceKey<ConfiguredFeature<?, ?>> SAPPHIRE_ORE_LARGE = configuredKey("sapphire_ore_large");
     private static final ResourceKey<ConfiguredFeature<?, ?>> SAPPHIRE_ORE_BURIED = configuredKey("sapphire_ore_buried");
-
     private static final ResourceKey<ConfiguredFeature<?, ?>> AQUAMARINE_ORE_SMALL = configuredKey("aquamarine_ore_small");
     private static final ResourceKey<ConfiguredFeature<?, ?>> AQUAMARINE_ORE_MEDIUM = configuredKey("aquamarine_ore_medium");
     private static final ResourceKey<ConfiguredFeature<?, ?>> AQUAMARINE_ORE_LARGE = configuredKey("aquamarine_ore_large");
     private static final ResourceKey<ConfiguredFeature<?, ?>> AQUAMARINE_ORE_BURIED = configuredKey("aquamarine_ore_buried");
-
+    private static final ResourceKey<ConfiguredFeature<?, ?>> AMBER_ORE = configuredKey("amber_ore");
     private static final ResourceKey<PlacedFeature> RUBY_ORE_SMALL_PLACED = placedKey("ruby_ore_small");
     private static final ResourceKey<PlacedFeature> RUBY_ORE_MEDIUM_PLACED = placedKey("ruby_ore_medium");
     private static final ResourceKey<PlacedFeature> RUBY_ORE_LARGE_PLACED = placedKey("ruby_ore_large");
     private static final ResourceKey<PlacedFeature> RUBY_ORE_BURIED_PLACED = placedKey("ruby_ore_buried");
-
     private static final ResourceKey<PlacedFeature> SAPPHIRE_ORE_SMALL_PLACED = placedKey("sapphire_ore_small");
     private static final ResourceKey<PlacedFeature> SAPPHIRE_ORE_MEDIUM_PLACED = placedKey("sapphire_ore_medium");
     private static final ResourceKey<PlacedFeature> SAPPHIRE_ORE_LARGE_PLACED = placedKey("sapphire_ore_large");
     private static final ResourceKey<PlacedFeature> SAPPHIRE_ORE_BURIED_PLACED = placedKey("sapphire_ore_buried");
-
     private static final ResourceKey<PlacedFeature> AQUAMARINE_ORE_SMALL_PLACED = placedKey("aquamarine_ore_small");
     private static final ResourceKey<PlacedFeature> AQUAMARINE_ORE_MEDIUM_PLACED = placedKey("aquamarine_ore_medium");
     private static final ResourceKey<PlacedFeature> AQUAMARINE_ORE_LARGE_PLACED = placedKey("aquamarine_ore_large");
     private static final ResourceKey<PlacedFeature> AQUAMARINE_ORE_BURIED_PLACED = placedKey("aquamarine_ore_buried");
-
+    private static final ResourceKey<PlacedFeature> AMBER_ORE_PLACED = placedKey("amber_ore");
+    private static final ResourceKey<PlacedFeature> AMBER_ORE_LOWER_PLACED = placedKey("amber_ore_lower");
     private static final ResourceKey<BiomeModifier> ADD_RUBY_ORE = biomeModifierKey("add_ruby_ore");
     private static final ResourceKey<BiomeModifier> ADD_SAPPHIRE_ORE = biomeModifierKey("add_sapphire_ore");
     private static final ResourceKey<BiomeModifier> ADD_AQUAMARINE_ORE = biomeModifierKey("add_aquamarine_ore");
-
-    public static final RegistrySetBuilder BUILDER = new RegistrySetBuilder().add(Registries.CONFIGURED_FEATURE, GemistryWorldGenProvider::registerConfiguredFeatures).add(Registries.PLACED_FEATURE, GemistryWorldGenProvider::registerPlacedFeatures).add(NeoForgeRegistries.Keys.BIOME_MODIFIERS, GemistryWorldGenProvider::registerBiomeModifiers);
+    private static final ResourceKey<BiomeModifier> ADD_AMBER_ORE = biomeModifierKey("add_amber_ore");
 
     private static ResourceKey<ConfiguredFeature<?, ?>> configuredKey(String name) {
         return ResourceKey.create(Registries.CONFIGURED_FEATURE, Identifier.fromNamespaceAndPath(MODID, name));
@@ -82,22 +79,20 @@ public class GemistryWorldGenProvider {
         List<OreConfiguration.TargetBlockState> rubyTargets = List.of(OreConfiguration.target(new TagMatchTest(BlockTags.STONE_ORE_REPLACEABLES), GemistryBlocks.RUBY_ORE.get().defaultBlockState()), OreConfiguration.target(new TagMatchTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES), GemistryBlocks.DEEPSLATE_RUBY_ORE.get().defaultBlockState()));
         List<OreConfiguration.TargetBlockState> sapphireTargets = List.of(OreConfiguration.target(new TagMatchTest(BlockTags.STONE_ORE_REPLACEABLES), GemistryBlocks.SAPPHIRE_ORE.get().defaultBlockState()), OreConfiguration.target(new TagMatchTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES), GemistryBlocks.DEEPSLATE_SAPPHIRE_ORE.get().defaultBlockState()));
         List<OreConfiguration.TargetBlockState> aquamarineTargets = List.of(OreConfiguration.target(new TagMatchTest(BlockTags.STONE_ORE_REPLACEABLES), GemistryBlocks.AQUAMARINE_ORE.get().defaultBlockState()), OreConfiguration.target(new TagMatchTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES), GemistryBlocks.DEEPSLATE_AQUAMARINE_ORE.get().defaultBlockState()));
-
+        List<OreConfiguration.TargetBlockState> amberTargets = List.of(OreConfiguration.target(new TagMatchTest(BlockTags.STONE_ORE_REPLACEABLES), GemistryBlocks.AMBER_ORE.get().defaultBlockState()), OreConfiguration.target(new TagMatchTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES), GemistryBlocks.DEEPSLATE_AMBER_ORE.get().defaultBlockState()));
         context.register(RUBY_ORE_SMALL, new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(rubyTargets, 4, 0.5F)));
         context.register(RUBY_ORE_MEDIUM, new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(rubyTargets, 8, 0.5F)));
         context.register(RUBY_ORE_LARGE, new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(rubyTargets, 12, 0.7F)));
         context.register(RUBY_ORE_BURIED, new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(rubyTargets, 8, 1.0F)));
-
         context.register(SAPPHIRE_ORE_SMALL, new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(sapphireTargets, 4, 0.5F)));
         context.register(SAPPHIRE_ORE_MEDIUM, new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(sapphireTargets, 8, 0.5F)));
         context.register(SAPPHIRE_ORE_LARGE, new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(sapphireTargets, 12, 0.7F)));
         context.register(SAPPHIRE_ORE_BURIED, new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(sapphireTargets, 8, 1.0F)));
-
-        // Same configuration values as vanilla diamond ore (see OreFeatures.ORE_DIAMOND_SMALL/MEDIUM/LARGE/BURIED).
         context.register(AQUAMARINE_ORE_SMALL, new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(aquamarineTargets, 4, 0.5F)));
         context.register(AQUAMARINE_ORE_MEDIUM, new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(aquamarineTargets, 8, 0.5F)));
         context.register(AQUAMARINE_ORE_LARGE, new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(aquamarineTargets, 12, 0.7F)));
         context.register(AQUAMARINE_ORE_BURIED, new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(aquamarineTargets, 8, 1.0F)));
+        context.register(AMBER_ORE, new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(amberTargets, 8)));
     }
 
     private static List<PlacementModifier> commonOrePlacement(int count, PlacementModifier heightRange) {
@@ -110,46 +105,41 @@ public class GemistryWorldGenProvider {
 
     private static void registerPlacedFeatures(BootstrapContext<PlacedFeature> context) {
         HolderGetter<ConfiguredFeature<?, ?>> configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
-
         Holder<ConfiguredFeature<?, ?>> rubySmall = configuredFeatures.getOrThrow(RUBY_ORE_SMALL);
         Holder<ConfiguredFeature<?, ?>> rubyMedium = configuredFeatures.getOrThrow(RUBY_ORE_MEDIUM);
         Holder<ConfiguredFeature<?, ?>> rubyLarge = configuredFeatures.getOrThrow(RUBY_ORE_LARGE);
         Holder<ConfiguredFeature<?, ?>> rubyBuried = configuredFeatures.getOrThrow(RUBY_ORE_BURIED);
-
         Holder<ConfiguredFeature<?, ?>> sapphireSmall = configuredFeatures.getOrThrow(SAPPHIRE_ORE_SMALL);
         Holder<ConfiguredFeature<?, ?>> sapphireMedium = configuredFeatures.getOrThrow(SAPPHIRE_ORE_MEDIUM);
         Holder<ConfiguredFeature<?, ?>> sapphireLarge = configuredFeatures.getOrThrow(SAPPHIRE_ORE_LARGE);
         Holder<ConfiguredFeature<?, ?>> sapphireBuried = configuredFeatures.getOrThrow(SAPPHIRE_ORE_BURIED);
-
         Holder<ConfiguredFeature<?, ?>> aquamarineSmall = configuredFeatures.getOrThrow(AQUAMARINE_ORE_SMALL);
         Holder<ConfiguredFeature<?, ?>> aquamarineMedium = configuredFeatures.getOrThrow(AQUAMARINE_ORE_MEDIUM);
         Holder<ConfiguredFeature<?, ?>> aquamarineLarge = configuredFeatures.getOrThrow(AQUAMARINE_ORE_LARGE);
         Holder<ConfiguredFeature<?, ?>> aquamarineBuried = configuredFeatures.getOrThrow(AQUAMARINE_ORE_BURIED);
-
+        Holder<ConfiguredFeature<?, ?>> amberOre = configuredFeatures.getOrThrow(AMBER_ORE);
         context.register(RUBY_ORE_SMALL_PLACED, new PlacedFeature(rubySmall, commonOrePlacement(5, HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(80)))));
         context.register(RUBY_ORE_MEDIUM_PLACED, new PlacedFeature(rubyMedium, rareOrePlacement(3, HeightRangePlacement.uniform(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(-4)))));
         context.register(RUBY_ORE_LARGE_PLACED, new PlacedFeature(rubyLarge, rareOrePlacement(14, HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(80)))));
         context.register(RUBY_ORE_BURIED_PLACED, new PlacedFeature(rubyBuried, commonOrePlacement(3, HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(80)))));
-
         context.register(SAPPHIRE_ORE_SMALL_PLACED, new PlacedFeature(sapphireSmall, commonOrePlacement(5, HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(80)))));
         context.register(SAPPHIRE_ORE_MEDIUM_PLACED, new PlacedFeature(sapphireMedium, rareOrePlacement(3, HeightRangePlacement.uniform(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(-4)))));
         context.register(SAPPHIRE_ORE_LARGE_PLACED, new PlacedFeature(sapphireLarge, rareOrePlacement(14, HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(80)))));
         context.register(SAPPHIRE_ORE_BURIED_PLACED, new PlacedFeature(sapphireBuried, commonOrePlacement(3, HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(80)))));
-
         context.register(AQUAMARINE_ORE_SMALL_PLACED, new PlacedFeature(aquamarineSmall, commonOrePlacement(7, HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(80)))));
         context.register(AQUAMARINE_ORE_MEDIUM_PLACED, new PlacedFeature(aquamarineMedium, commonOrePlacement(2, HeightRangePlacement.uniform(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(-4)))));
         context.register(AQUAMARINE_ORE_LARGE_PLACED, new PlacedFeature(aquamarineLarge, rareOrePlacement(9, HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(80)))));
         context.register(AQUAMARINE_ORE_BURIED_PLACED, new PlacedFeature(aquamarineBuried, commonOrePlacement(4, HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(80)))));
+        context.register(AMBER_ORE_PLACED, new PlacedFeature(amberOre, commonOrePlacement(3, HeightRangePlacement.uniform(VerticalAnchor.bottom(), VerticalAnchor.absolute(63)))));
+        context.register(AMBER_ORE_LOWER_PLACED, new PlacedFeature(amberOre, commonOrePlacement(6, HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-32), VerticalAnchor.aboveBottom(32)))));
     }
 
     private static void registerBiomeModifiers(BootstrapContext<BiomeModifier> context) {
         HolderGetter<Biome> biomes = context.lookup(Registries.BIOME);
         HolderGetter<PlacedFeature> placedFeatures = context.lookup(Registries.PLACED_FEATURE);
-
         context.register(ADD_RUBY_ORE, new BiomeModifiers.AddFeaturesBiomeModifier(biomes.getOrThrow(Tags.Biomes.IS_HOT_OVERWORLD), HolderSet.direct(placedFeatures.getOrThrow(RUBY_ORE_SMALL_PLACED), placedFeatures.getOrThrow(RUBY_ORE_MEDIUM_PLACED), placedFeatures.getOrThrow(RUBY_ORE_LARGE_PLACED), placedFeatures.getOrThrow(RUBY_ORE_BURIED_PLACED)), GenerationStep.Decoration.UNDERGROUND_ORES));
-
         context.register(ADD_SAPPHIRE_ORE, new BiomeModifiers.AddFeaturesBiomeModifier(biomes.getOrThrow(Tags.Biomes.IS_COLD_OVERWORLD), HolderSet.direct(placedFeatures.getOrThrow(SAPPHIRE_ORE_SMALL_PLACED), placedFeatures.getOrThrow(SAPPHIRE_ORE_MEDIUM_PLACED), placedFeatures.getOrThrow(SAPPHIRE_ORE_LARGE_PLACED), placedFeatures.getOrThrow(SAPPHIRE_ORE_BURIED_PLACED)), GenerationStep.Decoration.UNDERGROUND_ORES));
-
         context.register(ADD_AQUAMARINE_ORE, new BiomeModifiers.AddFeaturesBiomeModifier(biomes.getOrThrow(BiomeTags.IS_OCEAN), HolderSet.direct(placedFeatures.getOrThrow(AQUAMARINE_ORE_SMALL_PLACED), placedFeatures.getOrThrow(AQUAMARINE_ORE_MEDIUM_PLACED), placedFeatures.getOrThrow(AQUAMARINE_ORE_LARGE_PLACED), placedFeatures.getOrThrow(AQUAMARINE_ORE_BURIED_PLACED)), GenerationStep.Decoration.UNDERGROUND_ORES));
+        context.register(ADD_AMBER_ORE, new BiomeModifiers.AddFeaturesBiomeModifier(HolderSet.direct(biomes.getOrThrow(Biomes.SWAMP), biomes.getOrThrow(Biomes.MANGROVE_SWAMP), biomes.getOrThrow(Biomes.PALE_GARDEN)), HolderSet.direct(placedFeatures.getOrThrow(AMBER_ORE_PLACED), placedFeatures.getOrThrow(AMBER_ORE_LOWER_PLACED)), GenerationStep.Decoration.UNDERGROUND_ORES));
     }
 }

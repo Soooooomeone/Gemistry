@@ -2,6 +2,7 @@
   "values": [
     "gemistry:deepslate_ruby_ore",
     "gemistry:deepslate_sapphire_ore",
-    "gemistry:deepslate_aquamarine_ore"
+    "gemistry:deepslate_aquamarine_ore",
+    "gemistry:deepslate_amber_ore"
   ]
 }

@@ -56,5 +56,17 @@ public class GemistryEquipmentAssetProvider extends EquipmentAssetProvider {
                 .addLayers(EquipmentClientInfo.LayerType.HORSE_BODY, new EquipmentClientInfo.Layer(aquamarineTexture, Optional.empty(), false))
 
                 .addLayers(EquipmentClientInfo.LayerType.NAUTILUS_BODY, new EquipmentClientInfo.Layer(aquamarineTexture, Optional.empty(), false)).build());
+
+        Identifier amberTexture = Identifier.fromNamespaceAndPath(Gemistry.MODID, "amber");
+
+        output.accept(GemistryArmorMaterial.AMBER_ARMOR_ASSET, EquipmentClientInfo.builder()
+
+                .addLayers(EquipmentClientInfo.LayerType.HUMANOID, new EquipmentClientInfo.Layer(amberTexture, Optional.empty(), false))
+
+                .addLayers(EquipmentClientInfo.LayerType.HUMANOID_LEGGINGS, new EquipmentClientInfo.Layer(amberTexture, Optional.empty(), false))
+
+                .addLayers(EquipmentClientInfo.LayerType.HORSE_BODY, new EquipmentClientInfo.Layer(amberTexture, Optional.empty(), false))
+
+                .addLayers(EquipmentClientInfo.LayerType.NAUTILUS_BODY, new EquipmentClientInfo.Layer(amberTexture, Optional.empty(), false)).build());
     }
 }

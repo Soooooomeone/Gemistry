@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "gemistry:block/amber_block"
+    }
+  }
+}

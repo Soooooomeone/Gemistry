@@ -33,6 +33,7 @@ public class GemistryRecipeProvider extends RecipeProvider {
         nineBlockStorageRecipes(RecipeCategory.MISC, GemistryItems.RUBY.get(), RecipeCategory.BUILDING_BLOCKS, GemistryItems.RUBY_BLOCK.get(), "gemistry:ruby_block", null, "gemistry:ruby_from_ruby_block", null);
         nineBlockStorageRecipes(RecipeCategory.MISC, GemistryItems.SAPPHIRE.get(), RecipeCategory.BUILDING_BLOCKS, GemistryItems.SAPPHIRE_BLOCK.get(), "gemistry:sapphire_block", null, "gemistry:sapphire_from_sapphire_block", null);
         nineBlockStorageRecipes(RecipeCategory.MISC, GemistryItems.AQUAMARINE.get(), RecipeCategory.BUILDING_BLOCKS, GemistryItems.AQUAMARINE_BLOCK.get(), "gemistry:aquamarine_block", null, "gemistry:aquamarine_from_aquamarine_block", null);
+        nineBlockStorageRecipes(RecipeCategory.MISC, GemistryItems.AMBER.get(), RecipeCategory.BUILDING_BLOCKS, GemistryItems.AMBER_BLOCK.get(), "gemistry:amber_block", null, "gemistry:amber_from_amber_block", null);
     }
 
     private void buildTools() {
@@ -71,6 +72,18 @@ public class GemistryRecipeProvider extends RecipeProvider {
         ShapedRecipeBuilder.shaped(items, RecipeCategory.TOOLS, GemistryItems.AQUAMARINE_HOE.get()).pattern("XX").pattern(" S").pattern(" S").define('X', GemistryItems.AQUAMARINE.get()).define('S', Items.STICK).unlockedBy("has_aquamarine", has(GemistryItems.AQUAMARINE.get())).save(output);
 
         ShapedRecipeBuilder.shaped(items, RecipeCategory.COMBAT, GemistryItems.AQUAMARINE_SPEAR.get()).pattern("I").pattern("S").pattern("S").define('I', GemistryItems.AQUAMARINE.get()).define('S', Items.STICK).unlockedBy("has_aquamarine", has(GemistryItems.AQUAMARINE.get())).save(output);
+
+        ShapedRecipeBuilder.shaped(items, RecipeCategory.COMBAT, GemistryItems.AMBER_SWORD.get()).pattern("X").pattern("X").pattern("S").define('X', GemistryItems.AMBER.get()).define('S', Items.STICK).unlockedBy("has_amber", has(GemistryItems.AMBER.get())).save(output);
+
+        ShapedRecipeBuilder.shaped(items, RecipeCategory.TOOLS, GemistryItems.AMBER_PICKAXE.get()).pattern("XXX").pattern(" S ").pattern(" S ").define('X', GemistryItems.AMBER.get()).define('S', Items.STICK).unlockedBy("has_amber", has(GemistryItems.AMBER.get())).save(output);
+
+        ShapedRecipeBuilder.shaped(items, RecipeCategory.TOOLS, GemistryItems.AMBER_AXE.get()).pattern("XX").pattern("XS").pattern(" S").define('X', GemistryItems.AMBER.get()).define('S', Items.STICK).unlockedBy("has_amber", has(GemistryItems.AMBER.get())).save(output);
+
+        ShapedRecipeBuilder.shaped(items, RecipeCategory.TOOLS, GemistryItems.AMBER_SHOVEL.get()).pattern("X").pattern("S").pattern("S").define('X', GemistryItems.AMBER.get()).define('S', Items.STICK).unlockedBy("has_amber", has(GemistryItems.AMBER.get())).save(output);
+
+        ShapedRecipeBuilder.shaped(items, RecipeCategory.TOOLS, GemistryItems.AMBER_HOE.get()).pattern("XX").pattern(" S").pattern(" S").define('X', GemistryItems.AMBER.get()).define('S', Items.STICK).unlockedBy("has_amber", has(GemistryItems.AMBER.get())).save(output);
+
+        ShapedRecipeBuilder.shaped(items, RecipeCategory.COMBAT, GemistryItems.AMBER_SPEAR.get()).pattern("I").pattern("S").pattern("S").define('I', GemistryItems.AMBER.get()).define('S', Items.STICK).unlockedBy("has_amber", has(GemistryItems.AMBER.get())).save(output);
     }
 
     private void buildArmor() {
@@ -97,6 +110,14 @@ public class GemistryRecipeProvider extends RecipeProvider {
         ShapedRecipeBuilder.shaped(items, RecipeCategory.COMBAT, GemistryItems.AQUAMARINE_LEGGINGS.get()).pattern("XXX").pattern("X X").pattern("X X").define('X', GemistryItems.AQUAMARINE.get()).unlockedBy("has_aquamarine", has(GemistryItems.AQUAMARINE.get())).save(output);
 
         ShapedRecipeBuilder.shaped(items, RecipeCategory.COMBAT, GemistryItems.AQUAMARINE_BOOTS.get()).pattern("X X").pattern("X X").define('X', GemistryItems.AQUAMARINE.get()).unlockedBy("has_aquamarine", has(GemistryItems.AQUAMARINE.get())).save(output);
+
+        ShapedRecipeBuilder.shaped(items, RecipeCategory.COMBAT, GemistryItems.AMBER_HELMET.get()).pattern("XXX").pattern("X X").define('X', GemistryItems.AMBER.get()).unlockedBy("has_amber", has(GemistryItems.AMBER.get())).save(output);
+
+        ShapedRecipeBuilder.shaped(items, RecipeCategory.COMBAT, GemistryItems.AMBER_CHESTPLATE.get()).pattern("X X").pattern("XXX").pattern("XXX").define('X', GemistryItems.AMBER.get()).unlockedBy("has_amber", has(GemistryItems.AMBER.get())).save(output);
+
+        ShapedRecipeBuilder.shaped(items, RecipeCategory.COMBAT, GemistryItems.AMBER_LEGGINGS.get()).pattern("XXX").pattern("X X").pattern("X X").define('X', GemistryItems.AMBER.get()).unlockedBy("has_amber", has(GemistryItems.AMBER.get())).save(output);
+
+        ShapedRecipeBuilder.shaped(items, RecipeCategory.COMBAT, GemistryItems.AMBER_BOOTS.get()).pattern("X X").pattern("X X").define('X', GemistryItems.AMBER.get()).unlockedBy("has_amber", has(GemistryItems.AMBER.get())).save(output);
     }
 
 

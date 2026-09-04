@@ -62,6 +62,22 @@ public final class GemistryTabs {
         output.accept(GemistryItems.AQUAMARINE_BOOTS.get());
         output.accept(GemistryItems.AQUAMARINE_HORSE_ARMOR.get());
         output.accept(GemistryItems.AQUAMARINE_NAUTILUS_ARMOR.get());
+        output.accept(GemistryItems.AMBER.get());
+        output.accept(GemistryItems.AMBER_ORE.get());
+        output.accept(GemistryItems.DEEPSLATE_AMBER_ORE.get());
+        output.accept(GemistryItems.AMBER_BLOCK.get());
+        output.accept(GemistryItems.AMBER_SWORD.get());
+        output.accept(GemistryItems.AMBER_SPEAR.get());
+        output.accept(GemistryItems.AMBER_PICKAXE.get());
+        output.accept(GemistryItems.AMBER_AXE.get());
+        output.accept(GemistryItems.AMBER_SHOVEL.get());
+        output.accept(GemistryItems.AMBER_HOE.get());
+        output.accept(GemistryItems.AMBER_HELMET.get());
+        output.accept(GemistryItems.AMBER_CHESTPLATE.get());
+        output.accept(GemistryItems.AMBER_LEGGINGS.get());
+        output.accept(GemistryItems.AMBER_BOOTS.get());
+        output.accept(GemistryItems.AMBER_HORSE_ARMOR.get());
+        output.accept(GemistryItems.AMBER_NAUTILUS_ARMOR.get());
     }).build());
 
     private GemistryTabs() {

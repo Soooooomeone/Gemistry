@@ -19,6 +19,9 @@ public final class GemistryTags {
     public static final TagKey<Block> INCORRECT_FOR_AQUAMARINE_TOOL = TagKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(Gemistry.MODID, "incorrect_for_aquamarine_tool"));
     public static final TagKey<Item> AQUAMARINE_TOOL_MATERIALS = TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(Gemistry.MODID, "aquamarine_tool_materials"));
     public static final TagKey<Item> REPAIRS_AQUAMARINE_ARMOR = TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(Gemistry.MODID, "repairs_aquamarine_armor"));
+    public static final TagKey<Block> INCORRECT_FOR_AMBER_TOOL = TagKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(Gemistry.MODID, "incorrect_for_amber_tool"));
+    public static final TagKey<Item> AMBER_TOOL_MATERIALS = TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(Gemistry.MODID, "amber_tool_materials"));
+    public static final TagKey<Item> REPAIRS_AMBER_ARMOR = TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(Gemistry.MODID, "repairs_amber_armor"));
 
     private GemistryTags() {
     }

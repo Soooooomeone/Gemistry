@@ -1,0 +1,14 @@
+{
+  "type": "gemistry:add_item",
+  "conditions": [
+    {
+      "condition": "neoforge:loot_table_id",
+      "loot_table_id": "minecraft:chests/stronghold_corridor"
+    },
+    {
+      "chance": 0.0112499995,
+      "condition": "minecraft:random_chance"
+    }
+  ],
+  "item": "gemistry:amber_horse_armor"
+}

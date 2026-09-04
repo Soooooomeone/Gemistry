@@ -8,6 +8,9 @@
     "gemistry:sapphire_block",
     "gemistry:aquamarine_ore",
     "gemistry:deepslate_aquamarine_ore",
-    "gemistry:aquamarine_block"
+    "gemistry:aquamarine_block",
+    "gemistry:amber_ore",
+    "gemistry:deepslate_amber_ore",
+    "gemistry:amber_block"
   ]
 }

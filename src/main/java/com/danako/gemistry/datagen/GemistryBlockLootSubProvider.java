@@ -29,11 +29,14 @@ public class GemistryBlockLootSubProvider extends BlockLootSubProvider {
         add(GemistryBlocks.AQUAMARINE_ORE.get(), block -> createOreDrop(block, GemistryItems.AQUAMARINE.get()));
         add(GemistryBlocks.DEEPSLATE_AQUAMARINE_ORE.get(), block -> createOreDrop(block, GemistryItems.AQUAMARINE.get()));
         dropSelf(GemistryBlocks.AQUAMARINE_BLOCK.get());
+
+        add(GemistryBlocks.AMBER_ORE.get(), block -> createOreDrop(block, GemistryItems.AMBER.get()));
+        add(GemistryBlocks.DEEPSLATE_AMBER_ORE.get(), block -> createOreDrop(block, GemistryItems.AMBER.get()));
+        dropSelf(GemistryBlocks.AMBER_BLOCK.get());
     }
 
     @Override
     protected Iterable<Block> getKnownBlocks() {
-        return GemistryBlocks.BLOCKS.getEntries().stream().map(holder -> (Block) holder.get())
-                .toList();
+        return GemistryBlocks.BLOCKS.getEntries().stream().map(holder -> (Block) holder.get()).toList();
     }
 }

@@ -39,6 +39,10 @@ public class GemistryModelProvider extends ModelProvider {
         blockModels.createTrivialCube(GemistryBlocks.AQUAMARINE_ORE.get());
         blockModels.createTrivialCube(GemistryBlocks.DEEPSLATE_AQUAMARINE_ORE.get());
         blockModels.createTrivialCube(GemistryBlocks.AQUAMARINE_BLOCK.get());
+
+        blockModels.createTrivialCube(GemistryBlocks.AMBER_ORE.get());
+        blockModels.createTrivialCube(GemistryBlocks.DEEPSLATE_AMBER_ORE.get());
+        blockModels.createTrivialCube(GemistryBlocks.AMBER_BLOCK.get());
     }
 
     private void registerItemModels(ItemModelGenerators itemModels) {
@@ -89,6 +93,22 @@ public class GemistryModelProvider extends ModelProvider {
         itemModels.generateFlatItem(GemistryItems.AQUAMARINE_BOOTS.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(GemistryItems.AQUAMARINE_HORSE_ARMOR.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(GemistryItems.AQUAMARINE_NAUTILUS_ARMOR.get(), ModelTemplates.FLAT_ITEM);
+
+        itemModels.generateFlatItem(GemistryItems.AMBER.get(), ModelTemplates.FLAT_ITEM);
+
+        itemModels.generateFlatItem(GemistryItems.AMBER_SWORD.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModels.generateFlatItem(GemistryItems.AMBER_PICKAXE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModels.generateFlatItem(GemistryItems.AMBER_AXE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModels.generateFlatItem(GemistryItems.AMBER_SHOVEL.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModels.generateFlatItem(GemistryItems.AMBER_HOE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        registerSpearModel(itemModels, GemistryItems.AMBER_SPEAR.get());
+
+        itemModels.generateFlatItem(GemistryItems.AMBER_HELMET.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(GemistryItems.AMBER_CHESTPLATE.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(GemistryItems.AMBER_LEGGINGS.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(GemistryItems.AMBER_BOOTS.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(GemistryItems.AMBER_HORSE_ARMOR.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(GemistryItems.AMBER_NAUTILUS_ARMOR.get(), ModelTemplates.FLAT_ITEM);
     }
 
     private void registerSpearModel(ItemModelGenerators itemModels, Item spearItem) {

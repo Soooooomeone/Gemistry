@@ -15,7 +15,7 @@ public class GemistryLanguageProvider extends LanguageProvider {
 
     @Override
     protected void addTranslations() {
-        add("itemGroup." + Gemistry.MODID + "gemistry", "Gemistry");
+        add("itemGroup." + Gemistry.MODID + ".gemistry", "Gemistry");
 
         addBlock(GemistryBlocks.RUBY_ORE, "Ruby Ore");
         addBlock(GemistryBlocks.DEEPSLATE_RUBY_ORE, "Deepslate Ruby Ore");

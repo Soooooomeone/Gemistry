@@ -1,6 +1,11 @@
 {
   "type": "neoforge:add_features",
   "biomes": "#c:is_hot/overworld",
-  "features": "gemistry:ruby_ore_placed",
+  "features": [
+    "gemistry:ruby_ore_small",
+    "gemistry:ruby_ore_medium",
+    "gemistry:ruby_ore_large",
+    "gemistry:ruby_ore_buried"
+  ],
   "step": "underground_ores"
 }

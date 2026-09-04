@@ -1,9 +1,9 @@
 {
-  "feature": "gemistry:ruby_ore",
+  "feature": "gemistry:sapphire_ore_large",
   "placement": [
     {
-      "type": "minecraft:count",
-      "count": 7
+      "type": "minecraft:rarity_filter",
+      "chance": 14
     },
     {
       "type": "minecraft:in_square"
@@ -13,10 +13,10 @@
       "height": {
         "type": "minecraft:trapezoid",
         "max_inclusive": {
-          "absolute": 24
+          "above_bottom": 80
         },
         "min_inclusive": {
-          "absolute": -80
+          "above_bottom": -80
         }
       }
     },

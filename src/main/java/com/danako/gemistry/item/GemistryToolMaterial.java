@@ -19,7 +19,7 @@ public final class GemistryToolMaterial {
 
     public static final ToolMaterial AMBER = new ToolMaterial(GemistryTags.INCORRECT_FOR_AMBER_TOOL,
 
-            1152, 7.5F, 2.5F, 9, GemistryTags.AMBER_TOOL_MATERIALS);
+            1400, 7.5F, 2.5F, 9, GemistryTags.AMBER_TOOL_MATERIALS);
 
     private GemistryToolMaterial() {
     }

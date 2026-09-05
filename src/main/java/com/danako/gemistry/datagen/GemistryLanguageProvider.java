@@ -32,6 +32,7 @@ public class GemistryLanguageProvider extends LanguageProvider {
         addItem(GemistryItems.RUBY_BOOTS, "Ruby Boots");
         addItem(GemistryItems.RUBY_HORSE_ARMOR, "Ruby Horse Armor");
         addItem(GemistryItems.RUBY_NAUTILUS_ARMOR, "Ruby Nautilus Armor");
+        add("trim_material.gemistry.ruby", "Ruby");
         addBlock(GemistryBlocks.SAPPHIRE_ORE, "Sapphire Ore");
         addBlock(GemistryBlocks.DEEPSLATE_SAPPHIRE_ORE, "Deepslate Sapphire Ore");
         addBlock(GemistryBlocks.SAPPHIRE_BLOCK, "Block of Sapphire");
@@ -48,6 +49,7 @@ public class GemistryLanguageProvider extends LanguageProvider {
         addItem(GemistryItems.SAPPHIRE_BOOTS, "Sapphire Boots");
         addItem(GemistryItems.SAPPHIRE_HORSE_ARMOR, "Sapphire Horse Armor");
         addItem(GemistryItems.SAPPHIRE_NAUTILUS_ARMOR, "Sapphire Nautilus Armor");
+        add("trim_material.gemistry.sapphire", "Sapphire");
         addBlock(GemistryBlocks.AQUAMARINE_ORE, "Aquamarine Ore");
         addBlock(GemistryBlocks.DEEPSLATE_AQUAMARINE_ORE, "Deepslate Aquamarine Ore");
         addBlock(GemistryBlocks.AQUAMARINE_BLOCK, "Block of Aquamarine");
@@ -64,6 +66,7 @@ public class GemistryLanguageProvider extends LanguageProvider {
         addItem(GemistryItems.AQUAMARINE_BOOTS, "Aquamarine Boots");
         addItem(GemistryItems.AQUAMARINE_HORSE_ARMOR, "Aquamarine Horse Armor");
         addItem(GemistryItems.AQUAMARINE_NAUTILUS_ARMOR, "Aquamarine Nautilus Armor");
+        add("trim_material.gemistry.aquamarine", "Aquamarine");
         addBlock(GemistryBlocks.AMBER_ORE, "Amber Ore");
         addBlock(GemistryBlocks.DEEPSLATE_AMBER_ORE, "Deepslate Amber Ore");
         addBlock(GemistryBlocks.AMBER_BLOCK, "Block of Amber");
@@ -80,9 +83,6 @@ public class GemistryLanguageProvider extends LanguageProvider {
         addItem(GemistryItems.AMBER_BOOTS, "Amber Boots");
         addItem(GemistryItems.AMBER_HORSE_ARMOR, "Amber Horse Armor");
         addItem(GemistryItems.AMBER_NAUTILUS_ARMOR, "Amber Nautilus Armor");
-        add("trim_material.gemistry.ruby", "Ruby");
-        add("trim_material.gemistry.sapphire", "Sapphire");
-        add("trim_material.gemistry.aquamarine", "Aquamarine");
         add("trim_material.gemistry.amber", "Amber");
     }
 }

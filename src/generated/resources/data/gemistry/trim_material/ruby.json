@@ -1,0 +1,10 @@
+{
+  "asset_name": "ruby",
+  "description": {
+    "color": "#E0115F",
+    "translate": "trim_material.gemistry.ruby"
+  },
+  "override_armor_assets": {
+    "gemistry:ruby": "ruby_darker"
+  }
+}

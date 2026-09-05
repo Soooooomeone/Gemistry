@@ -3,13 +3,16 @@ package com.danako.gemistry.datagen;
 import com.danako.gemistry.Gemistry;
 import com.danako.gemistry.core.GemistryItems;
 import com.danako.gemistry.core.GemistryTags;
+import com.danako.gemistry.core.GemistryTrimMaterials;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.equipment.trim.TrimMaterial;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.data.ItemTagsProvider;
@@ -26,14 +29,20 @@ public class GemistryItemTagsProvider extends ItemTagsProvider {
         return TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath("c", path));
     }
 
+    private static TagKey<Item> trimMaterialTag(ResourceKey<TrimMaterial> key) {
+        return TagKey.create(Registries.ITEM, key.identifier());
+    }
+
     @Override
     protected void addTags(HolderLookup.Provider provider) {
         addVanillaToolTypeTags();
         addVanillaArmorSlotTags();
+        addTrimmableArmorTags();
         addVanillaMiscTags();
         addEnchantableTags();
         addNeoForgeConventionTags();
         addCustomTags();
+        addTrimMaterialTags();
     }
 
     private void addVanillaToolTypeTags() {
@@ -62,10 +71,16 @@ public class GemistryItemTagsProvider extends ItemTagsProvider {
         tag(ItemTags.FOOT_ARMOR).add(GemistryItems.RUBY_BOOTS.get()).add(GemistryItems.SAPPHIRE_BOOTS.get()).add(GemistryItems.AQUAMARINE_BOOTS.get()).add(GemistryItems.AMBER_BOOTS.get());
     }
 
+    private void addTrimmableArmorTags() {
+        tag(ItemTags.TRIMMABLE_ARMOR)
+                .add(GemistryItems.RUBY_HELMET.get()).add(GemistryItems.RUBY_CHESTPLATE.get()).add(GemistryItems.RUBY_LEGGINGS.get()).add(GemistryItems.RUBY_BOOTS.get())
+                .add(GemistryItems.SAPPHIRE_HELMET.get()).add(GemistryItems.SAPPHIRE_CHESTPLATE.get()).add(GemistryItems.SAPPHIRE_LEGGINGS.get()).add(GemistryItems.SAPPHIRE_BOOTS.get())
+                .add(GemistryItems.AQUAMARINE_HELMET.get()).add(GemistryItems.AQUAMARINE_CHESTPLATE.get()).add(GemistryItems.AQUAMARINE_LEGGINGS.get()).add(GemistryItems.AQUAMARINE_BOOTS.get())
+                .add(GemistryItems.AMBER_HELMET.get()).add(GemistryItems.AMBER_CHESTPLATE.get()).add(GemistryItems.AMBER_LEGGINGS.get()).add(GemistryItems.AMBER_BOOTS.get());
+    }
+
     private void addVanillaMiscTags() {
         tag(ItemTags.BEACON_PAYMENT_ITEMS).add(GemistryItems.RUBY.get()).add(GemistryItems.SAPPHIRE.get()).add(GemistryItems.AQUAMARINE.get()).add(GemistryItems.AMBER.get());
-
-        tag(ItemTags.TRIM_MATERIALS).add(GemistryItems.RUBY.get()).add(GemistryItems.SAPPHIRE.get()).add(GemistryItems.AQUAMARINE.get()).add(GemistryItems.AMBER.get());
     }
 
     private void addEnchantableTags() {
@@ -152,5 +167,18 @@ public class GemistryItemTagsProvider extends ItemTagsProvider {
 
         tag(GemistryTags.REPAIRS_AMBER_ARMOR).add(GemistryItems.AMBER.get());
         tag(GemistryTags.AMBER_TOOL_MATERIALS).add(GemistryItems.AMBER.get());
+    }
+
+    private void addTrimMaterialTags() {
+        tag(ItemTags.TRIM_MATERIALS)
+                .add(GemistryItems.RUBY.get())
+                .add(GemistryItems.SAPPHIRE.get())
+                .add(GemistryItems.AQUAMARINE.get())
+                .add(GemistryItems.AMBER.get());
+
+        tag(trimMaterialTag(GemistryTrimMaterials.RUBY)).add(GemistryItems.RUBY.get());
+        tag(trimMaterialTag(GemistryTrimMaterials.SAPPHIRE)).add(GemistryItems.SAPPHIRE.get());
+        tag(trimMaterialTag(GemistryTrimMaterials.AQUAMARINE)).add(GemistryItems.AQUAMARINE.get());
+        tag(trimMaterialTag(GemistryTrimMaterials.AMBER)).add(GemistryItems.AMBER.get());
     }
 }

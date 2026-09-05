@@ -1,5 +1,7 @@
 package com.danako.gemistry.datagen;
 
+import com.danako.gemistry.core.GemistryTrimMaterials;
+import net.minecraft.core.registries.Registries;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
 
@@ -13,7 +15,7 @@ public class DataGenerators {
         event.createProvider(GemistryModelProvider::new);
         event.createProvider(GemistryEquipmentAssetProvider::new);
         event.createProvider(GemistryLanguageProvider::new);
-        event.createDatapackRegistryObjects(GemistryWorldGenProvider.BUILDER);
+        event.createDatapackRegistryObjects(GemistryWorldGenProvider.BUILDER.add(Registries.TRIM_MATERIAL, GemistryTrimMaterials::bootstrap));
         event.createBlockAndItemTags(GemistryBlockTagsProvider::new, GemistryItemTagsProvider::new);
         event.createProvider(GemistryLootTableProvider::new);
         event.createProvider(GemistryGlobalLootModifierProvider::new);

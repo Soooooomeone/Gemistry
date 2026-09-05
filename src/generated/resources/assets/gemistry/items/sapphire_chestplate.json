@@ -1,6 +1,10 @@
 {
   "model": {
-    "type": "minecraft:model",
-    "model": "gemistry:item/sapphire_chestplate"
+    "type": "neoforge:trimmed_armor",
+    "base_model": {
+      "type": "minecraft:model",
+      "model": "gemistry:item/sapphire_chestplate"
+    },
+    "base_trim_texture": "minecraft:trims/items/chestplate_trim"
   }
 }

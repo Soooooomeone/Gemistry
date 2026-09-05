@@ -11,6 +11,7 @@ import net.minecraft.client.data.models.model.ModelTemplates;
 import net.minecraft.client.renderer.item.ItemModel;
 import net.minecraft.client.renderer.item.properties.select.DisplayContext;
 import net.minecraft.data.PackOutput;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemDisplayContext;
 
@@ -19,6 +20,11 @@ public class GemistryModelProvider extends ModelProvider {
 
     public GemistryModelProvider(PackOutput output) {
         super(output, Gemistry.MODID);
+    }
+
+    private void generateTrimmableItemWithGems(ItemModelGenerators itemModels, Item armor, Identifier slotTrimPrefix) {
+        itemModels.createFlatItemModel(armor, ModelTemplates.FLAT_ITEM);
+        itemModels.generateDynamicTrimmableItem(armor, slotTrimPrefix);
     }
 
     @Override
@@ -55,10 +61,6 @@ public class GemistryModelProvider extends ModelProvider {
         itemModels.generateFlatItem(GemistryItems.RUBY_HOE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
         registerSpearModel(itemModels, GemistryItems.RUBY_SPEAR.get());
 
-        itemModels.generateFlatItem(GemistryItems.RUBY_HELMET.get(), ModelTemplates.FLAT_ITEM);
-        itemModels.generateFlatItem(GemistryItems.RUBY_CHESTPLATE.get(), ModelTemplates.FLAT_ITEM);
-        itemModels.generateFlatItem(GemistryItems.RUBY_LEGGINGS.get(), ModelTemplates.FLAT_ITEM);
-        itemModels.generateFlatItem(GemistryItems.RUBY_BOOTS.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(GemistryItems.RUBY_HORSE_ARMOR.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(GemistryItems.RUBY_NAUTILUS_ARMOR.get(), ModelTemplates.FLAT_ITEM);
 
@@ -71,10 +73,6 @@ public class GemistryModelProvider extends ModelProvider {
         itemModels.generateFlatItem(GemistryItems.SAPPHIRE_HOE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
         registerSpearModel(itemModels, GemistryItems.SAPPHIRE_SPEAR.get());
 
-        itemModels.generateFlatItem(GemistryItems.SAPPHIRE_HELMET.get(), ModelTemplates.FLAT_ITEM);
-        itemModels.generateFlatItem(GemistryItems.SAPPHIRE_CHESTPLATE.get(), ModelTemplates.FLAT_ITEM);
-        itemModels.generateFlatItem(GemistryItems.SAPPHIRE_LEGGINGS.get(), ModelTemplates.FLAT_ITEM);
-        itemModels.generateFlatItem(GemistryItems.SAPPHIRE_BOOTS.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(GemistryItems.SAPPHIRE_HORSE_ARMOR.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(GemistryItems.SAPPHIRE_NAUTILUS_ARMOR.get(), ModelTemplates.FLAT_ITEM);
 
@@ -87,10 +85,6 @@ public class GemistryModelProvider extends ModelProvider {
         itemModels.generateFlatItem(GemistryItems.AQUAMARINE_HOE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
         registerSpearModel(itemModels, GemistryItems.AQUAMARINE_SPEAR.get());
 
-        itemModels.generateFlatItem(GemistryItems.AQUAMARINE_HELMET.get(), ModelTemplates.FLAT_ITEM);
-        itemModels.generateFlatItem(GemistryItems.AQUAMARINE_CHESTPLATE.get(), ModelTemplates.FLAT_ITEM);
-        itemModels.generateFlatItem(GemistryItems.AQUAMARINE_LEGGINGS.get(), ModelTemplates.FLAT_ITEM);
-        itemModels.generateFlatItem(GemistryItems.AQUAMARINE_BOOTS.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(GemistryItems.AQUAMARINE_HORSE_ARMOR.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(GemistryItems.AQUAMARINE_NAUTILUS_ARMOR.get(), ModelTemplates.FLAT_ITEM);
 
@@ -103,12 +97,25 @@ public class GemistryModelProvider extends ModelProvider {
         itemModels.generateFlatItem(GemistryItems.AMBER_HOE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
         registerSpearModel(itemModels, GemistryItems.AMBER_SPEAR.get());
 
-        itemModels.generateFlatItem(GemistryItems.AMBER_HELMET.get(), ModelTemplates.FLAT_ITEM);
-        itemModels.generateFlatItem(GemistryItems.AMBER_CHESTPLATE.get(), ModelTemplates.FLAT_ITEM);
-        itemModels.generateFlatItem(GemistryItems.AMBER_LEGGINGS.get(), ModelTemplates.FLAT_ITEM);
-        itemModels.generateFlatItem(GemistryItems.AMBER_BOOTS.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(GemistryItems.AMBER_HORSE_ARMOR.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(GemistryItems.AMBER_NAUTILUS_ARMOR.get(), ModelTemplates.FLAT_ITEM);
+
+        generateTrimmableItemWithGems(itemModels, GemistryItems.RUBY_HELMET.get(), ItemModelGenerators.TRIM_PREFIX_HELMET);
+        generateTrimmableItemWithGems(itemModels, GemistryItems.RUBY_CHESTPLATE.get(), ItemModelGenerators.TRIM_PREFIX_CHESTPLATE);
+        generateTrimmableItemWithGems(itemModels, GemistryItems.RUBY_LEGGINGS.get(), ItemModelGenerators.TRIM_PREFIX_LEGGINGS);
+        generateTrimmableItemWithGems(itemModels, GemistryItems.RUBY_BOOTS.get(), ItemModelGenerators.TRIM_PREFIX_BOOTS);
+        generateTrimmableItemWithGems(itemModels, GemistryItems.SAPPHIRE_HELMET.get(), ItemModelGenerators.TRIM_PREFIX_HELMET);
+        generateTrimmableItemWithGems(itemModels, GemistryItems.SAPPHIRE_CHESTPLATE.get(), ItemModelGenerators.TRIM_PREFIX_CHESTPLATE);
+        generateTrimmableItemWithGems(itemModels, GemistryItems.SAPPHIRE_LEGGINGS.get(), ItemModelGenerators.TRIM_PREFIX_LEGGINGS);
+        generateTrimmableItemWithGems(itemModels, GemistryItems.SAPPHIRE_BOOTS.get(), ItemModelGenerators.TRIM_PREFIX_BOOTS);
+        generateTrimmableItemWithGems(itemModels, GemistryItems.AQUAMARINE_HELMET.get(), ItemModelGenerators.TRIM_PREFIX_HELMET);
+        generateTrimmableItemWithGems(itemModels, GemistryItems.AQUAMARINE_CHESTPLATE.get(), ItemModelGenerators.TRIM_PREFIX_CHESTPLATE);
+        generateTrimmableItemWithGems(itemModels, GemistryItems.AQUAMARINE_LEGGINGS.get(), ItemModelGenerators.TRIM_PREFIX_LEGGINGS);
+        generateTrimmableItemWithGems(itemModels, GemistryItems.AQUAMARINE_BOOTS.get(), ItemModelGenerators.TRIM_PREFIX_BOOTS);
+        generateTrimmableItemWithGems(itemModels, GemistryItems.AMBER_HELMET.get(), ItemModelGenerators.TRIM_PREFIX_HELMET);
+        generateTrimmableItemWithGems(itemModels, GemistryItems.AMBER_CHESTPLATE.get(), ItemModelGenerators.TRIM_PREFIX_CHESTPLATE);
+        generateTrimmableItemWithGems(itemModels, GemistryItems.AMBER_LEGGINGS.get(), ItemModelGenerators.TRIM_PREFIX_LEGGINGS);
+        generateTrimmableItemWithGems(itemModels, GemistryItems.AMBER_BOOTS.get(), ItemModelGenerators.TRIM_PREFIX_BOOTS);
     }
 
     private void registerSpearModel(ItemModelGenerators itemModels, Item spearItem) {

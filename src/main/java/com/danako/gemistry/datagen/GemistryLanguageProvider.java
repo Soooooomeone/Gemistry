@@ -80,5 +80,9 @@ public class GemistryLanguageProvider extends LanguageProvider {
         addItem(GemistryItems.AMBER_BOOTS, "Amber Boots");
         addItem(GemistryItems.AMBER_HORSE_ARMOR, "Amber Horse Armor");
         addItem(GemistryItems.AMBER_NAUTILUS_ARMOR, "Amber Nautilus Armor");
+        add("trim_material.gemistry.ruby", "Ruby");
+        add("trim_material.gemistry.sapphire", "Sapphire");
+        add("trim_material.gemistry.aquamarine", "Aquamarine");
+        add("trim_material.gemistry.amber", "Amber");
     }
 }

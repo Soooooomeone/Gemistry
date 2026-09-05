@@ -1,0 +1,10 @@
+{
+  "asset_name": "sapphire",
+  "description": {
+    "color": "#0F52BA",
+    "translate": "trim_material.gemistry.sapphire"
+  },
+  "override_armor_assets": {
+    "gemistry:sapphire": "sapphire_darker"
+  }
+}

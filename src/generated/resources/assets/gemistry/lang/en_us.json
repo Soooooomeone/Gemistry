@@ -63,5 +63,9 @@
   "item.gemistry.sapphire_shovel": "Sapphire Shovel",
   "item.gemistry.sapphire_spear": "Sapphire Spear",
   "item.gemistry.sapphire_sword": "Sapphire Sword",
-  "itemGroup.gemistry.gemistry": "Gemistry"
+  "itemGroup.gemistry.gemistry": "Gemistry",
+  "trim_material.gemistry.amber": "Amber",
+  "trim_material.gemistry.aquamarine": "Aquamarine",
+  "trim_material.gemistry.ruby": "Ruby",
+  "trim_material.gemistry.sapphire": "Sapphire"
 }

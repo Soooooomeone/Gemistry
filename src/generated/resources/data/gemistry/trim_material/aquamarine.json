@@ -1,0 +1,10 @@
+{
+  "asset_name": "aquamarine",
+  "description": {
+    "color": "#7FFFD4",
+    "translate": "trim_material.gemistry.aquamarine"
+  },
+  "override_armor_assets": {
+    "gemistry:aquamarine": "aquamarine_darker"
+  }
+}

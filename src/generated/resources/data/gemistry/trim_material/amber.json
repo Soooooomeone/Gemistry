@@ -1,7 +1,7 @@
 {
   "asset_name": "amber",
   "description": {
-    "color": "#FFBF00",
+    "color": "#FF8700",
     "translate": "trim_material.gemistry.amber"
   },
   "override_armor_assets": {

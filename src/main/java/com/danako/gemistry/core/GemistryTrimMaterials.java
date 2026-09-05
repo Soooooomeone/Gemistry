@@ -34,10 +34,10 @@ public final class GemistryTrimMaterials {
             MaterialAssetGroup.create("amber", Map.of(GemistryArmorMaterial.AMBER_ARMOR_ASSET, "amber_darker"));
 
     public static void bootstrap(BootstrapContext<TrimMaterial> context) {
-        register(context, RUBY, Style.EMPTY.withColor(0xE0115F), RUBY_ASSETS);
-        register(context, SAPPHIRE, Style.EMPTY.withColor(0x0F52BA), SAPPHIRE_ASSETS);
+        register(context, RUBY, Style.EMPTY.withColor(0xFF0000), RUBY_ASSETS);
+        register(context, SAPPHIRE, Style.EMPTY.withColor(0x4B4BB8), SAPPHIRE_ASSETS);
         register(context, AQUAMARINE, Style.EMPTY.withColor(0x7FFFD4), AQUAMARINE_ASSETS);
-        register(context, AMBER, Style.EMPTY.withColor(0xFFBF00), AMBER_ASSETS);
+        register(context, AMBER, Style.EMPTY.withColor(0xFF8700), AMBER_ASSETS);
     }
 
     private static void register(BootstrapContext<TrimMaterial> context, ResourceKey<TrimMaterial> registryKey, Style hoverTextStyle, MaterialAssetGroup assets) {

@@ -1,0 +1,24 @@
+{
+  "sources": [
+    {
+      "type": "minecraft:paletted_permutations",
+      "palette_key": "minecraft:trims/color_palettes/trim_palette",
+      "permutations": {
+        "amber": "gemistry:trims/color_palettes/amber",
+        "amber_darker": "gemistry:trims/color_palettes/amber_darker",
+        "aquamarine": "gemistry:trims/color_palettes/aquamarine",
+        "aquamarine_darker": "gemistry:trims/color_palettes/aquamarine_darker",
+        "ruby": "gemistry:trims/color_palettes/ruby",
+        "ruby_darker": "gemistry:trims/color_palettes/ruby_darker",
+        "sapphire": "gemistry:trims/color_palettes/sapphire",
+        "sapphire_darker": "gemistry:trims/color_palettes/sapphire_darker"
+      },
+      "textures": [
+        "minecraft:trims/items/helmet_trim",
+        "minecraft:trims/items/chestplate_trim",
+        "minecraft:trims/items/leggings_trim",
+        "minecraft:trims/items/boots_trim"
+      ]
+    }
+  ]
+}

@@ -15,10 +15,12 @@ public class DataGenerators {
         event.createProvider(GemistryModelProvider::new);
         event.createProvider(GemistryEquipmentAssetProvider::new);
         event.createProvider(GemistryLanguageProvider::new);
+        event.createProvider(GemistryTrimAtlasProvider::new);
         event.createDatapackRegistryObjects(GemistryWorldGenProvider.BUILDER.add(Registries.TRIM_MATERIAL, GemistryTrimMaterials::bootstrap));
         event.createBlockAndItemTags(GemistryBlockTagsProvider::new, GemistryItemTagsProvider::new);
         event.createProvider(GemistryLootTableProvider::new);
         event.createProvider(GemistryGlobalLootModifierProvider::new);
         event.createProvider(GemistryRecipeProvider.Runner::new);
+
     }
 }

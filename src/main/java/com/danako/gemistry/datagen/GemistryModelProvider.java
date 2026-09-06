@@ -7,16 +7,33 @@ import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.ModelProvider;
 import net.minecraft.client.data.models.model.ItemModelUtils;
+import net.minecraft.client.data.models.model.ModelTemplate;
 import net.minecraft.client.data.models.model.ModelTemplates;
+import net.minecraft.client.data.models.model.TextureMapping;
+import net.minecraft.client.data.models.model.TextureSlot;
 import net.minecraft.client.renderer.item.ItemModel;
 import net.minecraft.client.renderer.item.properties.select.DisplayContext;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemDisplayContext;
+import net.minecraft.world.level.block.Block;
+
+import java.util.Optional;
 
 
 public class GemistryModelProvider extends ModelProvider {
+
+    // Parent model living at assets/gemistry/models/block/template_attunement_table.json.
+    // It hardcodes the 16x12x16 box + UVs; this template just fills in the textures.
+    private static final ModelTemplate ATTUNEMENT_TABLE_TEMPLATE = new ModelTemplate(
+            Optional.of(Identifier.fromNamespaceAndPath(Gemistry.MODID, "block/template_attunement_table")),
+            Optional.empty(),
+            TextureSlot.TOP, TextureSlot.SIDE, TextureSlot.BOTTOM, TextureSlot.PARTICLE
+    );
+
+    // Populated by registerAttunementTable() before registerItemModels() runs.
+    private Identifier attunementTableModel;
 
     public GemistryModelProvider(PackOutput output) {
         super(output, Gemistry.MODID);
@@ -49,9 +66,31 @@ public class GemistryModelProvider extends ModelProvider {
         blockModels.createTrivialCube(GemistryBlocks.AMBER_ORE.get());
         blockModels.createTrivialCube(GemistryBlocks.DEEPSLATE_AMBER_ORE.get());
         blockModels.createTrivialCube(GemistryBlocks.AMBER_BLOCK.get());
+
+        registerAttunementTable(blockModels);
+    }
+
+    private void registerAttunementTable(BlockModelGenerators blockModels) {
+        Block block = GemistryBlocks.ATTUNEMENT_TABLE.get();
+
+        // Particle slot points at the *_bottom texture per spec, so break particles use it.
+        TextureMapping mapping = new TextureMapping()
+                .put(TextureSlot.TOP, TextureMapping.getBlockTexture(block, "_top"))
+                .put(TextureSlot.SIDE, TextureMapping.getBlockTexture(block, "_side"))
+                .put(TextureSlot.BOTTOM, TextureMapping.getBlockTexture(block, "_bottom"))
+                .put(TextureSlot.PARTICLE, TextureMapping.getBlockTexture(block, "_bottom"));
+
+        Identifier modelLocation = ATTUNEMENT_TABLE_TEMPLATE.create(block, mapping, blockModels.modelOutput);
+        blockModels.blockStateOutput.accept(BlockModelGenerators.createSimpleBlock(block, BlockModelGenerators.plainVariant(modelLocation)));
+
+        // Item model is wired up in registerItemModels() via ItemModelGenerators, since
+        // BlockModelGenerators has no direct way to emit an item model.
+        this.attunementTableModel = modelLocation;
     }
 
     private void registerItemModels(ItemModelGenerators itemModels) {
+        itemModels.itemModelOutput.accept(GemistryItems.ATTUNEMENT_TABLE.get(), ItemModelUtils.plainModel(attunementTableModel));
+
         itemModels.generateFlatItem(GemistryItems.RUBY.get(), ModelTemplates.FLAT_ITEM);
 
         itemModels.generateFlatItem(GemistryItems.RUBY_SWORD.get(), ModelTemplates.FLAT_HANDHELD_ITEM);

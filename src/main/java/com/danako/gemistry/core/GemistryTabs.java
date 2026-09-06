@@ -78,6 +78,7 @@ public final class GemistryTabs {
         output.accept(GemistryItems.AMBER_BOOTS.get());
         output.accept(GemistryItems.AMBER_HORSE_ARMOR.get());
         output.accept(GemistryItems.AMBER_NAUTILUS_ARMOR.get());
+        output.accept(GemistryItems.ATTUNEMENT_TABLE.get());
     }).build());
 
     private GemistryTabs() {

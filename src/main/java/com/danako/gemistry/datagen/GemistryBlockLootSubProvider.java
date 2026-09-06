@@ -33,6 +33,8 @@ public class GemistryBlockLootSubProvider extends BlockLootSubProvider {
         add(GemistryBlocks.AMBER_ORE.get(), block -> createOreDrop(block, GemistryItems.AMBER.get()));
         add(GemistryBlocks.DEEPSLATE_AMBER_ORE.get(), block -> createOreDrop(block, GemistryItems.AMBER.get()));
         dropSelf(GemistryBlocks.AMBER_BLOCK.get());
+
+        dropSelf(GemistryBlocks.ATTUNEMENT_TABLE.get());
     }
 
     @Override

@@ -34,9 +34,10 @@ public class GemistryBlockTagsProvider extends BlockTagsProvider {
     }
 
     private void addHarvestLevelTags() {
-        tag(BlockTags.MINEABLE_WITH_PICKAXE).add(GemistryBlocks.RUBY_ORE.get()).add(GemistryBlocks.DEEPSLATE_RUBY_ORE.get()).add(GemistryBlocks.RUBY_BLOCK.get()).add(GemistryBlocks.SAPPHIRE_ORE.get()).add(GemistryBlocks.DEEPSLATE_SAPPHIRE_ORE.get()).add(GemistryBlocks.SAPPHIRE_BLOCK.get()).add(GemistryBlocks.AQUAMARINE_ORE.get()).add(GemistryBlocks.DEEPSLATE_AQUAMARINE_ORE.get()).add(GemistryBlocks.AQUAMARINE_BLOCK.get()).add(GemistryBlocks.AMBER_ORE.get()).add(GemistryBlocks.DEEPSLATE_AMBER_ORE.get()).add(GemistryBlocks.AMBER_BLOCK.get());
+        tag(BlockTags.MINEABLE_WITH_PICKAXE).add(GemistryBlocks.RUBY_ORE.get()).add(GemistryBlocks.DEEPSLATE_RUBY_ORE.get()).add(GemistryBlocks.RUBY_BLOCK.get()).add(GemistryBlocks.SAPPHIRE_ORE.get()).add(GemistryBlocks.DEEPSLATE_SAPPHIRE_ORE.get()).add(GemistryBlocks.SAPPHIRE_BLOCK.get()).add(GemistryBlocks.AQUAMARINE_ORE.get()).add(GemistryBlocks.DEEPSLATE_AQUAMARINE_ORE.get()).add(GemistryBlocks.AQUAMARINE_BLOCK.get()).add(GemistryBlocks.AMBER_ORE.get()).add(GemistryBlocks.DEEPSLATE_AMBER_ORE.get()).add(GemistryBlocks.ATTUNEMENT_TABLE.get()).add(GemistryBlocks.AMBER_BLOCK.get());
 
         tag(BlockTags.NEEDS_IRON_TOOL).add(GemistryBlocks.RUBY_ORE.get()).add(GemistryBlocks.DEEPSLATE_RUBY_ORE.get()).add(GemistryBlocks.RUBY_BLOCK.get()).add(GemistryBlocks.SAPPHIRE_ORE.get()).add(GemistryBlocks.DEEPSLATE_SAPPHIRE_ORE.get()).add(GemistryBlocks.SAPPHIRE_BLOCK.get()).add(GemistryBlocks.AQUAMARINE_ORE.get()).add(GemistryBlocks.DEEPSLATE_AQUAMARINE_ORE.get()).add(GemistryBlocks.AQUAMARINE_BLOCK.get()).add(GemistryBlocks.AMBER_ORE.get()).add(GemistryBlocks.DEEPSLATE_AMBER_ORE.get()).add(GemistryBlocks.AMBER_BLOCK.get());
+        tag(BlockTags.NEEDS_DIAMOND_TOOL).add(GemistryBlocks.ATTUNEMENT_TABLE.get());
     }
 
     private void addNeoForgeConventionTags() {

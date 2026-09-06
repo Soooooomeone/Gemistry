@@ -1,6 +1,7 @@
 package com.danako.gemistry.core;
 
 import com.danako.gemistry.Gemistry;
+import com.danako.gemistry.common.block.AttunementTableBlock;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.DropExperienceBlock;
@@ -31,6 +32,7 @@ public final class GemistryBlocks {
     public static final DeferredBlock<Block> AMBER_ORE = BLOCKS.registerBlock("amber_ore", properties -> new DropExperienceBlock(AMBER_XP, properties), () -> Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(3.0F, 3.0F));
     public static final DeferredBlock<Block> DEEPSLATE_AMBER_ORE = BLOCKS.registerBlock("deepslate_amber_ore", properties -> new DropExperienceBlock(AMBER_XP, properties), () -> Properties.of().mapColor(MapColor.DEEPSLATE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(4.5F, 3.0F).sound(SoundType.DEEPSLATE));
     public static final DeferredBlock<Block> AMBER_BLOCK = BLOCKS.registerBlock("amber_block", Block::new, () -> Properties.of().mapColor(MapColor.COLOR_ORANGE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(5.0F, 6.0F).sound(SoundType.METAL));
+    public static final DeferredBlock<Block> ATTUNEMENT_TABLE = BLOCKS.registerBlock("attunement_table", AttunementTableBlock::new, () -> Properties.of().mapColor(MapColor.COLOR_BLACK).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(50.0F, 1200.0F).noOcclusion().sound(SoundType.STONE));
     private GemistryBlocks() {
     }
 }

@@ -1,0 +1,9 @@
+{
+  "parent": "gemistry:block/template_attunement_table",
+  "textures": {
+    "bottom": "gemistry:block/attunement_table_bottom",
+    "particle": "gemistry:block/attunement_table_bottom",
+    "side": "gemistry:block/attunement_table_side",
+    "top": "gemistry:block/attunement_table_top"
+  }
+}

@@ -84,5 +84,7 @@ public class GemistryLanguageProvider extends LanguageProvider {
         addItem(GemistryItems.AMBER_HORSE_ARMOR, "Amber Horse Armor");
         addItem(GemistryItems.AMBER_NAUTILUS_ARMOR, "Amber Nautilus Armor");
         add("trim_material.gemistry.amber", "Amber");
+
+        addBlock(GemistryBlocks.ATTUNEMENT_TABLE, "Attunement Table");
     }
 }

@@ -77,6 +77,7 @@ public final class GemistryItems {
     public static final DeferredItem<Item> AMBER_BOOTS = ITEMS.registerItem("amber_boots", properties -> new Item(properties.humanoidArmor(GemistryArmorMaterial.AMBER, ArmorType.BOOTS)));
     public static final DeferredItem<Item> AMBER_HORSE_ARMOR = ITEMS.registerItem("amber_horse_armor", properties -> new Item(properties.horseArmor(GemistryArmorMaterial.AMBER)));
     public static final DeferredItem<Item> AMBER_NAUTILUS_ARMOR = ITEMS.registerItem("amber_nautilus_armor", properties -> new Item(properties.nautilusArmor(GemistryArmorMaterial.AMBER)));
+    public static final DeferredItem<BlockItem> ATTUNEMENT_TABLE = ITEMS.registerSimpleBlockItem(GemistryBlocks.ATTUNEMENT_TABLE);
 
     private GemistryItems() {
     }

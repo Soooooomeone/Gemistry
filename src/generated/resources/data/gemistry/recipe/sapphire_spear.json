@@ -6,9 +6,9 @@
     "S": "minecraft:stick"
   },
   "pattern": [
-    "I",
-    "S",
-    "S"
+    "  I",
+    " S ",
+    "S  "
   ],
   "result": {
     "id": "gemistry:sapphire_spear"

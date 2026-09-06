@@ -72,11 +72,7 @@ public class GemistryItemTagsProvider extends ItemTagsProvider {
     }
 
     private void addTrimmableArmorTags() {
-        tag(ItemTags.TRIMMABLE_ARMOR)
-                .add(GemistryItems.RUBY_HELMET.get()).add(GemistryItems.RUBY_CHESTPLATE.get()).add(GemistryItems.RUBY_LEGGINGS.get()).add(GemistryItems.RUBY_BOOTS.get())
-                .add(GemistryItems.SAPPHIRE_HELMET.get()).add(GemistryItems.SAPPHIRE_CHESTPLATE.get()).add(GemistryItems.SAPPHIRE_LEGGINGS.get()).add(GemistryItems.SAPPHIRE_BOOTS.get())
-                .add(GemistryItems.AQUAMARINE_HELMET.get()).add(GemistryItems.AQUAMARINE_CHESTPLATE.get()).add(GemistryItems.AQUAMARINE_LEGGINGS.get()).add(GemistryItems.AQUAMARINE_BOOTS.get())
-                .add(GemistryItems.AMBER_HELMET.get()).add(GemistryItems.AMBER_CHESTPLATE.get()).add(GemistryItems.AMBER_LEGGINGS.get()).add(GemistryItems.AMBER_BOOTS.get());
+        tag(ItemTags.TRIMMABLE_ARMOR).add(GemistryItems.RUBY_HELMET.get()).add(GemistryItems.RUBY_CHESTPLATE.get()).add(GemistryItems.RUBY_LEGGINGS.get()).add(GemistryItems.RUBY_BOOTS.get()).add(GemistryItems.SAPPHIRE_HELMET.get()).add(GemistryItems.SAPPHIRE_CHESTPLATE.get()).add(GemistryItems.SAPPHIRE_LEGGINGS.get()).add(GemistryItems.SAPPHIRE_BOOTS.get()).add(GemistryItems.AQUAMARINE_HELMET.get()).add(GemistryItems.AQUAMARINE_CHESTPLATE.get()).add(GemistryItems.AQUAMARINE_LEGGINGS.get()).add(GemistryItems.AQUAMARINE_BOOTS.get()).add(GemistryItems.AMBER_HELMET.get()).add(GemistryItems.AMBER_CHESTPLATE.get()).add(GemistryItems.AMBER_LEGGINGS.get()).add(GemistryItems.AMBER_BOOTS.get());
     }
 
     private void addVanillaMiscTags() {
@@ -116,6 +112,9 @@ public class GemistryItemTagsProvider extends ItemTagsProvider {
     }
 
     private void addNeoForgeConventionTags() {
+
+        tag(Tags.Items.GEMS).addTag(commonTag("gems/ruby")).addTag(commonTag("gems/sapphire")).addTag(commonTag("gems/aquamarine")).addTag(commonTag("gems/amber"));
+
         tag(commonTag("gems/ruby")).add(GemistryItems.RUBY.get());
         tag(commonTag("storage_blocks/ruby")).add(GemistryItems.RUBY_BLOCK.get());
 
@@ -170,11 +169,7 @@ public class GemistryItemTagsProvider extends ItemTagsProvider {
     }
 
     private void addTrimMaterialTags() {
-        tag(ItemTags.TRIM_MATERIALS)
-                .add(GemistryItems.RUBY.get())
-                .add(GemistryItems.SAPPHIRE.get())
-                .add(GemistryItems.AQUAMARINE.get())
-                .add(GemistryItems.AMBER.get());
+        tag(ItemTags.TRIM_MATERIALS).add(GemistryItems.RUBY.get()).add(GemistryItems.SAPPHIRE.get()).add(GemistryItems.AQUAMARINE.get()).add(GemistryItems.AMBER.get());
 
         tag(trimMaterialTag(GemistryTrimMaterials.RUBY)).add(GemistryItems.RUBY.get());
         tag(trimMaterialTag(GemistryTrimMaterials.SAPPHIRE)).add(GemistryItems.SAPPHIRE.get());

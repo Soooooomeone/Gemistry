@@ -86,5 +86,17 @@ public class GemistryLanguageProvider extends LanguageProvider {
         add("trim_material.gemistry.amber", "Amber");
 
         addBlock(GemistryBlocks.ATTUNEMENT_TABLE, "Attunement Table");
+
+        add("enchantment.gemistry.frost_protection", "Frost Protection");
+        add("enchantment.gemistry.frost_aspect", "Frost Aspect");
+        add("enchantment.gemistry.illagers_bane", "Illager's Bane");
+        add("enchantment.gemistry.venom_aspect", "Venom Aspect");
+        add("enchantment.gemistry.purification", "Purification");
+        add("enchantment.gemistry.leeching", "Leeching");
+        add("enchantment.gemistry.vitality", "Vitality");
+        add("enchantment.gemistry.insight", "Insight");
+        add("enchantment.gemistry.prosperity", "Prosperity");
+        add("enchantment.gemistry.swines_bane", "Swine's Bane");
+
     }
 }

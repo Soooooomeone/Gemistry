@@ -1,5 +1,6 @@
 package com.danako.gemistry.datagen;
 
+import com.danako.gemistry.core.GemistryEnchantments;
 import com.danako.gemistry.core.GemistryTrimMaterials;
 import net.minecraft.core.registries.Registries;
 import net.neoforged.bus.api.IEventBus;
@@ -16,8 +17,9 @@ public class DataGenerators {
         event.createProvider(GemistryEquipmentAssetProvider::new);
         event.createProvider(GemistryLanguageProvider::new);
         event.createProvider(GemistryAtlasProvider::new);
-        event.createDatapackRegistryObjects(GemistryWorldGenProvider.BUILDER.add(Registries.TRIM_MATERIAL, GemistryTrimMaterials::bootstrap));
+        event.createDatapackRegistryObjects(GemistryWorldGenProvider.BUILDER.add(Registries.TRIM_MATERIAL, GemistryTrimMaterials::bootstrap).add(Registries.ENCHANTMENT, GemistryEnchantments::bootstrap));
         event.createBlockAndItemTags(GemistryBlockTagsProvider::new, GemistryItemTagsProvider::new);
+        event.createProvider(output -> new GemistryEnchantmentTagsProvider(output, event.getLookupProvider()));
         event.createProvider(GemistryLootTableProvider::new);
         event.createProvider(GemistryGlobalLootModifierProvider::new);
         event.createProvider(GemistryRecipeProvider.Runner::new);

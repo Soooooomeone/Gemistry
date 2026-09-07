@@ -49,7 +49,7 @@ public class AttunementTableScreen extends AbstractContainerScreen<AttunementTab
     private static final int COST_BOX_LEFT = 61;
     private static final int COST_BOX_WIDTH = 19;
     private static final int COST_BOX_HEIGHT = 17;
-    private static final int BOOK_X_OFFSET = 13;
+    private static final int BOOK_X_OFFSET = 16;
     private static final int BOOK_Y_OFFSET = 3;
     private static final int BOOK_WIDTH = 34;
     private static final int BOOK_HEIGHT = 30;

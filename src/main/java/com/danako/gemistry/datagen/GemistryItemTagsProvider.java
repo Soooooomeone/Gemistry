@@ -43,6 +43,7 @@ public class GemistryItemTagsProvider extends ItemTagsProvider {
         addNeoForgeConventionTags();
         addCustomTags();
         addTrimMaterialTags();
+        addAttunementCatalystTags();
     }
 
     private void addVanillaToolTypeTags() {
@@ -175,5 +176,18 @@ public class GemistryItemTagsProvider extends ItemTagsProvider {
         tag(trimMaterialTag(GemistryTrimMaterials.SAPPHIRE)).add(GemistryItems.SAPPHIRE.get());
         tag(trimMaterialTag(GemistryTrimMaterials.AQUAMARINE)).add(GemistryItems.AQUAMARINE.get());
         tag(trimMaterialTag(GemistryTrimMaterials.AMBER)).add(GemistryItems.AMBER.get());
+    }
+
+    private void addAttunementCatalystTags() {
+        tag(GemistryTags.ATTUNEMENT_CATALYSTS)
+                .addTag(GemistryTags.ATTUNEMENT_CATALYSTS_RUBY)
+                .addTag(GemistryTags.ATTUNEMENT_CATALYSTS_SAPPHIRE)
+                .addTag(GemistryTags.ATTUNEMENT_CATALYSTS_AQUAMARINE)
+                .addTag(GemistryTags.ATTUNEMENT_CATALYSTS_AMBER);
+
+        tag(GemistryTags.ATTUNEMENT_CATALYSTS_RUBY).add(GemistryItems.RUBY.get());
+        tag(GemistryTags.ATTUNEMENT_CATALYSTS_SAPPHIRE).add(GemistryItems.SAPPHIRE.get());
+        tag(GemistryTags.ATTUNEMENT_CATALYSTS_AQUAMARINE).add(GemistryItems.AQUAMARINE.get());
+        tag(GemistryTags.ATTUNEMENT_CATALYSTS_AMBER).add(GemistryItems.AMBER.get());
     }
 }

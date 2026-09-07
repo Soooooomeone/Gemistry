@@ -1,6 +1,7 @@
 package com.danako.gemistry;
 
 import com.danako.gemistry.common.block.entity.GemistryBlockEntities;
+import com.danako.gemistry.common.menu.GemistryMenuTypes;
 import com.danako.gemistry.config.Config;
 import com.danako.gemistry.core.GemistryBlocks;
 import com.danako.gemistry.core.GemistryItems;
@@ -30,6 +31,7 @@ public class Gemistry {
         GemistryLootModifierSerializers.register(modEventBus);
         GemistryBlockEntities.register(modEventBus);
         DataGenerators.register(modEventBus);
+        GemistryMenuTypes.MENU_TYPES.register(modEventBus);
 
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }

@@ -1,14 +1,21 @@
 package com.danako.gemistry.common.block.entity;
 
+import com.danako.gemistry.common.menu.AttunementTableMenu;
 import net.minecraft.core.BlockPos;
+import net.minecraft.network.chat.Component;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.MenuProvider;
+import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.inventory.AbstractContainerMenu;
+import net.minecraft.world.inventory.ContainerLevelAccess;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
+import org.jspecify.annotations.Nullable;
 
-public class AttunementTableBlockEntity extends BlockEntity {
+public class AttunementTableBlockEntity extends BlockEntity implements MenuProvider {
 
     private static final RandomSource RANDOM = RandomSource.create();
 
@@ -78,5 +85,16 @@ public class AttunementTableBlockEntity extends BlockEntity {
 
     public float getFlip(float partialTick) {
         return Mth.lerp(partialTick, this.oFlip, this.flip);
+    }
+
+    @Override
+    public Component getDisplayName() {
+        return Component.translatable(this.getBlockState().getBlock().getDescriptionId());
+    }
+
+    @Nullable
+    @Override
+    public AbstractContainerMenu createMenu(int containerId, Inventory inventory, Player player) {
+        return new AttunementTableMenu(containerId, inventory, ContainerLevelAccess.create(this.level, this.worldPosition));
     }
 }

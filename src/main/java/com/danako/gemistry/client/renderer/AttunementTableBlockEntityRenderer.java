@@ -47,7 +47,16 @@ public class AttunementTableBlockEntityRenderer
         BlockEntityRenderState.extractBase(blockEntity, state, crumblingOverlay);
 
         state.time = blockEntity.time + partialTick;
-        state.yRot = -Mth.lerp(partialTick, blockEntity.oRot, blockEntity.rot) * (180.0F / (float) Math.PI);
+
+        float rotDelta = blockEntity.rot - blockEntity.oRot;
+        while (rotDelta >= (float) Math.PI) {
+            rotDelta -= ((float) Math.PI * 2F);
+        }
+        while (rotDelta < -(float) Math.PI) {
+            rotDelta += ((float) Math.PI * 2F);
+        }
+        state.yRot = -(blockEntity.oRot + rotDelta * partialTick) * (180.0F / (float) Math.PI);
+
         state.flip = Mth.lerp(partialTick, blockEntity.oFlip, blockEntity.flip);
         state.open = Mth.lerp(partialTick, blockEntity.oOpen, blockEntity.open);
     }

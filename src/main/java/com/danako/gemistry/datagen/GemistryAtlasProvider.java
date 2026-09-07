@@ -2,6 +2,7 @@ package com.danako.gemistry.datagen;
 
 import com.danako.gemistry.Gemistry;
 import net.minecraft.client.renderer.texture.atlas.sources.PalettedPermutations;
+import net.minecraft.client.renderer.texture.atlas.sources.SingleFile;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.Identifier;
@@ -10,12 +11,14 @@ import net.neoforged.neoforge.client.data.SpriteSourceProvider;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
 
-public class GemistryTrimAtlasProvider extends SpriteSourceProvider {
+public class GemistryAtlasProvider extends SpriteSourceProvider {
 
     private static final Identifier ARMOR_TRIMS_ATLAS = Identifier.withDefaultNamespace("armor_trims");
     private static final Identifier ITEMS_ATLAS = Identifier.withDefaultNamespace("items");
+    private static final Identifier BLOCKS_ATLAS = Identifier.withDefaultNamespace("blocks"); // Targets assets/minecraft/atlases/blocks.json
 
     private static final Identifier PALETTE_KEY = Identifier.withDefaultNamespace("trims/color_palettes/trim_palette");
 
@@ -29,7 +32,7 @@ public class GemistryTrimAtlasProvider extends SpriteSourceProvider {
             "humanoid", "humanoid_leggings"
     );
 
-    public GemistryTrimAtlasProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider) {
+    public GemistryAtlasProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider) {
         super(output, lookupProvider, Gemistry.MODID);
 
         Map<String, Identifier> permutations = Map.ofEntries(
@@ -59,6 +62,11 @@ public class GemistryTrimAtlasProvider extends SpriteSourceProvider {
 
         atlas(ARMOR_TRIMS_ATLAS).addSource(new PalettedPermutations(entityTextures, PALETTE_KEY, permutations));
         atlas(ITEMS_ATLAS).addSource(new PalettedPermutations(itemTextures, PALETTE_KEY, permutations));
+
+        atlas(BLOCKS_ATLAS).addSource(new SingleFile(
+                Identifier.fromNamespaceAndPath(Gemistry.MODID, "entity/attunement/attunement_table_book"),
+                Optional.empty()
+        ));
     }
 
     @Override

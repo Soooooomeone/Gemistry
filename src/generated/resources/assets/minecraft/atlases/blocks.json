@@ -1,0 +1,8 @@
+{
+  "sources": [
+    {
+      "type": "minecraft:single",
+      "resource": "gemistry:entity/attunement/attunement_table_book"
+    }
+  ]
+}

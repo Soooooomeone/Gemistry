@@ -17,6 +17,7 @@ import net.minecraft.client.renderer.state.level.CameraRenderState;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.client.resources.model.sprite.SpriteGetter;
 import net.minecraft.client.resources.model.sprite.SpriteId;
+import net.minecraft.resources.Identifier;
 import net.minecraft.util.Mth;
 import net.minecraft.world.phys.Vec3;
 import org.jspecify.annotations.Nullable;
@@ -25,7 +26,7 @@ public class AttunementTableBlockEntityRenderer
         implements BlockEntityRenderer<AttunementTableBlockEntity, EnchantTableRenderState> {
 
     private static final SpriteId BOOK_TEXTURE =
-            Sheets.BLOCK_ENTITIES_MAPPER.defaultNamespaceApply("enchantment/enchanting_table_book");
+            Sheets.BLOCK_ENTITIES_MAPPER.apply(Identifier.fromNamespaceAndPath("gemistry", "attunement/attunement_table_book"));
 
     private final SpriteGetter sprites;
     private final BookModel bookModel;

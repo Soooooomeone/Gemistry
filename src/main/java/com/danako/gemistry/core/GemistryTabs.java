@@ -13,7 +13,7 @@ public final class GemistryTabs {
 
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, Gemistry.MODID);
 
-    public static final Supplier<CreativeModeTab> GEMISTRY_TAB = CREATIVE_MODE_TABS.register("gemistry", () -> CreativeModeTab.builder().title(Component.translatable("itemGroup." + Gemistry.MODID + ".gemistry")).icon(() -> new ItemStack(GemistryItems.RUBY.get())).displayItems((parameters, output) -> {
+    public static final Supplier<CreativeModeTab> GEMISTRY_TAB = CREATIVE_MODE_TABS.register("gemistry", () -> CreativeModeTab.builder().title(Component.translatable("itemGroup." + Gemistry.MODID + ".gemistry")).icon(() -> new ItemStack(GemistryItems.AMBER.get())).displayItems((parameters, output) -> {
         output.accept(GemistryItems.ATTUNEMENT_TABLE.get());
         output.accept(GemistryItems.RUBY.get());
         output.accept(GemistryItems.RUBY_ORE.get());

@@ -14,6 +14,7 @@ public final class GemistryTabs {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, Gemistry.MODID);
 
     public static final Supplier<CreativeModeTab> GEMISTRY_TAB = CREATIVE_MODE_TABS.register("gemistry", () -> CreativeModeTab.builder().title(Component.translatable("itemGroup." + Gemistry.MODID + ".gemistry")).icon(() -> new ItemStack(GemistryItems.RUBY.get())).displayItems((parameters, output) -> {
+        output.accept(GemistryItems.ATTUNEMENT_TABLE.get());
         output.accept(GemistryItems.RUBY.get());
         output.accept(GemistryItems.RUBY_ORE.get());
         output.accept(GemistryItems.DEEPSLATE_RUBY_ORE.get());
@@ -78,7 +79,6 @@ public final class GemistryTabs {
         output.accept(GemistryItems.AMBER_BOOTS.get());
         output.accept(GemistryItems.AMBER_HORSE_ARMOR.get());
         output.accept(GemistryItems.AMBER_NAUTILUS_ARMOR.get());
-        output.accept(GemistryItems.ATTUNEMENT_TABLE.get());
     }).build());
 
     private GemistryTabs() {

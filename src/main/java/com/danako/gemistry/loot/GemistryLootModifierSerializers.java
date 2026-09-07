@@ -15,10 +15,10 @@ public final class GemistryLootModifierSerializers {
 
     public static final Supplier<MapCodec<AddItemLootModifier>> ADD_ITEM = LOOT_MODIFIER_SERIALIZERS.register("add_item", () -> AddItemLootModifier.CODEC);
 
-    public static void register(IEventBus modEventBus) {
-        LOOT_MODIFIER_SERIALIZERS.register(modEventBus);
+    private GemistryLootModifierSerializers() {
     }
 
-    private GemistryLootModifierSerializers() {
+    public static void register(IEventBus modEventBus) {
+        LOOT_MODIFIER_SERIALIZERS.register(modEventBus);
     }
 }

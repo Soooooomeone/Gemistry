@@ -179,11 +179,7 @@ public class GemistryItemTagsProvider extends ItemTagsProvider {
     }
 
     private void addAttunementCatalystTags() {
-        tag(GemistryTags.ATTUNEMENT_CATALYSTS)
-                .addTag(GemistryTags.ATTUNEMENT_CATALYSTS_RUBY)
-                .addTag(GemistryTags.ATTUNEMENT_CATALYSTS_SAPPHIRE)
-                .addTag(GemistryTags.ATTUNEMENT_CATALYSTS_AQUAMARINE)
-                .addTag(GemistryTags.ATTUNEMENT_CATALYSTS_AMBER);
+        tag(GemistryTags.ATTUNEMENT_CATALYSTS).addTag(GemistryTags.ATTUNEMENT_CATALYSTS_RUBY).addTag(GemistryTags.ATTUNEMENT_CATALYSTS_SAPPHIRE).addTag(GemistryTags.ATTUNEMENT_CATALYSTS_AQUAMARINE).addTag(GemistryTags.ATTUNEMENT_CATALYSTS_AMBER);
 
         tag(GemistryTags.ATTUNEMENT_CATALYSTS_RUBY).add(GemistryItems.RUBY.get());
         tag(GemistryTags.ATTUNEMENT_CATALYSTS_SAPPHIRE).add(GemistryItems.SAPPHIRE.get());

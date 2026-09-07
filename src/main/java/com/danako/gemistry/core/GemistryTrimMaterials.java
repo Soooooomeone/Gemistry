@@ -20,10 +20,6 @@ public final class GemistryTrimMaterials {
     public static final ResourceKey<TrimMaterial> SAPPHIRE = registryKey("sapphire");
     public static final ResourceKey<TrimMaterial> AQUAMARINE = registryKey("aquamarine");
     public static final ResourceKey<TrimMaterial> AMBER = registryKey("amber");
-
-    private GemistryTrimMaterials() {
-    }
-
     public static final MaterialAssetGroup RUBY_ASSETS =
             MaterialAssetGroup.create("ruby", Map.of(GemistryArmorMaterial.RUBY_ARMOR_ASSET, "ruby_darker"));
     public static final MaterialAssetGroup SAPPHIRE_ASSETS =
@@ -32,6 +28,9 @@ public final class GemistryTrimMaterials {
             MaterialAssetGroup.create("aquamarine", Map.of(GemistryArmorMaterial.AQUAMARINE_ARMOR_ASSET, "aquamarine_darker"));
     public static final MaterialAssetGroup AMBER_ASSETS =
             MaterialAssetGroup.create("amber", Map.of(GemistryArmorMaterial.AMBER_ARMOR_ASSET, "amber_darker"));
+
+    private GemistryTrimMaterials() {
+    }
 
     public static void bootstrap(BootstrapContext<TrimMaterial> context) {
         register(context, RUBY, Style.EMPTY.withColor(0xFF0000), RUBY_ASSETS);

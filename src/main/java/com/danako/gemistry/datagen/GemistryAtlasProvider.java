@@ -69,11 +69,11 @@ public class GemistryAtlasProvider extends SpriteSourceProvider {
         ));
     }
 
-    @Override
-    protected void gather() {
-    }
-
     private static Identifier palette(String name) {
         return Identifier.fromNamespaceAndPath(Gemistry.MODID, "trims/color_palettes/" + name);
+    }
+
+    @Override
+    protected void gather() {
     }
 }

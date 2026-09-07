@@ -69,14 +69,14 @@ public class AttunementTableMenu extends AbstractContainerMenu {
                 AttunementTableMenu.this.slotsChanged(this);
             }
         };
-        this.addSlot(new Slot(this.attuneSlots, ITEM_SLOT, 25, 39) {
+        this.addSlot(new Slot(this.attuneSlots, ITEM_SLOT, 25, 36) {
             @Override
             public boolean mayPlace(ItemStack itemStack) {
                 return itemStack.isEnchantable();
             }
         });
 
-        this.addSlot(new Slot(this.attuneSlots, LAPIS_SLOT, 16, 57) {
+        this.addSlot(new Slot(this.attuneSlots, LAPIS_SLOT, 16, 54) {
             @Override
             public boolean mayPlace(ItemStack itemStack) {
                 return itemStack.is(Items.LAPIS_LAZULI);
@@ -88,7 +88,7 @@ public class AttunementTableMenu extends AbstractContainerMenu {
             }
         });
 
-        this.addSlot(new Slot(this.attuneSlots, GEM_SLOT, 34, 57) {
+        this.addSlot(new Slot(this.attuneSlots, GEM_SLOT, 34, 54) {
             @Override
             public boolean mayPlace(ItemStack itemStack) {
                 return itemStack.is(GemistryTags.ATTUNEMENT_CATALYSTS);

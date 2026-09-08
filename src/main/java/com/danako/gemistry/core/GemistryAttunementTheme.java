@@ -1,5 +1,6 @@
 package com.danako.gemistry.core;
 
+import com.danako.gemistry.tag.GemistryTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.enchantment.Enchantment;

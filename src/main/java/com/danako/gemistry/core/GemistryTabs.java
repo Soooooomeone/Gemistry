@@ -1,6 +1,7 @@
 package com.danako.gemistry.core;
 
 import com.danako.gemistry.Gemistry;
+import com.danako.gemistry.common.item.GemistryItems;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;

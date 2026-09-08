@@ -1,7 +1,6 @@
-package com.danako.gemistry.core;
+package com.danako.gemistry.common.block;
 
 import com.danako.gemistry.Gemistry;
-import com.danako.gemistry.common.block.AttunementTableBlock;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.DropExperienceBlock;

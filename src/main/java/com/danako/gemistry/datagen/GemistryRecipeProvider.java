@@ -1,6 +1,6 @@
 package com.danako.gemistry.datagen;
 
-import com.danako.gemistry.core.GemistryItems;
+import com.danako.gemistry.common.item.GemistryItems;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;

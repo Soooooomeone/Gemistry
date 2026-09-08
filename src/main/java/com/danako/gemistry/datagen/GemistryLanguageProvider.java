@@ -1,8 +1,8 @@
 package com.danako.gemistry.datagen;
 
 import com.danako.gemistry.Gemistry;
-import com.danako.gemistry.core.GemistryBlocks;
-import com.danako.gemistry.core.GemistryItems;
+import com.danako.gemistry.common.block.GemistryBlocks;
+import com.danako.gemistry.common.item.GemistryItems;
 
 import net.minecraft.data.PackOutput;
 import net.neoforged.neoforge.common.data.LanguageProvider;
@@ -97,6 +97,9 @@ public class GemistryLanguageProvider extends LanguageProvider {
         add("enchantment.gemistry.insight", "Insight");
         add("enchantment.gemistry.prosperity", "Prosperity");
         add("enchantment.gemistry.swines_bane", "Swine's Bane");
+        add("enchantment.gemistry.refining_touch", "Refining Touch");
+        add("enchantment.gemistry.soulbound", "Soulbound");
+        add("enchantment.gemistry.excavation", "Excavation");
 
     }
 }

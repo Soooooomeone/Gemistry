@@ -1,10 +1,10 @@
 package com.danako.gemistry;
 
+import com.danako.gemistry.common.block.GemistryBlocks;
 import com.danako.gemistry.common.block.entity.GemistryBlockEntities;
 import com.danako.gemistry.common.menu.GemistryMenuTypes;
 import com.danako.gemistry.config.Config;
-import com.danako.gemistry.core.GemistryBlocks;
-import com.danako.gemistry.core.GemistryItems;
+import com.danako.gemistry.common.item.GemistryItems;
 import com.danako.gemistry.core.GemistryTabs;
 import com.danako.gemistry.datagen.DataGenerators;
 import com.danako.gemistry.loot.GemistryLootModifierSerializers;

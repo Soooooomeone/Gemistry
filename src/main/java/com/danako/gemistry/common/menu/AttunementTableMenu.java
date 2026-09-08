@@ -1,8 +1,8 @@
 package com.danako.gemistry.common.menu;
 
+import com.danako.gemistry.common.block.GemistryBlocks;
 import com.danako.gemistry.core.GemistryAttunementTheme;
-import com.danako.gemistry.core.GemistryBlocks;
-import com.danako.gemistry.core.GemistryTags;
+import com.danako.gemistry.tag.GemistryTags;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderSet;

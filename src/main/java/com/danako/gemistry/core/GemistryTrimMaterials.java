@@ -1,7 +1,7 @@
 package com.danako.gemistry.core;
 
 import com.danako.gemistry.Gemistry;
-import com.danako.gemistry.item.GemistryArmorMaterial;
+import com.danako.gemistry.gear.GemistryArmorMaterial;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.network.chat.Component;

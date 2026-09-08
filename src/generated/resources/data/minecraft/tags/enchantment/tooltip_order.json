@@ -33,10 +33,12 @@
     "minecraft:feather_falling",
     "minecraft:fortune",
     "gemistry:prosperity",
+    "gemistry:excavation",
     "minecraft:looting",
     "gemistry:leeching",
     "gemistry:insight",
     "minecraft:silk_touch",
+    "gemistry:refining_touch",
     "minecraft:luck_of_the_sea",
     "minecraft:efficiency",
     "minecraft:quick_charge",
@@ -52,6 +54,7 @@
     "minecraft:loyalty",
     "minecraft:unbreaking",
     "minecraft:infinity",
+    "gemistry:soulbound",
     "minecraft:mending"
   ]
 }

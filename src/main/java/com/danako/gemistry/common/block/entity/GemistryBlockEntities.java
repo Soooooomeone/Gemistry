@@ -1,7 +1,7 @@
 package com.danako.gemistry.common.block.entity;
 
 import com.danako.gemistry.Gemistry;
-import com.danako.gemistry.core.GemistryBlocks;
+import com.danako.gemistry.common.block.GemistryBlocks;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.neoforged.bus.api.IEventBus;

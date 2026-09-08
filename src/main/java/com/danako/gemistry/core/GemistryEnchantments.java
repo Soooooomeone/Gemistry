@@ -15,10 +15,6 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.Enchantments;
 
-/**
- * Registers Gemistry's custom enchantments.
- * NOTE: Registration/compatibility only for now - no effect components (logic) are attached yet.
- */
 public final class GemistryEnchantments {
 
     public static final ResourceKey<Enchantment> FROST_PROTECTION = key("frost_protection");
@@ -31,6 +27,9 @@ public final class GemistryEnchantments {
     public static final ResourceKey<Enchantment> INSIGHT = key("insight");
     public static final ResourceKey<Enchantment> PROSPERITY = key("prosperity");
     public static final ResourceKey<Enchantment> SWINES_BANE = key("swines_bane");
+    public static final ResourceKey<Enchantment> REFINING_TOUCH = key("refining_touch");
+    public static final ResourceKey<Enchantment> SOULBOUND = key("soulbound");
+    public static final ResourceKey<Enchantment> EXCAVATION = key("excavation");
 
     private GemistryEnchantments() {
     }
@@ -103,6 +102,25 @@ public final class GemistryEnchantments {
                                 Enchantment.dynamicCost(5, 8), Enchantment.dynamicCost(25, 8), 2,
                                 EquipmentSlotGroup.MAINHAND))
                 .exclusiveWith(enchantments.getOrThrow(EnchantmentTags.DAMAGE_EXCLUSIVE)));
+
+        register(context, REFINING_TOUCH, Enchantment.enchantment(
+                        Enchantment.definition(items.getOrThrow(ItemTags.MINING_ENCHANTABLE), 1, 1,
+                                Enchantment.dynamicCost(15, 9), Enchantment.dynamicCost(65, 9), 4,
+                                EquipmentSlotGroup.MAINHAND))
+                .exclusiveWith(HolderSet.direct(
+                        enchantments.getOrThrow(Enchantments.FORTUNE),
+                        enchantments.getOrThrow(Enchantments.SILK_TOUCH),
+                        enchantments.getOrThrow(PROSPERITY))));
+
+        register(context, SOULBOUND, Enchantment.enchantment(
+                Enchantment.definition(items.getOrThrow(ItemTags.DURABILITY_ENCHANTABLE), 1, 1,
+                        Enchantment.dynamicCost(25, 25), Enchantment.dynamicCost(75, 25), 4,
+                        EquipmentSlotGroup.ANY)));
+
+        register(context, EXCAVATION, Enchantment.enchantment(
+                Enchantment.definition(items.getOrThrow(ItemTags.PICKAXES), 5, 3,
+                        Enchantment.dynamicCost(15, 9), Enchantment.dynamicCost(65, 9), 4,
+                        EquipmentSlotGroup.MAINHAND)));
     }
 
     private static void register(BootstrapContext<Enchantment> context, ResourceKey<Enchantment> key, Enchantment.Builder builder) {

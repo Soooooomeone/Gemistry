@@ -1,4 +1,4 @@
-package com.danako.gemistry.datagen;
+package com.danako.gemistry.loot;
 
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;

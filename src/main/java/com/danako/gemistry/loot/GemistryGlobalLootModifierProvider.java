@@ -1,7 +1,6 @@
-package com.danako.gemistry.datagen;
+package com.danako.gemistry.loot;
 
-import com.danako.gemistry.core.GemistryItems;
-import com.danako.gemistry.loot.AddItemLootModifier;
+import com.danako.gemistry.common.item.GemistryItems;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;

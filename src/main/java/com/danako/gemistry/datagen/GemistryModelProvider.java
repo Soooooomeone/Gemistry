@@ -1,8 +1,8 @@
 package com.danako.gemistry.datagen;
 
 import com.danako.gemistry.Gemistry;
-import com.danako.gemistry.core.GemistryBlocks;
-import com.danako.gemistry.core.GemistryItems;
+import com.danako.gemistry.common.block.GemistryBlocks;
+import com.danako.gemistry.common.item.GemistryItems;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.ModelProvider;

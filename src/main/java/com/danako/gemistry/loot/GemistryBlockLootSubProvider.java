@@ -1,7 +1,7 @@
-package com.danako.gemistry.datagen;
+package com.danako.gemistry.loot;
 
-import com.danako.gemistry.core.GemistryBlocks;
-import com.danako.gemistry.core.GemistryItems;
+import com.danako.gemistry.common.block.GemistryBlocks;
+import com.danako.gemistry.common.item.GemistryItems;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;

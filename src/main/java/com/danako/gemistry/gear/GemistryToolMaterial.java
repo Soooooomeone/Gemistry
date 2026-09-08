@@ -1,6 +1,6 @@
-package com.danako.gemistry.item;
+package com.danako.gemistry.gear;
 
-import com.danako.gemistry.core.GemistryTags;
+import com.danako.gemistry.tag.GemistryTags;
 import net.minecraft.world.item.ToolMaterial;
 
 public final class GemistryToolMaterial {

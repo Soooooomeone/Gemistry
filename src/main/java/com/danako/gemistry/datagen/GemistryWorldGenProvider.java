@@ -46,6 +46,8 @@ public class GemistryWorldGenProvider {
     private static final ResourceKey<ConfiguredFeature<?, ?>> AMBER_ORE = configuredKey("amber_ore");
     private static final ResourceKey<ConfiguredFeature<?, ?>> ONYX_ORE_TINY = configuredKey("onyx_ore_tiny");
     private static final ResourceKey<ConfiguredFeature<?, ?>> ONYX_ORE_SMALL = configuredKey("onyx_ore_small");
+    private static final ResourceKey<ConfiguredFeature<?, ?>> ONYX_ORE_MEDIUM = configuredKey("onyx_ore_medium");
+    private static final ResourceKey<ConfiguredFeature<?, ?>> ONYX_ORE_LARGE = configuredKey("onyx_ore_large");
     private static final ResourceKey<ConfiguredFeature<?, ?>> ONYX_ORE_CLUSTER = configuredKey("onyx_ore_cluster");
     private static final ResourceKey<PlacedFeature> RUBY_ORE_SMALL_PLACED = placedKey("ruby_ore_small");
     private static final ResourceKey<PlacedFeature> RUBY_ORE_MEDIUM_PLACED = placedKey("ruby_ore_medium");
@@ -63,6 +65,8 @@ public class GemistryWorldGenProvider {
     private static final ResourceKey<PlacedFeature> AMBER_ORE_LOWER_PLACED = placedKey("amber_ore_lower");
     private static final ResourceKey<PlacedFeature> ONYX_ORE_TINY_PLACED = placedKey("onyx_ore_tiny");
     private static final ResourceKey<PlacedFeature> ONYX_ORE_SMALL_PLACED = placedKey("onyx_ore_small");
+    private static final ResourceKey<PlacedFeature> ONYX_ORE_MEDIUM_PLACED = placedKey("onyx_ore_medium");
+    private static final ResourceKey<PlacedFeature> ONYX_ORE_LARGE_PLACED = placedKey("onyx_ore_large");
     private static final ResourceKey<PlacedFeature> ONYX_ORE_CLUSTER_PLACED = placedKey("onyx_ore_cluster");
     private static final ResourceKey<BiomeModifier> ADD_RUBY_ORE = biomeModifierKey("add_ruby_ore");
     private static final ResourceKey<BiomeModifier> ADD_SAPPHIRE_ORE = biomeModifierKey("add_sapphire_ore");
@@ -103,7 +107,9 @@ public class GemistryWorldGenProvider {
         context.register(AMBER_ORE, new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(amberTargets, 8)));
         context.register(ONYX_ORE_TINY, new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(onyxTargets, 2, 0.0F)));
         context.register(ONYX_ORE_SMALL, new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(onyxTargets, 4, 0.0F)));
-        context.register(ONYX_ORE_CLUSTER, new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(onyxTargets, 6, 0.0F)));
+        context.register(ONYX_ORE_MEDIUM, new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(onyxTargets, 6, 0.0F)));
+        context.register(ONYX_ORE_LARGE, new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(onyxTargets, 9, 0.0F)));
+        context.register(ONYX_ORE_CLUSTER, new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(onyxTargets, 12, 0.0F)));
     }
 
     private static List<PlacementModifier> commonOrePlacement(int count, PlacementModifier heightRange) {
@@ -131,6 +137,8 @@ public class GemistryWorldGenProvider {
         Holder<ConfiguredFeature<?, ?>> amberOre = configuredFeatures.getOrThrow(AMBER_ORE);
         Holder<ConfiguredFeature<?, ?>> onyxTiny = configuredFeatures.getOrThrow(ONYX_ORE_TINY);
         Holder<ConfiguredFeature<?, ?>> onyxSmall = configuredFeatures.getOrThrow(ONYX_ORE_SMALL);
+        Holder<ConfiguredFeature<?, ?>> onyxMedium = configuredFeatures.getOrThrow(ONYX_ORE_MEDIUM);
+        Holder<ConfiguredFeature<?, ?>> onyxLarge = configuredFeatures.getOrThrow(ONYX_ORE_LARGE);
         Holder<ConfiguredFeature<?, ?>> onyxCluster = configuredFeatures.getOrThrow(ONYX_ORE_CLUSTER);
         context.register(RUBY_ORE_SMALL_PLACED, new PlacedFeature(rubySmall, commonOrePlacement(5, HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(80)))));
         context.register(RUBY_ORE_MEDIUM_PLACED, new PlacedFeature(rubyMedium, rareOrePlacement(3, HeightRangePlacement.uniform(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(-4)))));
@@ -147,9 +155,11 @@ public class GemistryWorldGenProvider {
         context.register(AMBER_ORE_PLACED, new PlacedFeature(amberOre, commonOrePlacement(3, HeightRangePlacement.uniform(VerticalAnchor.bottom(), VerticalAnchor.absolute(63)))));
         context.register(AMBER_ORE_LOWER_PLACED, new PlacedFeature(amberOre, commonOrePlacement(6, HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-32), VerticalAnchor.aboveBottom(32)))));
         PlacementModifier onyxHeightRange = HeightRangePlacement.uniform(VerticalAnchor.absolute(-58), VerticalAnchor.absolute(-8));
-        context.register(ONYX_ORE_TINY_PLACED, new PlacedFeature(onyxTiny, rareOrePlacement(28, onyxHeightRange)));
-        context.register(ONYX_ORE_SMALL_PLACED, new PlacedFeature(onyxSmall, rareOrePlacement(55, onyxHeightRange)));
-        context.register(ONYX_ORE_CLUSTER_PLACED, new PlacedFeature(onyxCluster, rareOrePlacement(100, onyxHeightRange)));
+        context.register(ONYX_ORE_TINY_PLACED, new PlacedFeature(onyxTiny, commonOrePlacement(4, onyxHeightRange)));
+        context.register(ONYX_ORE_SMALL_PLACED, new PlacedFeature(onyxSmall, commonOrePlacement(2, onyxHeightRange)));
+        context.register(ONYX_ORE_MEDIUM_PLACED, new PlacedFeature(onyxMedium, rareOrePlacement(3, onyxHeightRange)));
+        context.register(ONYX_ORE_LARGE_PLACED, new PlacedFeature(onyxLarge, rareOrePlacement(6, onyxHeightRange)));
+        context.register(ONYX_ORE_CLUSTER_PLACED, new PlacedFeature(onyxCluster, rareOrePlacement(12, onyxHeightRange)));
     }
 
     private static void registerBiomeModifiers(BootstrapContext<BiomeModifier> context) {
@@ -159,6 +169,6 @@ public class GemistryWorldGenProvider {
         context.register(ADD_SAPPHIRE_ORE, new BiomeModifiers.AddFeaturesBiomeModifier(biomes.getOrThrow(Tags.Biomes.IS_COLD_OVERWORLD), HolderSet.direct(placedFeatures.getOrThrow(SAPPHIRE_ORE_SMALL_PLACED), placedFeatures.getOrThrow(SAPPHIRE_ORE_MEDIUM_PLACED), placedFeatures.getOrThrow(SAPPHIRE_ORE_LARGE_PLACED), placedFeatures.getOrThrow(SAPPHIRE_ORE_BURIED_PLACED)), GenerationStep.Decoration.UNDERGROUND_ORES));
         context.register(ADD_AQUAMARINE_ORE, new BiomeModifiers.AddFeaturesBiomeModifier(biomes.getOrThrow(BiomeTags.IS_OCEAN), HolderSet.direct(placedFeatures.getOrThrow(AQUAMARINE_ORE_SMALL_PLACED), placedFeatures.getOrThrow(AQUAMARINE_ORE_MEDIUM_PLACED), placedFeatures.getOrThrow(AQUAMARINE_ORE_LARGE_PLACED), placedFeatures.getOrThrow(AQUAMARINE_ORE_BURIED_PLACED)), GenerationStep.Decoration.UNDERGROUND_ORES));
         context.register(ADD_AMBER_ORE, new BiomeModifiers.AddFeaturesBiomeModifier(HolderSet.direct(biomes.getOrThrow(Biomes.SWAMP), biomes.getOrThrow(Biomes.MANGROVE_SWAMP)), HolderSet.direct(placedFeatures.getOrThrow(AMBER_ORE_PLACED), placedFeatures.getOrThrow(AMBER_ORE_LOWER_PLACED)), GenerationStep.Decoration.UNDERGROUND_ORES));
-        context.register(ADD_ONYX_ORE, new BiomeModifiers.AddFeaturesBiomeModifier(HolderSet.direct(biomes.getOrThrow(Biomes.DEEP_DARK)), HolderSet.direct(placedFeatures.getOrThrow(ONYX_ORE_TINY_PLACED), placedFeatures.getOrThrow(ONYX_ORE_SMALL_PLACED), placedFeatures.getOrThrow(ONYX_ORE_CLUSTER_PLACED)), GenerationStep.Decoration.UNDERGROUND_ORES));
+        context.register(ADD_ONYX_ORE, new BiomeModifiers.AddFeaturesBiomeModifier(HolderSet.direct(biomes.getOrThrow(Biomes.DEEP_DARK)), HolderSet.direct(placedFeatures.getOrThrow(ONYX_ORE_TINY_PLACED), placedFeatures.getOrThrow(ONYX_ORE_SMALL_PLACED), placedFeatures.getOrThrow(ONYX_ORE_MEDIUM_PLACED), placedFeatures.getOrThrow(ONYX_ORE_LARGE_PLACED), placedFeatures.getOrThrow(ONYX_ORE_CLUSTER_PLACED)), GenerationStep.Decoration.UNDERGROUND_ORES));
     }
 }

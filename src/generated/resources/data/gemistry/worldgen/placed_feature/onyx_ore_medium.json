@@ -1,9 +1,9 @@
 {
-  "feature": "gemistry:onyx_ore_small",
+  "feature": "gemistry:onyx_ore_medium",
   "placement": [
     {
-      "type": "minecraft:count",
-      "count": 2
+      "type": "minecraft:rarity_filter",
+      "chance": 3
     },
     {
       "type": "minecraft:in_square"

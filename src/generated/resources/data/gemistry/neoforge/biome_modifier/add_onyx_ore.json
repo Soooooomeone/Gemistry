@@ -4,6 +4,8 @@
   "features": [
     "gemistry:onyx_ore_tiny",
     "gemistry:onyx_ore_small",
+    "gemistry:onyx_ore_medium",
+    "gemistry:onyx_ore_large",
     "gemistry:onyx_ore_cluster"
   ],
   "step": "underground_ores"

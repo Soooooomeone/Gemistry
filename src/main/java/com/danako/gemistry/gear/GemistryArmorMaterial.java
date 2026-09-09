@@ -27,6 +27,9 @@ public final class GemistryArmorMaterial {
     public static final ResourceKey<EquipmentAsset> AMBER_ARMOR_ASSET = ResourceKey.create(EquipmentAssets.ROOT_ID, Identifier.fromNamespaceAndPath(Gemistry.MODID, "amber"));
     public static final ArmorMaterial AMBER = new ArmorMaterial(30, makeDefense(2, 6, 8, 3, 10), 9, SoundEvents.ARMOR_EQUIP_DIAMOND, 1.5F, 0.0F, GemistryTags.REPAIRS_AMBER_ARMOR, AMBER_ARMOR_ASSET);
 
+    public static final ResourceKey<EquipmentAsset> ONYX_ARMOR_ASSET = ResourceKey.create(EquipmentAssets.ROOT_ID, Identifier.fromNamespaceAndPath(Gemistry.MODID, "onyx"));
+    public static final ArmorMaterial ONYX = new ArmorMaterial(38, makeDefense(3, 7, 9, 4, 21), 17, SoundEvents.ARMOR_EQUIP_NETHERITE, 3.5F, 0.0F, GemistryTags.REPAIRS_ONYX_ARMOR, ONYX_ARMOR_ASSET);
+
     private GemistryArmorMaterial() {
     }
 

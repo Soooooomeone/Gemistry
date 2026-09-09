@@ -31,8 +31,9 @@ public class GemistryGlobalLootModifierProvider extends GlobalLootModifierProvid
     private static final float NAUTILUS_ARMOR_CHANCE_SHIPWRECK_SUPPLY = 0.0080F;
     private static final float NAUTILUS_ARMOR_CHANCE_SHIPWRECK_MAP = 0.0080F;
     private static final float NAUTILUS_ARMOR_CHANCE_SHIPWRECK_TREASURE = 0.0080F;
-    private static final float AMBER_HORSE_ARMOR_MULTIPLIER = 1.5F;
-    private static final float AMBER_NAUTILUS_ARMOR_CHANCE = 0.012F;
+    private static final float AMBER_HORSE_ARMOR_MULTIPLIER = 4.0F;
+    private static final float AMBER_NAUTILUS_ARMOR_CHANCE = 0.0350F;
+    private static final float ONYX_ANCIENT_CITY_ARMOR_CHANCE = 0.0040F;
 
     public GemistryGlobalLootModifierProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {
         super(output, registries, "gemistry");
@@ -54,6 +55,8 @@ public class GemistryGlobalLootModifierProvider extends GlobalLootModifierProvid
         addNautilusArmor(BuiltInLootTables.SHIPWRECK_SUPPLY, "shipwreck_supply", NAUTILUS_ARMOR_CHANCE_SHIPWRECK_SUPPLY);
         addNautilusArmor(BuiltInLootTables.SHIPWRECK_MAP, "shipwreck_map", NAUTILUS_ARMOR_CHANCE_SHIPWRECK_MAP);
         addNautilusArmor(BuiltInLootTables.SHIPWRECK_TREASURE, "shipwreck_treasure", NAUTILUS_ARMOR_CHANCE_SHIPWRECK_TREASURE);
+
+        addOnyxAncientCityLoot();
     }
 
     private void addHorseArmor(ResourceKey<LootTable> table, String tableName, float baseChance) {
@@ -68,6 +71,11 @@ public class GemistryGlobalLootModifierProvider extends GlobalLootModifierProvid
         addRareItem(table, tableName, "nautilus_armor", "sapphire", GemistryItems.SAPPHIRE_NAUTILUS_ARMOR.get(), baseChance);
         addRareItem(table, tableName, "nautilus_armor", "aquamarine", GemistryItems.AQUAMARINE_NAUTILUS_ARMOR.get(), baseChance);
         addRareItem(table, tableName, "nautilus_armor", "amber", GemistryItems.AMBER_NAUTILUS_ARMOR.get(), AMBER_NAUTILUS_ARMOR_CHANCE);
+    }
+
+    private void addOnyxAncientCityLoot() {
+        addRareItem(BuiltInLootTables.ANCIENT_CITY, "ancient_city", "horse_armor", "onyx", GemistryItems.ONYX_HORSE_ARMOR.get(), ONYX_ANCIENT_CITY_ARMOR_CHANCE);
+        addRareItem(BuiltInLootTables.ANCIENT_CITY, "ancient_city", "nautilus_armor", "onyx", GemistryItems.ONYX_NAUTILUS_ARMOR.get(), ONYX_ANCIENT_CITY_ARMOR_CHANCE);
     }
 
     private void addRareItem(ResourceKey<LootTable> table, String tableName, String kind, String gem, Item item, float chance) {

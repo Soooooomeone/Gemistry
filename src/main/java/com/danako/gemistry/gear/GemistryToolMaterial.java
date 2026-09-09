@@ -21,6 +21,10 @@ public final class GemistryToolMaterial {
 
             1400, 7.5F, 2.5F, 9, GemistryTags.AMBER_TOOL_MATERIALS);
 
+    public static final ToolMaterial ONYX = new ToolMaterial(GemistryTags.INCORRECT_FOR_ONYX_TOOL,
+
+            2100, 9.5F, 4.5F, 17, GemistryTags.ONYX_TOOL_MATERIALS);
+
     private GemistryToolMaterial() {
     }
 }

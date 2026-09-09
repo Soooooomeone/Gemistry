@@ -80,6 +80,22 @@ public final class GemistryTabs {
         output.accept(GemistryItems.AMBER_BOOTS.get());
         output.accept(GemistryItems.AMBER_HORSE_ARMOR.get());
         output.accept(GemistryItems.AMBER_NAUTILUS_ARMOR.get());
+        output.accept(GemistryItems.ONYX.get());
+        output.accept(GemistryItems.ONYX_ORE.get());
+        output.accept(GemistryItems.DEEPSLATE_ONYX_ORE.get());
+        output.accept(GemistryItems.ONYX_BLOCK.get());
+        output.accept(GemistryItems.ONYX_SWORD.get());
+        output.accept(GemistryItems.ONYX_SPEAR.get());
+        output.accept(GemistryItems.ONYX_PICKAXE.get());
+        output.accept(GemistryItems.ONYX_AXE.get());
+        output.accept(GemistryItems.ONYX_SHOVEL.get());
+        output.accept(GemistryItems.ONYX_HOE.get());
+        output.accept(GemistryItems.ONYX_HELMET.get());
+        output.accept(GemistryItems.ONYX_CHESTPLATE.get());
+        output.accept(GemistryItems.ONYX_LEGGINGS.get());
+        output.accept(GemistryItems.ONYX_BOOTS.get());
+        output.accept(GemistryItems.ONYX_HORSE_ARMOR.get());
+        output.accept(GemistryItems.ONYX_NAUTILUS_ARMOR.get());
     }).build());
 
     private GemistryTabs() {

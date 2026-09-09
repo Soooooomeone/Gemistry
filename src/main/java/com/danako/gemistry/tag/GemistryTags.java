@@ -23,6 +23,9 @@ public final class GemistryTags {
     public static final TagKey<Block> INCORRECT_FOR_AMBER_TOOL = TagKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(Gemistry.MODID, "incorrect_for_amber_tool"));
     public static final TagKey<Item> AMBER_TOOL_MATERIALS = TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(Gemistry.MODID, "amber_tool_materials"));
     public static final TagKey<Item> REPAIRS_AMBER_ARMOR = TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(Gemistry.MODID, "repairs_amber_armor"));
+    public static final TagKey<Block> INCORRECT_FOR_ONYX_TOOL = TagKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(Gemistry.MODID, "incorrect_for_onyx_tool"));
+    public static final TagKey<Item> ONYX_TOOL_MATERIALS = TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(Gemistry.MODID, "onyx_tool_materials"));
+    public static final TagKey<Item> REPAIRS_ONYX_ARMOR = TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(Gemistry.MODID, "repairs_onyx_armor"));
     public static final TagKey<Item> ATTUNEMENT_CATALYSTS = TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(Gemistry.MODID, "attunement_catalysts"));
     public static final TagKey<Item> ATTUNEMENT_CATALYSTS_RUBY = TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(Gemistry.MODID, "attunement_catalysts/ruby"));
     public static final TagKey<Item> ATTUNEMENT_CATALYSTS_SAPPHIRE = TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(Gemistry.MODID, "attunement_catalysts/sapphire"));

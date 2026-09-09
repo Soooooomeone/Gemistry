@@ -79,6 +79,22 @@ public final class GemistryItems {
     public static final DeferredItem<Item> AMBER_BOOTS = ITEMS.registerItem("amber_boots", properties -> new Item(properties.humanoidArmor(GemistryArmorMaterial.AMBER, ArmorType.BOOTS)));
     public static final DeferredItem<Item> AMBER_HORSE_ARMOR = ITEMS.registerItem("amber_horse_armor", properties -> new Item(properties.horseArmor(GemistryArmorMaterial.AMBER)));
     public static final DeferredItem<Item> AMBER_NAUTILUS_ARMOR = ITEMS.registerItem("amber_nautilus_armor", properties -> new Item(properties.nautilusArmor(GemistryArmorMaterial.AMBER)));
+    public static final DeferredItem<Item> ONYX = ITEMS.registerItem("onyx", Item::new);
+    public static final DeferredItem<BlockItem> ONYX_ORE = ITEMS.registerSimpleBlockItem(GemistryBlocks.ONYX_ORE);
+    public static final DeferredItem<BlockItem> DEEPSLATE_ONYX_ORE = ITEMS.registerSimpleBlockItem(GemistryBlocks.DEEPSLATE_ONYX_ORE);
+    public static final DeferredItem<BlockItem> ONYX_BLOCK = ITEMS.registerSimpleBlockItem(GemistryBlocks.ONYX_BLOCK);
+    public static final DeferredItem<Item> ONYX_SWORD = ITEMS.registerItem("onyx_sword", properties -> new Item(properties.sword(GemistryToolMaterial.ONYX, 3.0F, -2.4F)));
+    public static final DeferredItem<Item> ONYX_PICKAXE = ITEMS.registerItem("onyx_pickaxe", properties -> new Item(properties.pickaxe(GemistryToolMaterial.ONYX, 1.0F, -2.8F)));
+    public static final DeferredItem<Item> ONYX_AXE = ITEMS.registerItem("onyx_axe", properties -> new AxeItem(GemistryToolMaterial.ONYX, 5.0F, -3.0F, properties));
+    public static final DeferredItem<Item> ONYX_SHOVEL = ITEMS.registerItem("onyx_shovel", properties -> new ShovelItem(GemistryToolMaterial.ONYX, 1.5F, -3.0F, properties));
+    public static final DeferredItem<Item> ONYX_HOE = ITEMS.registerItem("onyx_hoe", properties -> new HoeItem(GemistryToolMaterial.ONYX, -4.0F, 0.0F, properties));
+    public static final DeferredItem<Item> ONYX_SPEAR = ITEMS.registerItem("onyx_spear", properties -> new Item(properties.spear(GemistryToolMaterial.ONYX, 1.15F, 1.2F, 0.4F, 2.5F, 9.0F, 5.5F, 5.1F, 8.75F, 4.6F)));
+    public static final DeferredItem<Item> ONYX_HELMET = ITEMS.registerItem("onyx_helmet", properties -> new Item(properties.humanoidArmor(GemistryArmorMaterial.ONYX, ArmorType.HELMET)));
+    public static final DeferredItem<Item> ONYX_CHESTPLATE = ITEMS.registerItem("onyx_chestplate", properties -> new Item(properties.humanoidArmor(GemistryArmorMaterial.ONYX, ArmorType.CHESTPLATE)));
+    public static final DeferredItem<Item> ONYX_LEGGINGS = ITEMS.registerItem("onyx_leggings", properties -> new Item(properties.humanoidArmor(GemistryArmorMaterial.ONYX, ArmorType.LEGGINGS)));
+    public static final DeferredItem<Item> ONYX_BOOTS = ITEMS.registerItem("onyx_boots", properties -> new Item(properties.humanoidArmor(GemistryArmorMaterial.ONYX, ArmorType.BOOTS)));
+    public static final DeferredItem<Item> ONYX_HORSE_ARMOR = ITEMS.registerItem("onyx_horse_armor", properties -> new Item(properties.horseArmor(GemistryArmorMaterial.ONYX)));
+    public static final DeferredItem<Item> ONYX_NAUTILUS_ARMOR = ITEMS.registerItem("onyx_nautilus_armor", properties -> new Item(properties.nautilusArmor(GemistryArmorMaterial.ONYX)));
     public static final DeferredItem<BlockItem> ATTUNEMENT_TABLE = ITEMS.registerSimpleBlockItem(GemistryBlocks.ATTUNEMENT_TABLE);
 
     private GemistryItems() {

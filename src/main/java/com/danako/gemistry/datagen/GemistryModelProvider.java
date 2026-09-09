@@ -20,15 +20,12 @@ import java.util.Optional;
 
 public class GemistryModelProvider extends ModelProvider {
 
-    // Parent model living at assets/gemistry/models/block/template_attunement_table.json.
-    // It hardcodes the 16x12x16 box + UVs; this template just fills in the textures.
     private static final ModelTemplate ATTUNEMENT_TABLE_TEMPLATE = new ModelTemplate(
             Optional.of(Identifier.fromNamespaceAndPath(Gemistry.MODID, "block/template_attunement_table")),
             Optional.empty(),
             TextureSlot.TOP, TextureSlot.SIDE, TextureSlot.BOTTOM, TextureSlot.PARTICLE
     );
 
-    // Populated by registerAttunementTable() before registerItemModels() runs.
     private Identifier attunementTableModel;
 
     public GemistryModelProvider(PackOutput output) {
@@ -63,13 +60,16 @@ public class GemistryModelProvider extends ModelProvider {
         blockModels.createTrivialCube(GemistryBlocks.DEEPSLATE_AMBER_ORE.get());
         blockModels.createTrivialCube(GemistryBlocks.AMBER_BLOCK.get());
 
+        blockModels.createTrivialCube(GemistryBlocks.ONYX_ORE.get());
+        blockModels.createTrivialCube(GemistryBlocks.DEEPSLATE_ONYX_ORE.get());
+        blockModels.createTrivialCube(GemistryBlocks.ONYX_BLOCK.get());
+
         registerAttunementTable(blockModels);
     }
 
     private void registerAttunementTable(BlockModelGenerators blockModels) {
         Block block = GemistryBlocks.ATTUNEMENT_TABLE.get();
 
-        // Particle slot points at the *_bottom texture per spec, so break particles use it.
         TextureMapping mapping = new TextureMapping()
                 .put(TextureSlot.TOP, TextureMapping.getBlockTexture(block, "_top"))
                 .put(TextureSlot.SIDE, TextureMapping.getBlockTexture(block, "_side"))
@@ -79,8 +79,6 @@ public class GemistryModelProvider extends ModelProvider {
         Identifier modelLocation = ATTUNEMENT_TABLE_TEMPLATE.create(block, mapping, blockModels.modelOutput);
         blockModels.blockStateOutput.accept(BlockModelGenerators.createSimpleBlock(block, BlockModelGenerators.plainVariant(modelLocation)));
 
-        // Item model is wired up in registerItemModels() via ItemModelGenerators, since
-        // BlockModelGenerators has no direct way to emit an item model.
         this.attunementTableModel = modelLocation;
     }
 
@@ -135,6 +133,18 @@ public class GemistryModelProvider extends ModelProvider {
         itemModels.generateFlatItem(GemistryItems.AMBER_HORSE_ARMOR.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(GemistryItems.AMBER_NAUTILUS_ARMOR.get(), ModelTemplates.FLAT_ITEM);
 
+        itemModels.generateFlatItem(GemistryItems.ONYX.get(), ModelTemplates.FLAT_ITEM);
+
+        itemModels.generateFlatItem(GemistryItems.ONYX_SWORD.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModels.generateFlatItem(GemistryItems.ONYX_PICKAXE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModels.generateFlatItem(GemistryItems.ONYX_AXE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModels.generateFlatItem(GemistryItems.ONYX_SHOVEL.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModels.generateFlatItem(GemistryItems.ONYX_HOE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        registerSpearModel(itemModels, GemistryItems.ONYX_SPEAR.get());
+
+        itemModels.generateFlatItem(GemistryItems.ONYX_HORSE_ARMOR.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(GemistryItems.ONYX_NAUTILUS_ARMOR.get(), ModelTemplates.FLAT_ITEM);
+
         generateTrimmableItemWithGems(itemModels, GemistryItems.RUBY_HELMET.get(), ItemModelGenerators.TRIM_PREFIX_HELMET);
         generateTrimmableItemWithGems(itemModels, GemistryItems.RUBY_CHESTPLATE.get(), ItemModelGenerators.TRIM_PREFIX_CHESTPLATE);
         generateTrimmableItemWithGems(itemModels, GemistryItems.RUBY_LEGGINGS.get(), ItemModelGenerators.TRIM_PREFIX_LEGGINGS);
@@ -151,6 +161,10 @@ public class GemistryModelProvider extends ModelProvider {
         generateTrimmableItemWithGems(itemModels, GemistryItems.AMBER_CHESTPLATE.get(), ItemModelGenerators.TRIM_PREFIX_CHESTPLATE);
         generateTrimmableItemWithGems(itemModels, GemistryItems.AMBER_LEGGINGS.get(), ItemModelGenerators.TRIM_PREFIX_LEGGINGS);
         generateTrimmableItemWithGems(itemModels, GemistryItems.AMBER_BOOTS.get(), ItemModelGenerators.TRIM_PREFIX_BOOTS);
+        generateTrimmableItemWithGems(itemModels, GemistryItems.ONYX_HELMET.get(), ItemModelGenerators.TRIM_PREFIX_HELMET);
+        generateTrimmableItemWithGems(itemModels, GemistryItems.ONYX_CHESTPLATE.get(), ItemModelGenerators.TRIM_PREFIX_CHESTPLATE);
+        generateTrimmableItemWithGems(itemModels, GemistryItems.ONYX_LEGGINGS.get(), ItemModelGenerators.TRIM_PREFIX_LEGGINGS);
+        generateTrimmableItemWithGems(itemModels, GemistryItems.ONYX_BOOTS.get(), ItemModelGenerators.TRIM_PREFIX_BOOTS);
     }
 
     private void registerSpearModel(ItemModelGenerators itemModels, Item spearItem) {

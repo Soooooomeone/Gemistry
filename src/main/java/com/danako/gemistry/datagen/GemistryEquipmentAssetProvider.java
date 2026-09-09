@@ -68,5 +68,17 @@ public class GemistryEquipmentAssetProvider extends EquipmentAssetProvider {
                 .addLayers(EquipmentClientInfo.LayerType.HORSE_BODY, new EquipmentClientInfo.Layer(amberTexture, Optional.empty(), false))
 
                 .addLayers(EquipmentClientInfo.LayerType.NAUTILUS_BODY, new EquipmentClientInfo.Layer(amberTexture, Optional.empty(), false)).build());
+
+        Identifier onyxTexture = Identifier.fromNamespaceAndPath(Gemistry.MODID, "onyx");
+
+        output.accept(GemistryArmorMaterial.ONYX_ARMOR_ASSET, EquipmentClientInfo.builder()
+
+                .addLayers(EquipmentClientInfo.LayerType.HUMANOID, new EquipmentClientInfo.Layer(onyxTexture, Optional.empty(), false))
+
+                .addLayers(EquipmentClientInfo.LayerType.HUMANOID_LEGGINGS, new EquipmentClientInfo.Layer(onyxTexture, Optional.empty(), false))
+
+                .addLayers(EquipmentClientInfo.LayerType.HORSE_BODY, new EquipmentClientInfo.Layer(onyxTexture, Optional.empty(), false))
+
+                .addLayers(EquipmentClientInfo.LayerType.NAUTILUS_BODY, new EquipmentClientInfo.Layer(onyxTexture, Optional.empty(), false)).build());
     }
 }

@@ -84,6 +84,22 @@ public class GemistryLanguageProvider extends LanguageProvider {
         addItem(GemistryItems.AMBER_HORSE_ARMOR, "Amber Horse Armor");
         addItem(GemistryItems.AMBER_NAUTILUS_ARMOR, "Amber Nautilus Armor");
         add("trim_material.gemistry.amber", "Amber");
+        addBlock(GemistryBlocks.ONYX_ORE, "Onyx Ore");
+        addBlock(GemistryBlocks.DEEPSLATE_ONYX_ORE, "Deepslate Onyx Ore");
+        addBlock(GemistryBlocks.ONYX_BLOCK, "Block of Onyx");
+        addItem(GemistryItems.ONYX, "Onyx");
+        addItem(GemistryItems.ONYX_SWORD, "Onyx Sword");
+        addItem(GemistryItems.ONYX_PICKAXE, "Onyx Pickaxe");
+        addItem(GemistryItems.ONYX_AXE, "Onyx Axe");
+        addItem(GemistryItems.ONYX_SHOVEL, "Onyx Shovel");
+        addItem(GemistryItems.ONYX_HOE, "Onyx Hoe");
+        addItem(GemistryItems.ONYX_SPEAR, "Onyx Spear");
+        addItem(GemistryItems.ONYX_HELMET, "Onyx Helmet");
+        addItem(GemistryItems.ONYX_CHESTPLATE, "Onyx Chestplate");
+        addItem(GemistryItems.ONYX_LEGGINGS, "Onyx Leggings");
+        addItem(GemistryItems.ONYX_BOOTS, "Onyx Boots");
+        addItem(GemistryItems.ONYX_HORSE_ARMOR, "Onyx Horse Armor");
+        addItem(GemistryItems.ONYX_NAUTILUS_ARMOR, "Onyx Nautilus Armor");
 
         addBlock(GemistryBlocks.ATTUNEMENT_TABLE, "Attunement Table");
 

@@ -1,5 +1,8 @@
 {
   "values": [
-    "gemistry:attunement_table"
+    "gemistry:attunement_table",
+    "gemistry:onyx_ore",
+    "gemistry:deepslate_onyx_ore",
+    "gemistry:onyx_block"
   ]
 }

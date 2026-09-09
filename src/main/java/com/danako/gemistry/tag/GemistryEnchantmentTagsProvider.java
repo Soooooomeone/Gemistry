@@ -155,5 +155,32 @@ public class GemistryEnchantmentTagsProvider extends EnchantmentTagsProvider {
                 .add(Enchantments.LUNGE)
                 .add(Enchantments.FORTUNE)
                 .add(Enchantments.LOOTING);
+
+        tag(attunementTag("umbral"))
+                // Onyx Themed
+                .add(Enchantments.SWIFT_SNEAK)
+                // Common
+                .add(Enchantments.PROTECTION)
+                .add(Enchantments.BLAST_PROTECTION)
+                .add(Enchantments.PROJECTILE_PROTECTION)
+                .add(Enchantments.SHARPNESS)
+                .add(Enchantments.KNOCKBACK)
+                .add(Enchantments.SWEEPING_EDGE)
+                .add(Enchantments.EFFICIENCY)
+                .add(Enchantments.SILK_TOUCH)
+                .add(Enchantments.UNBREAKING)
+                .add(Enchantments.MENDING)
+                .add(Enchantments.POWER)
+                .add(Enchantments.PUNCH)
+                .add(Enchantments.INFINITY)
+                .add(Enchantments.MULTISHOT)
+                .add(Enchantments.QUICK_CHARGE)
+                .add(Enchantments.PIERCING)
+                .add(Enchantments.DENSITY)
+                .add(Enchantments.BREACH)
+                .add(Enchantments.WIND_BURST)
+                .add(Enchantments.LUNGE)
+                .add(Enchantments.FORTUNE)
+                .add(Enchantments.LOOTING);
     }
 }

@@ -20,6 +20,7 @@ public final class GemistryTrimMaterials {
     public static final ResourceKey<TrimMaterial> SAPPHIRE = registryKey("sapphire");
     public static final ResourceKey<TrimMaterial> AQUAMARINE = registryKey("aquamarine");
     public static final ResourceKey<TrimMaterial> AMBER = registryKey("amber");
+    public static final ResourceKey<TrimMaterial> ONYX = registryKey("onyx");
     public static final MaterialAssetGroup RUBY_ASSETS =
             MaterialAssetGroup.create("ruby", Map.of(GemistryArmorMaterial.RUBY_ARMOR_ASSET, "ruby_darker"));
     public static final MaterialAssetGroup SAPPHIRE_ASSETS =
@@ -28,6 +29,8 @@ public final class GemistryTrimMaterials {
             MaterialAssetGroup.create("aquamarine", Map.of(GemistryArmorMaterial.AQUAMARINE_ARMOR_ASSET, "aquamarine_darker"));
     public static final MaterialAssetGroup AMBER_ASSETS =
             MaterialAssetGroup.create("amber", Map.of(GemistryArmorMaterial.AMBER_ARMOR_ASSET, "amber_darker"));
+    public static final MaterialAssetGroup ONYX_ASSETS =
+            MaterialAssetGroup.create("onyx", Map.of(GemistryArmorMaterial.ONYX_ARMOR_ASSET, "onyx_darker"));
 
     private GemistryTrimMaterials() {
     }
@@ -37,6 +40,7 @@ public final class GemistryTrimMaterials {
         register(context, SAPPHIRE, Style.EMPTY.withColor(0x4B4BB8), SAPPHIRE_ASSETS);
         register(context, AQUAMARINE, Style.EMPTY.withColor(0x7FFFD4), AQUAMARINE_ASSETS);
         register(context, AMBER, Style.EMPTY.withColor(0xFF8700), AMBER_ASSETS);
+        register(context, ONYX, Style.EMPTY.withColor(0x2B2B2B), ONYX_ASSETS);
     }
 
     private static void register(BootstrapContext<TrimMaterial> context, ResourceKey<TrimMaterial> registryKey, Style hoverTextStyle, MaterialAssetGroup assets) {

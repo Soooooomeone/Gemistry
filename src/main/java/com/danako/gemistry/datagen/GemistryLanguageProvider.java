@@ -100,22 +100,8 @@ public class GemistryLanguageProvider extends LanguageProvider {
         addItem(GemistryItems.ONYX_BOOTS, "Onyx Boots");
         addItem(GemistryItems.ONYX_HORSE_ARMOR, "Onyx Horse Armor");
         addItem(GemistryItems.ONYX_NAUTILUS_ARMOR, "Onyx Nautilus Armor");
-
+        add("trim_material.gemistry.onyx", "Onyx");
         addBlock(GemistryBlocks.ATTUNEMENT_TABLE, "Attunement Table");
-
-        add("enchantment.gemistry.frost_protection", "Frost Protection");
-        add("enchantment.gemistry.frost_aspect", "Frost Aspect");
-        add("enchantment.gemistry.illagers_bane", "Illager's Bane");
-        add("enchantment.gemistry.venom_aspect", "Venom Aspect");
-        add("enchantment.gemistry.purification", "Purification");
-        add("enchantment.gemistry.leeching", "Leeching");
-        add("enchantment.gemistry.vitality", "Vitality");
-        add("enchantment.gemistry.insight", "Insight");
-        add("enchantment.gemistry.prosperity", "Prosperity");
-        add("enchantment.gemistry.swines_bane", "Swine's Bane");
-        add("enchantment.gemistry.refining_touch", "Refining Touch");
-        add("enchantment.gemistry.soulbound", "Soulbound");
-        add("enchantment.gemistry.excavation", "Excavation");
 
     }
 }

@@ -79,7 +79,7 @@ public final class GemistryItems {
     public static final DeferredItem<Item> AMBER_BOOTS = ITEMS.registerItem("amber_boots", properties -> new Item(properties.humanoidArmor(GemistryArmorMaterial.AMBER, ArmorType.BOOTS)));
     public static final DeferredItem<Item> AMBER_HORSE_ARMOR = ITEMS.registerItem("amber_horse_armor", properties -> new Item(properties.horseArmor(GemistryArmorMaterial.AMBER)));
     public static final DeferredItem<Item> AMBER_NAUTILUS_ARMOR = ITEMS.registerItem("amber_nautilus_armor", properties -> new Item(properties.nautilusArmor(GemistryArmorMaterial.AMBER)));
-    public static final DeferredItem<Item> ONYX = ITEMS.registerItem("onyx", Item::new);
+    public static final DeferredItem<Item> ONYX = ITEMS.registerItem("onyx", properties -> new Item(properties.delayedHolderComponent(DataComponents.PROVIDES_TRIM_MATERIAL, GemistryTrimMaterials.ONYX)));
     public static final DeferredItem<BlockItem> ONYX_ORE = ITEMS.registerSimpleBlockItem(GemistryBlocks.ONYX_ORE);
     public static final DeferredItem<BlockItem> DEEPSLATE_ONYX_ORE = ITEMS.registerSimpleBlockItem(GemistryBlocks.DEEPSLATE_ONYX_ORE);
     public static final DeferredItem<BlockItem> ONYX_BLOCK = ITEMS.registerSimpleBlockItem(GemistryBlocks.ONYX_BLOCK);

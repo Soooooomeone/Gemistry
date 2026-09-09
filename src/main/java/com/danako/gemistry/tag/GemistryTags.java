@@ -31,10 +31,12 @@ public final class GemistryTags {
     public static final TagKey<Item> ATTUNEMENT_CATALYSTS_SAPPHIRE = TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(Gemistry.MODID, "attunement_catalysts/sapphire"));
     public static final TagKey<Item> ATTUNEMENT_CATALYSTS_AQUAMARINE = TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(Gemistry.MODID, "attunement_catalysts/aquamarine"));
     public static final TagKey<Item> ATTUNEMENT_CATALYSTS_AMBER = TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(Gemistry.MODID, "attunement_catalysts/amber"));
+    public static final TagKey<Item> ATTUNEMENT_CATALYSTS_ONYX = TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(Gemistry.MODID, "attunement_catalysts/onyx"));
     public static final TagKey<Enchantment> ATTUNEMENT_PYRIC = TagKey.create(Registries.ENCHANTMENT, Identifier.fromNamespaceAndPath(Gemistry.MODID, "attunement/pyric"));
     public static final TagKey<Enchantment> ATTUNEMENT_BOREAL = TagKey.create(Registries.ENCHANTMENT, Identifier.fromNamespaceAndPath(Gemistry.MODID, "attunement/boreal"));
     public static final TagKey<Enchantment> ATTUNEMENT_MIASMIC = TagKey.create(Registries.ENCHANTMENT, Identifier.fromNamespaceAndPath(Gemistry.MODID, "attunement/miasmic"));
     public static final TagKey<Enchantment> ATTUNEMENT_ABYSSAL = TagKey.create(Registries.ENCHANTMENT, Identifier.fromNamespaceAndPath(Gemistry.MODID, "attunement/abyssal"));
+    public static final TagKey<Enchantment> ATTUNEMENT_UMBRAL = TagKey.create(Registries.ENCHANTMENT, Identifier.fromNamespaceAndPath(Gemistry.MODID, "attunement/umbral"));
 
     private GemistryTags() {
     }

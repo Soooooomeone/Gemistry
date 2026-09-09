@@ -23,6 +23,12 @@
     "gemistry:amber_pickaxe",
     "gemistry:amber_axe",
     "gemistry:amber_shovel",
-    "gemistry:amber_hoe"
+    "gemistry:amber_hoe",
+    "gemistry:onyx_sword",
+    "gemistry:onyx_spear",
+    "gemistry:onyx_pickaxe",
+    "gemistry:onyx_axe",
+    "gemistry:onyx_shovel",
+    "gemistry:onyx_hoe"
   ]
 }

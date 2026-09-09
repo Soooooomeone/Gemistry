@@ -6,7 +6,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.enchantment.Enchantment;
 
 public enum GemistryAttunementTheme {
-    PYRIC(GemistryTags.ATTUNEMENT_CATALYSTS_RUBY, GemistryTags.ATTUNEMENT_PYRIC), BOREAL(GemistryTags.ATTUNEMENT_CATALYSTS_SAPPHIRE, GemistryTags.ATTUNEMENT_BOREAL), ABYSSAL(GemistryTags.ATTUNEMENT_CATALYSTS_AQUAMARINE, GemistryTags.ATTUNEMENT_ABYSSAL), MIASMIC(GemistryTags.ATTUNEMENT_CATALYSTS_AMBER, GemistryTags.ATTUNEMENT_MIASMIC);
+    PYRIC(GemistryTags.ATTUNEMENT_CATALYSTS_RUBY, GemistryTags.ATTUNEMENT_PYRIC), BOREAL(GemistryTags.ATTUNEMENT_CATALYSTS_SAPPHIRE, GemistryTags.ATTUNEMENT_BOREAL), ABYSSAL(GemistryTags.ATTUNEMENT_CATALYSTS_AQUAMARINE, GemistryTags.ATTUNEMENT_ABYSSAL), MIASMIC(GemistryTags.ATTUNEMENT_CATALYSTS_AMBER, GemistryTags.ATTUNEMENT_MIASMIC), UMBRAL(GemistryTags.ATTUNEMENT_CATALYSTS_ONYX, GemistryTags.ATTUNEMENT_UMBRAL);
 
     private final TagKey<Item> catalystTag;
     private final TagKey<Enchantment> themeTag;

@@ -175,20 +175,22 @@ public class GemistryItemTagsProvider extends ItemTagsProvider {
     }
 
     private void addTrimMaterialTags() {
-        tag(ItemTags.TRIM_MATERIALS).add(GemistryItems.RUBY.get()).add(GemistryItems.SAPPHIRE.get()).add(GemistryItems.AQUAMARINE.get()).add(GemistryItems.AMBER.get());
+        tag(ItemTags.TRIM_MATERIALS).add(GemistryItems.RUBY.get()).add(GemistryItems.SAPPHIRE.get()).add(GemistryItems.AQUAMARINE.get()).add(GemistryItems.AMBER.get()).add(GemistryItems.ONYX.get());
 
         tag(trimMaterialTag(GemistryTrimMaterials.RUBY)).add(GemistryItems.RUBY.get());
         tag(trimMaterialTag(GemistryTrimMaterials.SAPPHIRE)).add(GemistryItems.SAPPHIRE.get());
         tag(trimMaterialTag(GemistryTrimMaterials.AQUAMARINE)).add(GemistryItems.AQUAMARINE.get());
         tag(trimMaterialTag(GemistryTrimMaterials.AMBER)).add(GemistryItems.AMBER.get());
+        tag(trimMaterialTag(GemistryTrimMaterials.ONYX)).add(GemistryItems.ONYX.get());
     }
 
     private void addAttunementCatalystTags() {
-        tag(GemistryTags.ATTUNEMENT_CATALYSTS).addTag(GemistryTags.ATTUNEMENT_CATALYSTS_RUBY).addTag(GemistryTags.ATTUNEMENT_CATALYSTS_SAPPHIRE).addTag(GemistryTags.ATTUNEMENT_CATALYSTS_AQUAMARINE).addTag(GemistryTags.ATTUNEMENT_CATALYSTS_AMBER);
+        tag(GemistryTags.ATTUNEMENT_CATALYSTS).addTag(GemistryTags.ATTUNEMENT_CATALYSTS_RUBY).addTag(GemistryTags.ATTUNEMENT_CATALYSTS_SAPPHIRE).addTag(GemistryTags.ATTUNEMENT_CATALYSTS_AQUAMARINE).addTag(GemistryTags.ATTUNEMENT_CATALYSTS_AMBER).addTag(GemistryTags.ATTUNEMENT_CATALYSTS_ONYX);
 
         tag(GemistryTags.ATTUNEMENT_CATALYSTS_RUBY).add(GemistryItems.RUBY.get());
         tag(GemistryTags.ATTUNEMENT_CATALYSTS_SAPPHIRE).add(GemistryItems.SAPPHIRE.get());
         tag(GemistryTags.ATTUNEMENT_CATALYSTS_AQUAMARINE).add(GemistryItems.AQUAMARINE.get());
         tag(GemistryTags.ATTUNEMENT_CATALYSTS_AMBER).add(GemistryItems.AMBER.get());
+        tag(GemistryTags.ATTUNEMENT_CATALYSTS_ONYX).add(GemistryItems.ONYX.get());
     }
 }

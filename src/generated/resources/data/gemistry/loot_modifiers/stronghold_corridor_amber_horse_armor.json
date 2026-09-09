@@ -6,7 +6,7 @@
       "loot_table_id": "minecraft:chests/stronghold_corridor"
     },
     {
-      "chance": 0.0112499995,
+      "chance": 0.03,
       "condition": "minecraft:random_chance"
     }
   ],

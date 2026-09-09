@@ -18,7 +18,7 @@ public class GemistryAtlasProvider extends SpriteSourceProvider {
 
     private static final Identifier ARMOR_TRIMS_ATLAS = Identifier.withDefaultNamespace("armor_trims");
     private static final Identifier ITEMS_ATLAS = Identifier.withDefaultNamespace("items");
-    private static final Identifier BLOCKS_ATLAS = Identifier.withDefaultNamespace("blocks"); // Targets assets/minecraft/atlases/blocks.json
+    private static final Identifier BLOCKS_ATLAS = Identifier.withDefaultNamespace("blocks");
 
     private static final Identifier PALETTE_KEY = Identifier.withDefaultNamespace("trims/color_palettes/trim_palette");
 
@@ -43,7 +43,9 @@ public class GemistryAtlasProvider extends SpriteSourceProvider {
                 Map.entry("aquamarine", palette("aquamarine")),
                 Map.entry("aquamarine_darker", palette("aquamarine_darker")),
                 Map.entry("amber", palette("amber")),
-                Map.entry("amber_darker", palette("amber_darker"))
+                Map.entry("amber_darker", palette("amber_darker")),
+                Map.entry("onyx", palette("onyx")),
+                Map.entry("onyx_darker", palette("onyx_darker"))
         );
 
         List<Identifier> entityTextures = new ArrayList<>();

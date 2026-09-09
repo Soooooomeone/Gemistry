@@ -27,8 +27,6 @@ public class GemistryEnchantmentTagsProvider extends EnchantmentTagsProvider {
         addAttunementElementTags();
     }
 
-    // Non-elemental enchants with no water/ice/fire/mystical identity — added to every theme
-    // so no attunement table feels sparse.
     private void addAttunementElementTags() {
         tag(attunementTag("abyssal"))
                 // Aquamarine themed

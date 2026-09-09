@@ -15,12 +15,12 @@ import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 public class GemistryClientEvents {
 
     @SubscribeEvent
-    public static void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {
+    public static void registerGemistryRenderers(EntityRenderersEvent.RegisterRenderers event) {
         event.registerBlockEntityRenderer(GemistryBlockEntities.ATTUNEMENT_TABLE.get(), AttunementTableBlockEntityRenderer::new);
     }
 
     @SubscribeEvent
-    public static void registerScreens(RegisterMenuScreensEvent event) {
+    public static void registerGemistryScreens(RegisterMenuScreensEvent event) {
         event.register(GemistryMenuTypes.ATTUNEMENT_TABLE.get(), AttunementTableScreen::new);
     }
 }

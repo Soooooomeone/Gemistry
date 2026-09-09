@@ -1,0 +1,10 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "minecraft:deep_dark",
+  "features": [
+    "gemistry:onyx_ore_tiny",
+    "gemistry:onyx_ore_small",
+    "gemistry:onyx_ore_cluster"
+  ],
+  "step": "underground_ores"
+}

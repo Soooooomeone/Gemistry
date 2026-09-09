@@ -1,0 +1,27 @@
+{
+  "values": [
+    "minecraft:swift_sneak",
+    "minecraft:protection",
+    "minecraft:blast_protection",
+    "minecraft:projectile_protection",
+    "minecraft:sharpness",
+    "minecraft:knockback",
+    "minecraft:sweeping_edge",
+    "minecraft:efficiency",
+    "minecraft:silk_touch",
+    "minecraft:unbreaking",
+    "minecraft:mending",
+    "minecraft:power",
+    "minecraft:punch",
+    "minecraft:infinity",
+    "minecraft:multishot",
+    "minecraft:quick_charge",
+    "minecraft:piercing",
+    "minecraft:density",
+    "minecraft:breach",
+    "minecraft:wind_burst",
+    "minecraft:lunge",
+    "minecraft:fortune",
+    "minecraft:looting"
+  ]
+}

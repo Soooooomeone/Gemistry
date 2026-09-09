@@ -1,0 +1,10 @@
+{
+  "asset_name": "onyx",
+  "description": {
+    "color": "#2B2B2B",
+    "translate": "trim_material.gemistry.onyx"
+  },
+  "override_armor_assets": {
+    "gemistry:onyx": "onyx_darker"
+  }
+}

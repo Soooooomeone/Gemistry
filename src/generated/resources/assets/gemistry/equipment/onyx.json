@@ -1,0 +1,24 @@
+{
+  "layers": {
+    "horse_body": [
+      {
+        "texture": "gemistry:onyx"
+      }
+    ],
+    "humanoid": [
+      {
+        "texture": "gemistry:onyx"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "gemistry:onyx"
+      }
+    ],
+    "nautilus_body": [
+      {
+        "texture": "gemistry:onyx"
+      }
+    ]
+  }
+}

@@ -1,11 +1,13 @@
 package com.danako.gemistry.tag;
 
-import com.danako.gemistry.core.GemistryEnchantments;
-
+import com.danako.gemistry.Gemistry;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.EnchantmentTagsProvider;
-import net.minecraft.tags.EnchantmentTags;
+import net.minecraft.resources.Identifier;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.Enchantments;
 
 import java.util.concurrent.CompletableFuture;
@@ -13,24 +15,147 @@ import java.util.concurrent.CompletableFuture;
 public class GemistryEnchantmentTagsProvider extends EnchantmentTagsProvider {
 
     public GemistryEnchantmentTagsProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider) {
-        super(output, lookupProvider);
+        super(output, lookupProvider, Gemistry.MODID);
+    }
+
+    private static TagKey<Enchantment> attunementTag(String path) {
+        return TagKey.create(Registries.ENCHANTMENT, Identifier.fromNamespaceAndPath(Gemistry.MODID, "attunement/" + path));
     }
 
     @Override
-    @SuppressWarnings("unchecked")
-    protected void addTags(HolderLookup.Provider registries) {
-        this.tooltipOrder(registries, Enchantments.BINDING_CURSE, Enchantments.VANISHING_CURSE, Enchantments.RIPTIDE, Enchantments.CHANNELING, Enchantments.WIND_BURST, Enchantments.FROST_WALKER, Enchantments.LUNGE, Enchantments.SHARPNESS, Enchantments.SMITE, Enchantments.BANE_OF_ARTHROPODS, GemistryEnchantments.ILLAGERS_BANE, GemistryEnchantments.SWINES_BANE, Enchantments.IMPALING, Enchantments.POWER, Enchantments.DENSITY, Enchantments.BREACH, Enchantments.PIERCING, Enchantments.SWEEPING_EDGE, Enchantments.MULTISHOT, Enchantments.FIRE_ASPECT, GemistryEnchantments.FROST_ASPECT, GemistryEnchantments.VENOM_ASPECT, Enchantments.FLAME, Enchantments.KNOCKBACK, Enchantments.PUNCH, Enchantments.PROTECTION, Enchantments.BLAST_PROTECTION, Enchantments.FIRE_PROTECTION, GemistryEnchantments.FROST_PROTECTION, Enchantments.PROJECTILE_PROTECTION, Enchantments.FEATHER_FALLING, Enchantments.FORTUNE, GemistryEnchantments.PROSPERITY, GemistryEnchantments.EXCAVATION, Enchantments.LOOTING, GemistryEnchantments.LEECHING, GemistryEnchantments.INSIGHT, Enchantments.SILK_TOUCH, GemistryEnchantments.REFINING_TOUCH, Enchantments.LUCK_OF_THE_SEA, Enchantments.EFFICIENCY, Enchantments.QUICK_CHARGE, Enchantments.LURE, Enchantments.RESPIRATION, Enchantments.AQUA_AFFINITY, GemistryEnchantments.PURIFICATION, Enchantments.SOUL_SPEED, Enchantments.SWIFT_SNEAK, Enchantments.DEPTH_STRIDER, Enchantments.THORNS, GemistryEnchantments.VITALITY, Enchantments.LOYALTY, Enchantments.UNBREAKING, Enchantments.INFINITY, GemistryEnchantments.SOULBOUND, Enchantments.MENDING);
+    protected void addTags(HolderLookup.Provider provider) {
+        addAttunementElementTags();
+    }
 
-        this.tag(EnchantmentTags.ARMOR_EXCLUSIVE).add(GemistryEnchantments.FROST_PROTECTION);
+    // Non-elemental enchants with no water/ice/fire/mystical identity — added to every theme
+    // so no attunement table feels sparse.
+    private void addAttunementElementTags() {
+        tag(attunementTag("abyssal"))
+                // Aquamarine themed
+                .add(Enchantments.RESPIRATION)
+                .add(Enchantments.AQUA_AFFINITY)
+                .add(Enchantments.DEPTH_STRIDER)
+                .add(Enchantments.LUCK_OF_THE_SEA)
+                .add(Enchantments.LURE)
+                .add(Enchantments.LOYALTY)
+                .add(Enchantments.IMPALING)
+                .add(Enchantments.RIPTIDE)
+                // Common
+                .add(Enchantments.PROTECTION)
+                .add(Enchantments.BLAST_PROTECTION)
+                .add(Enchantments.PROJECTILE_PROTECTION)
+                .add(Enchantments.SHARPNESS)
+                .add(Enchantments.KNOCKBACK)
+                .add(Enchantments.SWEEPING_EDGE)
+                .add(Enchantments.EFFICIENCY)
+                .add(Enchantments.SILK_TOUCH)
+                .add(Enchantments.UNBREAKING)
+                .add(Enchantments.MENDING)
+                .add(Enchantments.SWIFT_SNEAK)
+                .add(Enchantments.POWER)
+                .add(Enchantments.PUNCH)
+                .add(Enchantments.INFINITY)
+                .add(Enchantments.MULTISHOT)
+                .add(Enchantments.QUICK_CHARGE)
+                .add(Enchantments.PIERCING)
+                .add(Enchantments.DENSITY)
+                .add(Enchantments.BREACH)
+                .add(Enchantments.WIND_BURST)
+                .add(Enchantments.LUNGE)
+                .add(Enchantments.FORTUNE)
+                .add(Enchantments.LOOTING);
 
-        this.tag(EnchantmentTags.DAMAGE_EXCLUSIVE).add(GemistryEnchantments.ILLAGERS_BANE, GemistryEnchantments.SWINES_BANE);
+        tag(attunementTag("boreal"))
+                // Sapphire themed
+                .add(Enchantments.FROST_WALKER)
+                .add(Enchantments.FEATHER_FALLING)
+                // Common
+                .add(Enchantments.PROTECTION)
+                .add(Enchantments.BLAST_PROTECTION)
+                .add(Enchantments.PROJECTILE_PROTECTION)
+                .add(Enchantments.SHARPNESS)
+                .add(Enchantments.KNOCKBACK)
+                .add(Enchantments.SWEEPING_EDGE)
+                .add(Enchantments.EFFICIENCY)
+                .add(Enchantments.SILK_TOUCH)
+                .add(Enchantments.UNBREAKING)
+                .add(Enchantments.MENDING)
+                .add(Enchantments.SWIFT_SNEAK)
+                .add(Enchantments.POWER)
+                .add(Enchantments.PUNCH)
+                .add(Enchantments.INFINITY)
+                .add(Enchantments.MULTISHOT)
+                .add(Enchantments.QUICK_CHARGE)
+                .add(Enchantments.PIERCING)
+                .add(Enchantments.DENSITY)
+                .add(Enchantments.BREACH)
+                .add(Enchantments.WIND_BURST)
+                .add(Enchantments.LUNGE)
+                .add(Enchantments.FORTUNE)
+                .add(Enchantments.LOOTING);
 
-        this.tag(EnchantmentTags.NON_TREASURE).add(GemistryEnchantments.FROST_PROTECTION, GemistryEnchantments.FROST_ASPECT, GemistryEnchantments.ILLAGERS_BANE, GemistryEnchantments.VENOM_ASPECT, GemistryEnchantments.PURIFICATION, GemistryEnchantments.LEECHING, GemistryEnchantments.VITALITY, GemistryEnchantments.INSIGHT, GemistryEnchantments.PROSPERITY, GemistryEnchantments.SWINES_BANE, GemistryEnchantments.REFINING_TOUCH, GemistryEnchantments.EXCAVATION);
+        tag(attunementTag("miasmic"))
+                // Amber themed
+                .add(Enchantments.BINDING_CURSE)
+                .add(Enchantments.VANISHING_CURSE)
+                .add(Enchantments.THORNS)
+                .add(Enchantments.SOUL_SPEED)
+                .add(Enchantments.CHANNELING)
+                .add(Enchantments.BANE_OF_ARTHROPODS)
+                // Common
+                .add(Enchantments.PROTECTION)
+                .add(Enchantments.BLAST_PROTECTION)
+                .add(Enchantments.PROJECTILE_PROTECTION)
+                .add(Enchantments.SHARPNESS)
+                .add(Enchantments.KNOCKBACK)
+                .add(Enchantments.SWEEPING_EDGE)
+                .add(Enchantments.EFFICIENCY)
+                .add(Enchantments.SILK_TOUCH)
+                .add(Enchantments.UNBREAKING)
+                .add(Enchantments.MENDING)
+                .add(Enchantments.SWIFT_SNEAK)
+                .add(Enchantments.POWER)
+                .add(Enchantments.PUNCH)
+                .add(Enchantments.INFINITY)
+                .add(Enchantments.MULTISHOT)
+                .add(Enchantments.QUICK_CHARGE)
+                .add(Enchantments.PIERCING)
+                .add(Enchantments.DENSITY)
+                .add(Enchantments.BREACH)
+                .add(Enchantments.WIND_BURST)
+                .add(Enchantments.FORTUNE)
+                .add(Enchantments.LOOTING)
+                .add(Enchantments.LUNGE);
 
-        this.tag(EnchantmentTags.MINING_EXCLUSIVE).add(GemistryEnchantments.REFINING_TOUCH);
-
-        this.tag(EnchantmentTags.TREASURE).add(GemistryEnchantments.SOULBOUND);
-        this.tag(EnchantmentTags.ON_RANDOM_LOOT).add(GemistryEnchantments.SOULBOUND);
-        this.tag(EnchantmentTags.TRADEABLE).add(GemistryEnchantments.SOULBOUND);
+        tag(attunementTag("pyric"))
+                // Ruby themed
+                .add(Enchantments.FIRE_ASPECT)
+                .add(Enchantments.FLAME)
+                .add(Enchantments.FIRE_PROTECTION)
+                .add(Enchantments.SMITE)
+                // Common
+                .add(Enchantments.PROTECTION)
+                .add(Enchantments.BLAST_PROTECTION)
+                .add(Enchantments.PROJECTILE_PROTECTION)
+                .add(Enchantments.SHARPNESS)
+                .add(Enchantments.KNOCKBACK)
+                .add(Enchantments.SWEEPING_EDGE)
+                .add(Enchantments.EFFICIENCY)
+                .add(Enchantments.SILK_TOUCH)
+                .add(Enchantments.UNBREAKING)
+                .add(Enchantments.MENDING)
+                .add(Enchantments.SWIFT_SNEAK)
+                .add(Enchantments.POWER)
+                .add(Enchantments.PUNCH)
+                .add(Enchantments.INFINITY)
+                .add(Enchantments.MULTISHOT)
+                .add(Enchantments.QUICK_CHARGE)
+                .add(Enchantments.PIERCING)
+                .add(Enchantments.DENSITY)
+                .add(Enchantments.BREACH)
+                .add(Enchantments.WIND_BURST)
+                .add(Enchantments.LUNGE)
+                .add(Enchantments.FORTUNE)
+                .add(Enchantments.LOOTING);
     }
 }

@@ -71,14 +71,45 @@ public class GemistryEnchantmentTagsProvider extends EnchantmentTagsProvider {
     }
 
     private void addAttunementThemeTags() {
-        tag(attunementTag("pyric"));
+        tag(attunementTag("pyric")).add(Enchantments.FIRE_ASPECT)
+                .add(Enchantments.FIRE_PROTECTION).add(Enchantments.BLAST_PROTECTION)
+                .add(Enchantments.EFFICIENCY)
+                .add(Enchantments.SMITE)
+                .add(Enchantments.FLAME)
+                .add(Enchantments.PIERCING).add(Enchantments.MULTISHOT).add(Enchantments.QUICK_CHARGE
+                );
 
-        tag(attunementTag("boreal"));
+        tag(attunementTag("boreal"))
+                .add(Enchantments.FEATHER_FALLING)
+                .add(Enchantments.PROJECTILE_PROTECTION)
+                .add(Enchantments.FROST_WALKER)
+                .add(Enchantments.KNOCKBACK).add(Enchantments.PUNCH)
+                .add(Enchantments.BANE_OF_ARTHROPODS
+        );
 
-        tag(attunementTag("abyssal"));
+        tag(attunementTag("abyssal"))
+                .add(Enchantments.AQUA_AFFINITY)
+                .add(Enchantments.RIPTIDE).add(Enchantments.IMPALING).add(Enchantments.LOYALTY)
+                .add(Enchantments.DEPTH_STRIDER).add(Enchantments.RESPIRATION)
+                .add(Enchantments.LURE).add(Enchantments.LUCK_OF_THE_SEA
+        );
 
-        tag(attunementTag("miasmic"));
+        tag(attunementTag("miasmic"))
+                .add(Enchantments.INFINITY)
+                .add(Enchantments.SILK_TOUCH)
+                .add(Enchantments.LOOTING)
+                .add(Enchantments.SOUL_SPEED)
+                .add(Enchantments.BINDING_CURSE)
+                .add(Enchantments.VANISHING_CURSE)
+                .add(Enchantments.FORTUNE
+        );
 
-        tag(attunementTag("umbral"));
+        tag(attunementTag("umbral"))
+                .add(Enchantments.THORNS)
+                .add(Enchantments.SHARPNESS)
+                .add(Enchantments.PROTECTION)
+                .add(Enchantments.POWER)
+                .add(Enchantments.UNBREAKING
+        );
     }
 }

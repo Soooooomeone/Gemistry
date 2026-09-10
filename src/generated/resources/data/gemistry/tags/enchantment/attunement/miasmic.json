@@ -1,3 +1,11 @@
 {
-  "values": []
+  "values": [
+    "minecraft:infinity",
+    "minecraft:silk_touch",
+    "minecraft:looting",
+    "minecraft:soul_speed",
+    "minecraft:binding_curse",
+    "minecraft:vanishing_curse",
+    "minecraft:fortune"
+  ]
 }

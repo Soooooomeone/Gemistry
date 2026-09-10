@@ -1,3 +1,13 @@
 {
-  "values": []
+  "values": [
+    "minecraft:fire_aspect",
+    "minecraft:fire_protection",
+    "minecraft:blast_protection",
+    "minecraft:efficiency",
+    "minecraft:smite",
+    "minecraft:flame",
+    "minecraft:piercing",
+    "minecraft:multishot",
+    "minecraft:quick_charge"
+  ]
 }

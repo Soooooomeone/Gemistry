@@ -1,3 +1,9 @@
 {
-  "values": []
+  "values": [
+    "minecraft:thorns",
+    "minecraft:sharpness",
+    "minecraft:protection",
+    "minecraft:power",
+    "minecraft:unbreaking"
+  ]
 }

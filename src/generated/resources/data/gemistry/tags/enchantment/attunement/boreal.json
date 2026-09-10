@@ -1,9 +1,3 @@
 {
-  "values": [
-    "minecraft:frost_walker",
-    "minecraft:feather_falling",
-    "minecraft:depth_strider",
-    "minecraft:wind_burst",
-    "minecraft:blast_protection"
-  ]
+  "values": []
 }

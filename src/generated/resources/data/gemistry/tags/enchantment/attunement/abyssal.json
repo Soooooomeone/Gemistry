@@ -1,11 +1,3 @@
 {
-  "values": [
-    "minecraft:respiration",
-    "minecraft:aqua_affinity",
-    "minecraft:depth_strider",
-    "minecraft:luck_of_the_sea",
-    "minecraft:lure",
-    "minecraft:impaling",
-    "minecraft:riptide"
-  ]
+  "values": []
 }

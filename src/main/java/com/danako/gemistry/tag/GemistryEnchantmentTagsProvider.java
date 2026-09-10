@@ -71,14 +71,14 @@ public class GemistryEnchantmentTagsProvider extends EnchantmentTagsProvider {
     }
 
     private void addAttunementThemeTags() {
-        tag(attunementTag("pyric")).add(Enchantments.FIRE_ASPECT).add(Enchantments.FLAME).add(Enchantments.FIRE_PROTECTION).add(Enchantments.SMITE).add(Enchantments.SHARPNESS);
+        tag(attunementTag("pyric"));
 
-        tag(attunementTag("boreal")).add(Enchantments.FROST_WALKER).add(Enchantments.FEATHER_FALLING).add(Enchantments.DEPTH_STRIDER).add(Enchantments.WIND_BURST).add(Enchantments.BLAST_PROTECTION);
+        tag(attunementTag("boreal"));
 
-        tag(attunementTag("abyssal")).add(Enchantments.RESPIRATION).add(Enchantments.AQUA_AFFINITY).add(Enchantments.DEPTH_STRIDER).add(Enchantments.LUCK_OF_THE_SEA).add(Enchantments.LURE).add(Enchantments.IMPALING).add(Enchantments.RIPTIDE);
+        tag(attunementTag("abyssal"));
 
-        tag(attunementTag("miasmic")).add(Enchantments.SOUL_SPEED).add(Enchantments.CHANNELING).add(Enchantments.LOYALTY).add(Enchantments.FORTUNE).add(Enchantments.BANE_OF_ARTHROPODS).add(Enchantments.INFINITY).add(Enchantments.LUNGE);
+        tag(attunementTag("miasmic"));
 
-        tag(attunementTag("umbral")).add(Enchantments.SWIFT_SNEAK).add(Enchantments.THORNS).add(Enchantments.LOOTING).add(Enchantments.FORTUNE).add(Enchantments.DENSITY).add(Enchantments.BREACH);
+        tag(attunementTag("umbral"));
     }
 }

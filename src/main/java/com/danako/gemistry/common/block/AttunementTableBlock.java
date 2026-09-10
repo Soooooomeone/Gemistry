@@ -5,6 +5,7 @@ import com.danako.gemistry.common.block.entity.GemistryBlockEntities;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -22,13 +23,19 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jspecify.annotations.Nullable;
 
+import java.util.List;
+
 public class AttunementTableBlock extends BaseEntityBlock {
     public static final MapCodec<AttunementTableBlock> CODEC = simpleCodec(AttunementTableBlock::new);
-
+    public static final List<BlockPos> BOOKSHELF_OFFSETS = BlockPos.betweenClosedStream(-2, 0, -2, 2, 1, 2).filter((offset) -> Math.abs(offset.getX()) == 2 || Math.abs(offset.getZ()) == 2).map(BlockPos::immutable).toList();
     private static final VoxelShape SHAPE = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 12.0D, 16.0D);
 
     public AttunementTableBlock(Properties properties) {
         super(properties);
+    }
+
+    public static boolean isValidBookShelf(Level level, BlockPos pos, BlockPos offset) {
+        return level.getBlockState(pos.offset(offset)).getEnchantPowerBonus(level, pos.offset(offset)) != 0.0F && level.getBlockState(pos.offset(offset.getX() / 2, offset.getY(), offset.getZ() / 2)).is(BlockTags.ENCHANTMENT_POWER_TRANSMITTER);
     }
 
     @Override
@@ -79,6 +86,12 @@ public class AttunementTableBlock extends BaseEntityBlock {
 
         BlockEntity be = level.getBlockEntity(pos);
         boolean active = be instanceof AttunementTableBlockEntity table && table.open > 0.1F;
+
+        for (BlockPos offset : BOOKSHELF_OFFSETS) {
+            if (random.nextInt(16) == 0 && isValidBookShelf(level, pos, offset)) {
+                level.addParticle(ParticleTypes.ENCHANT, pos.getX() + 0.5D, pos.getY() + 2.0D, pos.getZ() + 0.5D, (offset.getX() + random.nextFloat()) - 0.5D, (offset.getY() - random.nextFloat() - 1.0D), (offset.getZ() + random.nextFloat()) - 0.5D);
+            }
+        }
 
         int chanceDenominator = active ? 4 : 16;
         if (random.nextInt(chanceDenominator) == 0) {

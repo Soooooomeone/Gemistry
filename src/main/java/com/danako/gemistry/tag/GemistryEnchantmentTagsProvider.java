@@ -24,163 +24,61 @@ public class GemistryEnchantmentTagsProvider extends EnchantmentTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider provider) {
-        addAttunementElementTags();
+        addAttunementCommonTag();
+        addAttunementThemeTags();
     }
 
-    private void addAttunementElementTags() {
-        tag(attunementTag("abyssal"))
-                // Aquamarine themed
-                .add(Enchantments.RESPIRATION)
-                .add(Enchantments.AQUA_AFFINITY)
-                .add(Enchantments.DEPTH_STRIDER)
-                .add(Enchantments.LUCK_OF_THE_SEA)
-                .add(Enchantments.LURE)
-                .add(Enchantments.LOYALTY)
-                .add(Enchantments.IMPALING)
-                .add(Enchantments.RIPTIDE)
-                // Common
-                .add(Enchantments.PROTECTION)
-                .add(Enchantments.BLAST_PROTECTION)
-                .add(Enchantments.PROJECTILE_PROTECTION)
-                .add(Enchantments.SHARPNESS)
-                .add(Enchantments.KNOCKBACK)
-                .add(Enchantments.SWEEPING_EDGE)
-                .add(Enchantments.EFFICIENCY)
-                .add(Enchantments.SILK_TOUCH)
-                .add(Enchantments.UNBREAKING)
-                .add(Enchantments.MENDING)
-                .add(Enchantments.SWIFT_SNEAK)
-                .add(Enchantments.POWER)
-                .add(Enchantments.PUNCH)
-                .add(Enchantments.INFINITY)
-                .add(Enchantments.MULTISHOT)
-                .add(Enchantments.QUICK_CHARGE)
-                .add(Enchantments.PIERCING)
-                .add(Enchantments.DENSITY)
-                .add(Enchantments.BREACH)
-                .add(Enchantments.WIND_BURST)
-                .add(Enchantments.LUNGE)
-                .add(Enchantments.FORTUNE)
-                .add(Enchantments.LOOTING);
+    private void addAttunementCommonTag() {
+        tag(attunementTag("common"))
+                .add(
+                        Enchantments.PROTECTION,
+                        Enchantments.FIRE_PROTECTION,
+                        Enchantments.FEATHER_FALLING,
+                        Enchantments.BLAST_PROTECTION,
+                        Enchantments.PROJECTILE_PROTECTION,
+                        Enchantments.RESPIRATION,
+                        Enchantments.AQUA_AFFINITY,
+                        Enchantments.THORNS,
+                        Enchantments.DEPTH_STRIDER,
+                        Enchantments.SHARPNESS,
+                        Enchantments.SMITE,
+                        Enchantments.BANE_OF_ARTHROPODS,
+                        Enchantments.KNOCKBACK,
+                        Enchantments.FIRE_ASPECT,
+                        Enchantments.LOOTING,
+                        Enchantments.SWEEPING_EDGE,
+                        Enchantments.EFFICIENCY,
+                        Enchantments.SILK_TOUCH,
+                        Enchantments.UNBREAKING,
+                        Enchantments.FORTUNE,
+                        Enchantments.POWER,
+                        Enchantments.PUNCH,
+                        Enchantments.FLAME,
+                        Enchantments.INFINITY,
+                        Enchantments.LUCK_OF_THE_SEA,
+                        Enchantments.LURE,
+                        Enchantments.LOYALTY,
+                        Enchantments.IMPALING,
+                        Enchantments.RIPTIDE,
+                        Enchantments.CHANNELING,
+                        Enchantments.MULTISHOT,
+                        Enchantments.QUICK_CHARGE,
+                        Enchantments.PIERCING,
+                        Enchantments.DENSITY,
+                        Enchantments.BREACH,
+                        Enchantments.LUNGE
+                );
+    }
 
-        tag(attunementTag("boreal"))
-                // Sapphire themed
-                .add(Enchantments.FROST_WALKER)
-                .add(Enchantments.FEATHER_FALLING)
-                // Common
-                .add(Enchantments.PROTECTION)
-                .add(Enchantments.BLAST_PROTECTION)
-                .add(Enchantments.PROJECTILE_PROTECTION)
-                .add(Enchantments.SHARPNESS)
-                .add(Enchantments.KNOCKBACK)
-                .add(Enchantments.SWEEPING_EDGE)
-                .add(Enchantments.EFFICIENCY)
-                .add(Enchantments.SILK_TOUCH)
-                .add(Enchantments.UNBREAKING)
-                .add(Enchantments.MENDING)
-                .add(Enchantments.SWIFT_SNEAK)
-                .add(Enchantments.POWER)
-                .add(Enchantments.PUNCH)
-                .add(Enchantments.INFINITY)
-                .add(Enchantments.MULTISHOT)
-                .add(Enchantments.QUICK_CHARGE)
-                .add(Enchantments.PIERCING)
-                .add(Enchantments.DENSITY)
-                .add(Enchantments.BREACH)
-                .add(Enchantments.WIND_BURST)
-                .add(Enchantments.LUNGE)
-                .add(Enchantments.FORTUNE)
-                .add(Enchantments.LOOTING);
+    private void addAttunementThemeTags() {
+        tag(attunementTag("pyric")).add(Enchantments.FIRE_ASPECT).add(Enchantments.FLAME).add(Enchantments.FIRE_PROTECTION).add(Enchantments.SMITE).add(Enchantments.SHARPNESS);
 
-        tag(attunementTag("miasmic"))
-                // Amber themed
-                .add(Enchantments.BINDING_CURSE)
-                .add(Enchantments.VANISHING_CURSE)
-                .add(Enchantments.THORNS)
-                .add(Enchantments.SOUL_SPEED)
-                .add(Enchantments.CHANNELING)
-                .add(Enchantments.BANE_OF_ARTHROPODS)
-                // Common
-                .add(Enchantments.PROTECTION)
-                .add(Enchantments.BLAST_PROTECTION)
-                .add(Enchantments.PROJECTILE_PROTECTION)
-                .add(Enchantments.SHARPNESS)
-                .add(Enchantments.KNOCKBACK)
-                .add(Enchantments.SWEEPING_EDGE)
-                .add(Enchantments.EFFICIENCY)
-                .add(Enchantments.SILK_TOUCH)
-                .add(Enchantments.UNBREAKING)
-                .add(Enchantments.MENDING)
-                .add(Enchantments.SWIFT_SNEAK)
-                .add(Enchantments.POWER)
-                .add(Enchantments.PUNCH)
-                .add(Enchantments.INFINITY)
-                .add(Enchantments.MULTISHOT)
-                .add(Enchantments.QUICK_CHARGE)
-                .add(Enchantments.PIERCING)
-                .add(Enchantments.DENSITY)
-                .add(Enchantments.BREACH)
-                .add(Enchantments.WIND_BURST)
-                .add(Enchantments.FORTUNE)
-                .add(Enchantments.LOOTING)
-                .add(Enchantments.LUNGE);
+        tag(attunementTag("boreal")).add(Enchantments.FROST_WALKER).add(Enchantments.FEATHER_FALLING).add(Enchantments.DEPTH_STRIDER).add(Enchantments.WIND_BURST).add(Enchantments.BLAST_PROTECTION);
 
-        tag(attunementTag("pyric"))
-                // Ruby themed
-                .add(Enchantments.FIRE_ASPECT)
-                .add(Enchantments.FLAME)
-                .add(Enchantments.FIRE_PROTECTION)
-                .add(Enchantments.SMITE)
-                // Common
-                .add(Enchantments.PROTECTION)
-                .add(Enchantments.BLAST_PROTECTION)
-                .add(Enchantments.PROJECTILE_PROTECTION)
-                .add(Enchantments.SHARPNESS)
-                .add(Enchantments.KNOCKBACK)
-                .add(Enchantments.SWEEPING_EDGE)
-                .add(Enchantments.EFFICIENCY)
-                .add(Enchantments.SILK_TOUCH)
-                .add(Enchantments.UNBREAKING)
-                .add(Enchantments.MENDING)
-                .add(Enchantments.SWIFT_SNEAK)
-                .add(Enchantments.POWER)
-                .add(Enchantments.PUNCH)
-                .add(Enchantments.INFINITY)
-                .add(Enchantments.MULTISHOT)
-                .add(Enchantments.QUICK_CHARGE)
-                .add(Enchantments.PIERCING)
-                .add(Enchantments.DENSITY)
-                .add(Enchantments.BREACH)
-                .add(Enchantments.WIND_BURST)
-                .add(Enchantments.LUNGE)
-                .add(Enchantments.FORTUNE)
-                .add(Enchantments.LOOTING);
+        tag(attunementTag("abyssal")).add(Enchantments.RESPIRATION).add(Enchantments.AQUA_AFFINITY).add(Enchantments.DEPTH_STRIDER).add(Enchantments.LUCK_OF_THE_SEA).add(Enchantments.LURE).add(Enchantments.IMPALING).add(Enchantments.RIPTIDE);
 
-        tag(attunementTag("umbral"))
-                // Onyx Themed
-                .add(Enchantments.SWIFT_SNEAK)
-                // Common
-                .add(Enchantments.PROTECTION)
-                .add(Enchantments.BLAST_PROTECTION)
-                .add(Enchantments.PROJECTILE_PROTECTION)
-                .add(Enchantments.SHARPNESS)
-                .add(Enchantments.KNOCKBACK)
-                .add(Enchantments.SWEEPING_EDGE)
-                .add(Enchantments.EFFICIENCY)
-                .add(Enchantments.SILK_TOUCH)
-                .add(Enchantments.UNBREAKING)
-                .add(Enchantments.MENDING)
-                .add(Enchantments.POWER)
-                .add(Enchantments.PUNCH)
-                .add(Enchantments.INFINITY)
-                .add(Enchantments.MULTISHOT)
-                .add(Enchantments.QUICK_CHARGE)
-                .add(Enchantments.PIERCING)
-                .add(Enchantments.DENSITY)
-                .add(Enchantments.BREACH)
-                .add(Enchantments.WIND_BURST)
-                .add(Enchantments.LUNGE)
-                .add(Enchantments.FORTUNE)
-                .add(Enchantments.LOOTING);
+        tag(attunementTag("miasmic")).add(Enchantments.SOUL_SPEED).add(Enchantments.CHANNELING).add(Enchantments.LOYALTY).add(Enchantments.FORTUNE).add(Enchantments.BANE_OF_ARTHROPODS).add(Enchantments.INFINITY).add(Enchantments.LUNGE);
+
+        tag(attunementTag("umbral")).add(Enchantments.SWIFT_SNEAK).add(Enchantments.THORNS).add(Enchantments.LOOTING).add(Enchantments.FORTUNE).add(Enchantments.DENSITY).add(Enchantments.BREACH);
     }
 }

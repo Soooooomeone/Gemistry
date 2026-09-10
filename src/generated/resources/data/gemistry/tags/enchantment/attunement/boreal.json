@@ -2,28 +2,8 @@
   "values": [
     "minecraft:frost_walker",
     "minecraft:feather_falling",
-    "minecraft:protection",
-    "minecraft:blast_protection",
-    "minecraft:projectile_protection",
-    "minecraft:sharpness",
-    "minecraft:knockback",
-    "minecraft:sweeping_edge",
-    "minecraft:efficiency",
-    "minecraft:silk_touch",
-    "minecraft:unbreaking",
-    "minecraft:mending",
-    "minecraft:swift_sneak",
-    "minecraft:power",
-    "minecraft:punch",
-    "minecraft:infinity",
-    "minecraft:multishot",
-    "minecraft:quick_charge",
-    "minecraft:piercing",
-    "minecraft:density",
-    "minecraft:breach",
+    "minecraft:depth_strider",
     "minecraft:wind_burst",
-    "minecraft:lunge",
-    "minecraft:fortune",
-    "minecraft:looting"
+    "minecraft:blast_protection"
   ]
 }

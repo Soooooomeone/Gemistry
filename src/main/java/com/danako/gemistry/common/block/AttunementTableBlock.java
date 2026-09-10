@@ -29,9 +29,10 @@ public class AttunementTableBlock extends BaseEntityBlock {
     public static final MapCodec<AttunementTableBlock> CODEC = simpleCodec(AttunementTableBlock::new);
     public static final List<BlockPos> BOOKSHELF_OFFSETS = BlockPos.betweenClosedStream(-2, 0, -2, 2, 1, 2).filter((offset) -> Math.abs(offset.getX()) == 2 || Math.abs(offset.getZ()) == 2).map(BlockPos::immutable).toList();
     private static final VoxelShape SHAPE = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 12.0D, 16.0D);
+    private static final int LIGHT_LEVEL = 8;
 
     public AttunementTableBlock(Properties properties) {
-        super(properties);
+        super(properties.lightLevel(state -> LIGHT_LEVEL));
     }
 
     public static boolean isValidBookShelf(Level level, BlockPos pos, BlockPos offset) {

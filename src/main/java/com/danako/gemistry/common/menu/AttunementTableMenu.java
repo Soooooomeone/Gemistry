@@ -5,6 +5,7 @@ import com.danako.gemistry.core.GemistryAttunementTheme;
 import com.danako.gemistry.tag.GemistryTags;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Holder;
 import net.minecraft.core.HolderSet;
 import net.minecraft.core.RegistryAccess;
 import net.minecraft.core.registries.Registries;
@@ -34,6 +35,8 @@ import net.neoforged.neoforge.event.EventHooks;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.function.Supplier;
+import java.util.stream.Stream;
 
 public class AttunementTableMenu extends AbstractContainerMenu {
 
@@ -46,6 +49,10 @@ public class AttunementTableMenu extends AbstractContainerMenu {
     private static final int ATTUNEMENT_LEVEL_BONUS = 1;
     private static final Identifier EMPTY_SLOT_GEM = Identifier.fromNamespaceAndPath("gemistry", "container/slot/gem");
     private static final int MAX_FALLBACK_COST_PROBE = 20;
+
+    private static final int THEMED_ENCHANTMENT_BIAS = 3;
+    private static final int ATTUNEMENT_BYPASS_COST_THRESHOLD = 30;
+    private static final float ATTUNEMENT_BYPASS_CHANCE = 0.15F;
     public final int[] costs = new int[3];
     public final int[] enchantClue = new int[]{-1, -1, -1};
     public final int[] levelClue = new int[]{-1, -1, -1};
@@ -114,9 +121,10 @@ public class AttunementTableMenu extends AbstractContainerMenu {
         this.addDataSlot(DataSlot.shared(this.levelClue, 2));
     }
 
-    private static EnchantmentInstance buffLevel(EnchantmentInstance instance) {
+    private static EnchantmentInstance buffLevel(EnchantmentInstance instance, boolean allowBypass) {
         int maxLevel = instance.enchantment().value().getMaxLevel();
-        int buffed = Math.min(instance.level() + ATTUNEMENT_LEVEL_BONUS, maxLevel);
+        int cap = allowBypass ? maxLevel + ATTUNEMENT_LEVEL_BONUS : maxLevel;
+        int buffed = Math.min(instance.level() + ATTUNEMENT_LEVEL_BONUS, cap);
         return buffed == instance.level() ? instance : new EnchantmentInstance(instance.enchantment(), buffed);
     }
 
@@ -145,7 +153,7 @@ public class AttunementTableMenu extends AbstractContainerMenu {
         ItemStack itemStack = container.getItem(ITEM_SLOT);
         ItemStack gemStack = container.getItem(GEM_SLOT);
         Optional<TagKey<Enchantment>> theme = getThemeTag(gemStack);
-        if (itemStack.isEmpty() || !itemStack.isEnchantable() || theme.isEmpty()) {
+        if (itemStack.isEmpty() || !itemStack.isEnchantable()) {
             for (int i = 0; i < 3; ++i) {
                 this.costs[i] = 0;
                 this.enchantClue[i] = -1;
@@ -177,7 +185,7 @@ public class AttunementTableMenu extends AbstractContainerMenu {
                 this.enchantClue[i] = -1;
                 this.levelClue[i] = -1;
 
-                List<EnchantmentInstance> list = this.getEnchantmentList(level.registryAccess(), itemStack, i, cost, theme.get());
+                List<EnchantmentInstance> list = this.getEnchantmentList(level.registryAccess(), itemStack, i, cost, theme);
                 if (!list.isEmpty()) {
                     EnchantmentInstance ench = list.get(this.random.nextInt(list.size()));
                     this.enchantClue[i] = level.registryAccess().lookupOrThrow(Registries.ENCHANTMENT).asHolderIdMap().getId(ench.enchantment());
@@ -205,10 +213,6 @@ public class AttunementTableMenu extends AbstractContainerMenu {
         Optional<TagKey<Enchantment>> theme = getThemeTag(gemStack);
         int enchantmentCost = buttonId + 1;
 
-        if (theme.isEmpty()) {
-            return false;
-        }
-
         if ((currency.isEmpty() || currency.getCount() < enchantmentCost) && !player.hasInfiniteMaterials()) {
             return false;
         }
@@ -219,7 +223,7 @@ public class AttunementTableMenu extends AbstractContainerMenu {
         }
 
         this.access.execute((level, pos) -> {
-            List<EnchantmentInstance> newEnchantments = this.getEnchantmentList(level.registryAccess(), itemStack, buttonId, this.costs[buttonId], theme.get());
+            List<EnchantmentInstance> newEnchantments = this.getEnchantmentList(level.registryAccess(), itemStack, buttonId, this.costs[buttonId], theme);
             if (newEnchantments.isEmpty()) {
                 return;
             }
@@ -231,6 +235,12 @@ public class AttunementTableMenu extends AbstractContainerMenu {
             currency.consume(enchantmentCost, player);
             if (currency.isEmpty()) {
                 this.attuneSlots.setItem(LAPIS_SLOT, ItemStack.EMPTY);
+            }
+            if (theme.isPresent()) {
+                gemStack.consume(1, player);
+                if (gemStack.isEmpty()) {
+                    this.attuneSlots.setItem(GEM_SLOT, ItemStack.EMPTY);
+                }
             }
             player.awardStat(Stats.ENCHANT_ITEM);
             if (player instanceof ServerPlayer serverPlayer) {
@@ -246,19 +256,40 @@ public class AttunementTableMenu extends AbstractContainerMenu {
         return true;
     }
 
-    private List<EnchantmentInstance> getEnchantmentList(RegistryAccess registryAccess, ItemStack itemStack, int slot, int enchantmentCost, TagKey<Enchantment> themeTag) {
+    private List<EnchantmentInstance> getEnchantmentList(RegistryAccess registryAccess, ItemStack itemStack, int slot, int enchantmentCost, Optional<TagKey<Enchantment>> themeTag) {
         this.random.setSeed(this.enchantmentSeed.get() + slot);
-        Optional<HolderSet.Named<Enchantment>> themed = registryAccess.lookupOrThrow(Registries.ENCHANTMENT).get(themeTag);
-        if (themed.isEmpty()) {
+
+        var enchantmentRegistry = registryAccess.lookupOrThrow(Registries.ENCHANTMENT);
+        Optional<HolderSet.Named<Enchantment>> common = enchantmentRegistry.get(GemistryTags.ATTUNEMENT_COMMON);
+        if (common.isEmpty()) {
             return List.of();
         }
 
-        List<EnchantmentInstance> list = EnchantmentHelper.selectEnchantment(this.random, itemStack, enchantmentCost, themed.get().stream());
+        Optional<HolderSet.Named<Enchantment>> themed = themeTag.flatMap(enchantmentRegistry::get);
+
+        Supplier<Stream<Holder<Enchantment>>> poolSupplier = () -> {
+            Stream<Holder<Enchantment>> pool = common.get().stream();
+            if (themed.isPresent()) {
+                for (int i = 0; i < THEMED_ENCHANTMENT_BIAS; i++) {
+                    pool = Stream.concat(pool, themed.get().stream());
+                }
+            }
+            return pool;
+        };
+
+        List<EnchantmentInstance> list = EnchantmentHelper.selectEnchantment(this.random, itemStack, enchantmentCost, poolSupplier.get());
         for (int probe = 1; list.isEmpty() && probe <= MAX_FALLBACK_COST_PROBE; probe++) {
-            list = EnchantmentHelper.selectEnchantment(this.random, itemStack, enchantmentCost + probe, themed.get().stream());
+            list = EnchantmentHelper.selectEnchantment(this.random, itemStack, enchantmentCost + probe, poolSupplier.get());
         }
 
-        return list.stream().map(AttunementTableMenu::buffLevel).toList();
+        boolean costQualifies = enchantmentCost > ATTUNEMENT_BYPASS_COST_THRESHOLD;
+        return list.stream()
+                .map(instance -> {
+                    boolean isThemed = themed.isPresent() && themed.get().contains(instance.enchantment());
+                    boolean allowBypass = costQualifies && isThemed && this.random.nextFloat() < ATTUNEMENT_BYPASS_CHANCE;
+                    return buffLevel(instance, allowBypass);
+                })
+                .toList();
     }
 
     public int getLapisCount() {

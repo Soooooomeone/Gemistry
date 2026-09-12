@@ -27,6 +27,7 @@ public class GemistryRecipeProvider extends RecipeProvider {
         buildStorage();
         buildTools();
         buildArmor();
+        buildMisc();
     }
 
     private void buildStorage() {
@@ -139,6 +140,10 @@ public class GemistryRecipeProvider extends RecipeProvider {
         ShapedRecipeBuilder.shaped(items, RecipeCategory.COMBAT, GemistryItems.ONYX_LEGGINGS.get()).pattern("XXX").pattern("X X").pattern("X X").define('X', GemistryItems.ONYX.get()).unlockedBy("has_onyx", has(GemistryItems.ONYX.get())).save(output);
 
         ShapedRecipeBuilder.shaped(items, RecipeCategory.COMBAT, GemistryItems.ONYX_BOOTS.get()).pattern("X X").pattern("X X").define('X', GemistryItems.ONYX.get()).unlockedBy("has_onyx", has(GemistryItems.ONYX.get())).save(output);
+    }
+
+    private void buildMisc() {
+        ShapedRecipeBuilder.shaped(items, RecipeCategory.DECORATIONS, GemistryItems.ATTUNEMENT_TABLE.get()).pattern("RDR").pattern("OEO").pattern("OOO").define('R', GemistryItems.RUBY.get()).define('D', Items.BLACK_DYE).define('E', Items.ENCHANTING_TABLE).define('O', Items.CRYING_OBSIDIAN).unlockedBy("has_ruby", has(GemistryItems.RUBY.get())).save(output);
     }
 
 

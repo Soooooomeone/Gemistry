@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "D": "minecraft:black_dye",
+    "E": "minecraft:enchanting_table",
+    "O": "minecraft:crying_obsidian",
+    "R": "gemistry:ruby"
+  },
+  "pattern": [
+    "RDR",
+    "OEO",
+    "OOO"
+  ],
+  "result": {
+    "id": "gemistry:attunement_table"
+  }
+}

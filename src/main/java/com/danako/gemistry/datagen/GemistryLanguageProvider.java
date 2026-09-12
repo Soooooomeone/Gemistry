@@ -103,5 +103,34 @@ public class GemistryLanguageProvider extends LanguageProvider {
         add("trim_material.gemistry.onyx", "Onyx");
         addBlock(GemistryBlocks.ATTUNEMENT_TABLE, "Attunement Table");
 
+        addConfigTranslations();
+    }
+
+    private void addConfigTranslations() {
+        add("gemistry.configuration.detailed", "Detailed Settings");
+        add("gemistry.configuration.world_generation", "World Generation");
+        add("gemistry.configuration.ore_generation", "Ore Generation");
+        add("gemistry.configuration.world_generation.ore_generation.tooltip",
+                "Toggle whether a given ore generates in the world at all. Setting this to false stops NEW chunks from generating the ore. Chunks that were already generated before you changed this will keep whatever ore they already have.");
+
+        add("gemistry.configuration.generateRubyOre", "Generate Ruby Ore");
+        add("gemistry.configuration.detailed.world_generation.ore_generation.generateRubyOre.tooltip",
+                "Whether Ruby Ore should generate in the world");
+
+        add("gemistry.configuration.generateSapphireOre", "Generate Sapphire Ore");
+        add("gemistry.configuration.detailed.world_generation.ore_generation.generateSapphireOre.tooltip",
+                "Whether Sapphire Ore should generate in the world");
+
+        add("gemistry.configuration.generateAquamarineOre", "Generate Aquamarine Ore");
+        add("gemistry.configuration.detailed.world_generation.ore_generation.generateAquamarineOre.tooltip",
+                "Whether Aquamarine Ore should generate in the world");
+
+        add("gemistry.configuration.generateAmberOre", "Generate Amber Ore");
+        add("gemistry.configuration.detailed.world_generation.ore_generation.generateAmberOre.tooltip",
+                "Whether Amber Ore should generate in the world");
+
+        add("gemistry.configuration.generateOnyxOre", "Generate Onyx Ore");
+        add("gemistry.configuration.detailed.world_generation.ore_generation.generateOnyxOre.tooltip",
+                "Whether Onyx Ore should generate in the world");
     }
 }

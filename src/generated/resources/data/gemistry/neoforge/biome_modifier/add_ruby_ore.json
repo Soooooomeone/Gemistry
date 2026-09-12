@@ -1,6 +1,7 @@
 {
-  "type": "neoforge:add_features",
+  "type": "gemistry:configurable_ore",
   "biomes": "#c:is_hot/overworld",
+  "config_key": "ruby",
   "features": [
     "gemistry:ruby_ore_small",
     "gemistry:ruby_ore_medium",

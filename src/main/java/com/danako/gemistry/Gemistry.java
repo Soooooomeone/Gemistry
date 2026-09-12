@@ -3,11 +3,12 @@ package com.danako.gemistry;
 import com.danako.gemistry.common.block.GemistryBlocks;
 import com.danako.gemistry.common.block.entity.GemistryBlockEntities;
 import com.danako.gemistry.common.menu.GemistryMenuTypes;
-import com.danako.gemistry.config.Config;
+import com.danako.gemistry.config.GemistryConfig;
 import com.danako.gemistry.common.item.GemistryItems;
 import com.danako.gemistry.core.GemistryTabs;
 import com.danako.gemistry.datagen.DataGenerators;
 import com.danako.gemistry.loot.GemistryLootModifierSerializers;
+import com.danako.gemistry.worldgen.GemistryBiomeModifierSerializers;
 import com.mojang.logging.LogUtils;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
@@ -29,11 +30,12 @@ public class Gemistry {
         GemistryItems.ITEMS.register(modEventBus);
         GemistryTabs.CREATIVE_MODE_TABS.register(modEventBus);
         GemistryLootModifierSerializers.register(modEventBus);
+        GemistryBiomeModifierSerializers.register(modEventBus);
         GemistryBlockEntities.register(modEventBus);
         DataGenerators.register(modEventBus);
         GemistryMenuTypes.MENU_TYPES.register(modEventBus);
 
-        modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
+        modContainer.registerConfig(ModConfig.Type.COMMON, GemistryConfig.SPEC);
     }
 
     private void commonSetup(FMLCommonSetupEvent event) {

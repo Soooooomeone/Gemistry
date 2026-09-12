@@ -1,9 +1,10 @@
 {
-  "type": "neoforge:add_features",
+  "type": "gemistry:configurable_ore",
   "biomes": [
     "minecraft:swamp",
     "minecraft:mangrove_swamp"
   ],
+  "config_key": "amber",
   "features": [
     "gemistry:amber_ore",
     "gemistry:amber_ore_lower"

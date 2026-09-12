@@ -1,6 +1,7 @@
 {
-  "type": "neoforge:add_features",
+  "type": "gemistry:configurable_ore",
   "biomes": "minecraft:deep_dark",
+  "config_key": "onyx",
   "features": [
     "gemistry:onyx_ore_tiny",
     "gemistry:onyx_ore_small",

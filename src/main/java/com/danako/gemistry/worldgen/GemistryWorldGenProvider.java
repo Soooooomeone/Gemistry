@@ -1,4 +1,4 @@
-package com.danako.gemistry.datagen;
+package com.danako.gemistry.worldgen;
 
 import com.danako.gemistry.common.block.GemistryBlocks;
 import net.minecraft.core.Holder;
@@ -22,7 +22,6 @@ import net.minecraft.world.level.levelgen.placement.*;
 import net.minecraft.world.level.levelgen.structure.templatesystem.TagMatchTest;
 import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.world.BiomeModifier;
-import net.neoforged.neoforge.common.world.BiomeModifiers;
 import net.neoforged.neoforge.registries.NeoForgeRegistries;
 
 import java.util.List;
@@ -165,10 +164,10 @@ public class GemistryWorldGenProvider {
     private static void registerBiomeModifiers(BootstrapContext<BiomeModifier> context) {
         HolderGetter<Biome> biomes = context.lookup(Registries.BIOME);
         HolderGetter<PlacedFeature> placedFeatures = context.lookup(Registries.PLACED_FEATURE);
-        context.register(ADD_RUBY_ORE, new BiomeModifiers.AddFeaturesBiomeModifier(biomes.getOrThrow(Tags.Biomes.IS_HOT_OVERWORLD), HolderSet.direct(placedFeatures.getOrThrow(RUBY_ORE_SMALL_PLACED), placedFeatures.getOrThrow(RUBY_ORE_MEDIUM_PLACED), placedFeatures.getOrThrow(RUBY_ORE_LARGE_PLACED), placedFeatures.getOrThrow(RUBY_ORE_BURIED_PLACED)), GenerationStep.Decoration.UNDERGROUND_ORES));
-        context.register(ADD_SAPPHIRE_ORE, new BiomeModifiers.AddFeaturesBiomeModifier(biomes.getOrThrow(Tags.Biomes.IS_COLD_OVERWORLD), HolderSet.direct(placedFeatures.getOrThrow(SAPPHIRE_ORE_SMALL_PLACED), placedFeatures.getOrThrow(SAPPHIRE_ORE_MEDIUM_PLACED), placedFeatures.getOrThrow(SAPPHIRE_ORE_LARGE_PLACED), placedFeatures.getOrThrow(SAPPHIRE_ORE_BURIED_PLACED)), GenerationStep.Decoration.UNDERGROUND_ORES));
-        context.register(ADD_AQUAMARINE_ORE, new BiomeModifiers.AddFeaturesBiomeModifier(biomes.getOrThrow(BiomeTags.IS_OCEAN), HolderSet.direct(placedFeatures.getOrThrow(AQUAMARINE_ORE_SMALL_PLACED), placedFeatures.getOrThrow(AQUAMARINE_ORE_MEDIUM_PLACED), placedFeatures.getOrThrow(AQUAMARINE_ORE_LARGE_PLACED), placedFeatures.getOrThrow(AQUAMARINE_ORE_BURIED_PLACED)), GenerationStep.Decoration.UNDERGROUND_ORES));
-        context.register(ADD_AMBER_ORE, new BiomeModifiers.AddFeaturesBiomeModifier(HolderSet.direct(biomes.getOrThrow(Biomes.SWAMP), biomes.getOrThrow(Biomes.MANGROVE_SWAMP)), HolderSet.direct(placedFeatures.getOrThrow(AMBER_ORE_PLACED), placedFeatures.getOrThrow(AMBER_ORE_LOWER_PLACED)), GenerationStep.Decoration.UNDERGROUND_ORES));
-        context.register(ADD_ONYX_ORE, new BiomeModifiers.AddFeaturesBiomeModifier(HolderSet.direct(biomes.getOrThrow(Biomes.DEEP_DARK)), HolderSet.direct(placedFeatures.getOrThrow(ONYX_ORE_TINY_PLACED), placedFeatures.getOrThrow(ONYX_ORE_SMALL_PLACED), placedFeatures.getOrThrow(ONYX_ORE_MEDIUM_PLACED), placedFeatures.getOrThrow(ONYX_ORE_LARGE_PLACED), placedFeatures.getOrThrow(ONYX_ORE_CLUSTER_PLACED)), GenerationStep.Decoration.UNDERGROUND_ORES));
+        context.register(ADD_RUBY_ORE, new ConfigurableOreBiomeModifier(biomes.getOrThrow(Tags.Biomes.IS_HOT_OVERWORLD), HolderSet.direct(placedFeatures.getOrThrow(RUBY_ORE_SMALL_PLACED), placedFeatures.getOrThrow(RUBY_ORE_MEDIUM_PLACED), placedFeatures.getOrThrow(RUBY_ORE_LARGE_PLACED), placedFeatures.getOrThrow(RUBY_ORE_BURIED_PLACED)), GenerationStep.Decoration.UNDERGROUND_ORES, "ruby"));
+        context.register(ADD_SAPPHIRE_ORE, new ConfigurableOreBiomeModifier(biomes.getOrThrow(Tags.Biomes.IS_COLD_OVERWORLD), HolderSet.direct(placedFeatures.getOrThrow(SAPPHIRE_ORE_SMALL_PLACED), placedFeatures.getOrThrow(SAPPHIRE_ORE_MEDIUM_PLACED), placedFeatures.getOrThrow(SAPPHIRE_ORE_LARGE_PLACED), placedFeatures.getOrThrow(SAPPHIRE_ORE_BURIED_PLACED)), GenerationStep.Decoration.UNDERGROUND_ORES, "sapphire"));
+        context.register(ADD_AQUAMARINE_ORE, new ConfigurableOreBiomeModifier(biomes.getOrThrow(BiomeTags.IS_OCEAN), HolderSet.direct(placedFeatures.getOrThrow(AQUAMARINE_ORE_SMALL_PLACED), placedFeatures.getOrThrow(AQUAMARINE_ORE_MEDIUM_PLACED), placedFeatures.getOrThrow(AQUAMARINE_ORE_LARGE_PLACED), placedFeatures.getOrThrow(AQUAMARINE_ORE_BURIED_PLACED)), GenerationStep.Decoration.UNDERGROUND_ORES, "aquamarine"));
+        context.register(ADD_AMBER_ORE, new ConfigurableOreBiomeModifier(HolderSet.direct(biomes.getOrThrow(Biomes.SWAMP), biomes.getOrThrow(Biomes.MANGROVE_SWAMP)), HolderSet.direct(placedFeatures.getOrThrow(AMBER_ORE_PLACED), placedFeatures.getOrThrow(AMBER_ORE_LOWER_PLACED)), GenerationStep.Decoration.UNDERGROUND_ORES, "amber"));
+        context.register(ADD_ONYX_ORE, new ConfigurableOreBiomeModifier(HolderSet.direct(biomes.getOrThrow(Biomes.DEEP_DARK)), HolderSet.direct(placedFeatures.getOrThrow(ONYX_ORE_TINY_PLACED), placedFeatures.getOrThrow(ONYX_ORE_SMALL_PLACED), placedFeatures.getOrThrow(ONYX_ORE_MEDIUM_PLACED), placedFeatures.getOrThrow(ONYX_ORE_LARGE_PLACED), placedFeatures.getOrThrow(ONYX_ORE_CLUSTER_PLACED)), GenerationStep.Decoration.UNDERGROUND_ORES, "onyx"));
     }
 }

@@ -6,6 +6,7 @@ import com.danako.gemistry.loot.GemistryLootTableProvider;
 import com.danako.gemistry.tag.GemistryBlockTagsProvider;
 import com.danako.gemistry.tag.GemistryEnchantmentTagsProvider;
 import com.danako.gemistry.tag.GemistryItemTagsProvider;
+import com.danako.gemistry.worldgen.GemistryWorldGenProvider;
 import net.minecraft.core.registries.Registries;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.data.event.GatherDataEvent;

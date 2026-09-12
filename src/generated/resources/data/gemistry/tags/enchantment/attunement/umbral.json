@@ -4,6 +4,9 @@
     "minecraft:sharpness",
     "minecraft:protection",
     "minecraft:power",
-    "minecraft:unbreaking"
+    "minecraft:unbreaking",
+    "gemistry:vigilante",
+    "gemistry:leeching",
+    "gemistry:vitality"
   ]
 }

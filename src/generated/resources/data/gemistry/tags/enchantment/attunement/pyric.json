@@ -8,6 +8,7 @@
     "minecraft:flame",
     "minecraft:piercing",
     "minecraft:multishot",
-    "minecraft:quick_charge"
+    "minecraft:quick_charge",
+    "gemistry:leeching"
   ]
 }

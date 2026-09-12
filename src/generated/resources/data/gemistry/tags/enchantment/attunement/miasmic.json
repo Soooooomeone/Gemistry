@@ -6,6 +6,9 @@
     "minecraft:soul_speed",
     "minecraft:binding_curse",
     "minecraft:vanishing_curse",
-    "minecraft:fortune"
+    "minecraft:fortune",
+    "gemistry:venomous_aspect",
+    "gemistry:purification",
+    "gemistry:insight"
   ]
 }

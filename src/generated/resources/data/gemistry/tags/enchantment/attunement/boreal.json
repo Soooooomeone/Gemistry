@@ -5,6 +5,9 @@
     "minecraft:frost_walker",
     "minecraft:knockback",
     "minecraft:punch",
-    "minecraft:bane_of_arthropods"
+    "minecraft:bane_of_arthropods",
+    "gemistry:frost_aspect",
+    "gemistry:frost_protection",
+    "gemistry:vitality"
   ]
 }

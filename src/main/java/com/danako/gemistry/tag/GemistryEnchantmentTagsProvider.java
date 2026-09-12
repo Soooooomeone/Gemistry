@@ -1,11 +1,13 @@
 package com.danako.gemistry.tag;
 
 import com.danako.gemistry.Gemistry;
+import com.danako.gemistry.core.GemistryEnchantments;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.EnchantmentTagsProvider;
 import net.minecraft.resources.Identifier;
+import net.minecraft.tags.EnchantmentTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.Enchantments;
@@ -26,6 +28,7 @@ public class GemistryEnchantmentTagsProvider extends EnchantmentTagsProvider {
     protected void addTags(HolderLookup.Provider provider) {
         addAttunementCommonTag();
         addAttunementThemeTags();
+        addVanillaTagIntegration();
     }
 
     private void addAttunementCommonTag() {
@@ -72,27 +75,35 @@ public class GemistryEnchantmentTagsProvider extends EnchantmentTagsProvider {
 
     private void addAttunementThemeTags() {
         tag(attunementTag("pyric")).add(Enchantments.FIRE_ASPECT)
-                .add(Enchantments.FIRE_PROTECTION).add(Enchantments.BLAST_PROTECTION)
+                .add(Enchantments.FIRE_PROTECTION)
+                .add(Enchantments.BLAST_PROTECTION)
                 .add(Enchantments.EFFICIENCY)
                 .add(Enchantments.SMITE)
                 .add(Enchantments.FLAME)
-                .add(Enchantments.PIERCING).add(Enchantments.MULTISHOT).add(Enchantments.QUICK_CHARGE
+                .add(Enchantments.PIERCING)
+                .add(Enchantments.MULTISHOT)
+                .add(Enchantments.QUICK_CHARGE)
+                .add(GemistryEnchantments.LEECHING
                 );
 
         tag(attunementTag("boreal"))
                 .add(Enchantments.FEATHER_FALLING)
                 .add(Enchantments.PROJECTILE_PROTECTION)
                 .add(Enchantments.FROST_WALKER)
-                .add(Enchantments.KNOCKBACK).add(Enchantments.PUNCH)
-                .add(Enchantments.BANE_OF_ARTHROPODS
-        );
+                .add(Enchantments.KNOCKBACK)
+                .add(Enchantments.PUNCH)
+                .add(Enchantments.BANE_OF_ARTHROPODS)
+                .add(GemistryEnchantments.FROST_ASPECT)
+                .add(GemistryEnchantments.FROST_PROTECTION)
+                .add(GemistryEnchantments.VITALITY
+                );
 
         tag(attunementTag("abyssal"))
                 .add(Enchantments.AQUA_AFFINITY)
                 .add(Enchantments.RIPTIDE).add(Enchantments.IMPALING).add(Enchantments.LOYALTY)
                 .add(Enchantments.DEPTH_STRIDER).add(Enchantments.RESPIRATION)
                 .add(Enchantments.LURE).add(Enchantments.LUCK_OF_THE_SEA
-        );
+                );
 
         tag(attunementTag("miasmic"))
                 .add(Enchantments.INFINITY)
@@ -101,15 +112,38 @@ public class GemistryEnchantmentTagsProvider extends EnchantmentTagsProvider {
                 .add(Enchantments.SOUL_SPEED)
                 .add(Enchantments.BINDING_CURSE)
                 .add(Enchantments.VANISHING_CURSE)
-                .add(Enchantments.FORTUNE
-        );
+                .add(Enchantments.FORTUNE)
+                .add(GemistryEnchantments.VENOMOUS_ASPECT)
+                .add(GemistryEnchantments.PURIFICATION)
+                .add(GemistryEnchantments.INSIGHT
+                );
 
         tag(attunementTag("umbral"))
                 .add(Enchantments.THORNS)
                 .add(Enchantments.SHARPNESS)
                 .add(Enchantments.PROTECTION)
                 .add(Enchantments.POWER)
-                .add(Enchantments.UNBREAKING
+                .add(Enchantments.UNBREAKING)
+                .add(GemistryEnchantments.VIGILANTE)
+                .add(GemistryEnchantments.LEECHING)
+                .add(GemistryEnchantments.VITALITY
+                );
+    }
+
+    private void addVanillaTagIntegration() {
+        tag(EnchantmentTags.TREASURE).add(
+                GemistryEnchantments.VENOMOUS_ASPECT,
+                GemistryEnchantments.FROST_ASPECT,
+                GemistryEnchantments.FROST_PROTECTION,
+                GemistryEnchantments.PURIFICATION,
+                GemistryEnchantments.VITALITY,
+                GemistryEnchantments.LEECHING,
+                GemistryEnchantments.VIGILANTE,
+                GemistryEnchantments.INSIGHT,
+                GemistryEnchantments.SOULBOUND
         );
+
+        tag(EnchantmentTags.ARMOR_EXCLUSIVE).add(GemistryEnchantments.FROST_PROTECTION);
+        tag(EnchantmentTags.DAMAGE_EXCLUSIVE).add(GemistryEnchantments.VIGILANTE);
     }
 }

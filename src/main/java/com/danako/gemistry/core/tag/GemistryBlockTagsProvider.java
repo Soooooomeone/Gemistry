@@ -1,4 +1,4 @@
-package com.danako.gemistry.tag;
+package com.danako.gemistry.core.tag;
 
 import com.danako.gemistry.Gemistry;
 import com.danako.gemistry.common.block.GemistryBlocks;

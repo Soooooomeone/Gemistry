@@ -1,4 +1,4 @@
-package com.danako.gemistry.datagen;
+package com.danako.gemistry.datagen.model;
 
 import com.danako.gemistry.Gemistry;
 import com.danako.gemistry.common.block.GemistryBlocks;

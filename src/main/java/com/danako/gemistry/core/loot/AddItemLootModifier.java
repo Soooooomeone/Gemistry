@@ -1,4 +1,4 @@
-package com.danako.gemistry.loot;
+package com.danako.gemistry.core.loot;
 
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;

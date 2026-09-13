@@ -1,7 +1,7 @@
-package com.danako.gemistry.enchantment;
+package com.danako.gemistry.core.enchantment;
 
 import com.danako.gemistry.Gemistry;
-import com.danako.gemistry.tag.GemistryTags;
+import com.danako.gemistry.core.tag.GemistryTags;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;

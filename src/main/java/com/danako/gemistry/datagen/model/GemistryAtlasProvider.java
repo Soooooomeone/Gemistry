@@ -1,4 +1,4 @@
-package com.danako.gemistry.datagen;
+package com.danako.gemistry.datagen.model;
 
 import com.danako.gemistry.Gemistry;
 import net.minecraft.client.renderer.texture.atlas.sources.PalettedPermutations;

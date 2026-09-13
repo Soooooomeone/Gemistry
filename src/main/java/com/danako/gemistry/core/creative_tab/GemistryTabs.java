@@ -1,4 +1,4 @@
-package com.danako.gemistry.core;
+package com.danako.gemistry.core.creative_tab;
 
 import com.danako.gemistry.Gemistry;
 import com.danako.gemistry.common.item.GemistryItems;

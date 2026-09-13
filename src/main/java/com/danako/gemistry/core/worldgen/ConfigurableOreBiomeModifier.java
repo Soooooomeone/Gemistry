@@ -1,4 +1,4 @@
-package com.danako.gemistry.worldgen;
+package com.danako.gemistry.core.worldgen;
 
 import com.danako.gemistry.config.GemistryConfig;
 import com.mojang.serialization.Codec;

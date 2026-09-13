@@ -1,8 +1,8 @@
-package com.danako.gemistry.tag;
+package com.danako.gemistry.core.tag;
 
 import com.danako.gemistry.Gemistry;
 import com.danako.gemistry.common.item.GemistryItems;
-import com.danako.gemistry.core.GemistryTrimMaterials;
+import com.danako.gemistry.core.trim_material.GemistryTrimMaterials;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;

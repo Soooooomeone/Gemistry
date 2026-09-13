@@ -1,7 +1,7 @@
-package com.danako.gemistry.gear;
+package com.danako.gemistry.core.gear;
 
 import com.danako.gemistry.Gemistry;
-import com.danako.gemistry.tag.GemistryTags;
+import com.danako.gemistry.core.tag.GemistryTags;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.sounds.SoundEvents;

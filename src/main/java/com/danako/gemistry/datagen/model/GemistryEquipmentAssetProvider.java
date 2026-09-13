@@ -1,7 +1,7 @@
-package com.danako.gemistry.datagen;
+package com.danako.gemistry.datagen.model;
 
 import com.danako.gemistry.Gemistry;
-import com.danako.gemistry.gear.GemistryArmorMaterial;
+import com.danako.gemistry.core.gear.GemistryArmorMaterial;
 import net.minecraft.client.data.models.EquipmentAssetProvider;
 import net.minecraft.client.resources.model.EquipmentClientInfo;
 import net.minecraft.data.PackOutput;

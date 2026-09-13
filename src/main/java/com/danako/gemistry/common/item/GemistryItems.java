@@ -2,9 +2,9 @@ package com.danako.gemistry.common.item;
 
 import com.danako.gemistry.Gemistry;
 import com.danako.gemistry.common.block.GemistryBlocks;
-import com.danako.gemistry.core.GemistryTrimMaterials;
-import com.danako.gemistry.gear.GemistryArmorMaterial;
-import com.danako.gemistry.gear.GemistryToolMaterial;
+import com.danako.gemistry.core.trim_material.GemistryTrimMaterials;
+import com.danako.gemistry.core.gear.GemistryArmorMaterial;
+import com.danako.gemistry.core.gear.GemistryToolMaterial;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.equipment.ArmorType;

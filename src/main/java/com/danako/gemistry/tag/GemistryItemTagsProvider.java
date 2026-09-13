@@ -39,6 +39,7 @@ public class GemistryItemTagsProvider extends ItemTagsProvider {
         addTrimmableArmorTags();
         addVanillaMiscTags();
         addEnchantableTags();
+        addGemistryEnchantableTags();
         addNeoForgeConventionTags();
         addCustomTags();
         addTrimMaterialTags();
@@ -192,5 +193,9 @@ public class GemistryItemTagsProvider extends ItemTagsProvider {
         tag(GemistryTags.ATTUNEMENT_CATALYSTS_AQUAMARINE).add(GemistryItems.AQUAMARINE.get());
         tag(GemistryTags.ATTUNEMENT_CATALYSTS_AMBER).add(GemistryItems.AMBER.get());
         tag(GemistryTags.ATTUNEMENT_CATALYSTS_ONYX).add(GemistryItems.ONYX.get());
+    }
+
+    private void addGemistryEnchantableTags() {
+        tag(GemistryTags.GEMISTRY_ASPECT_ENCHANTABLE).addTag(ItemTags.MELEE_WEAPON_ENCHANTABLE);
     }
 }

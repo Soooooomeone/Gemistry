@@ -145,5 +145,6 @@ public class GemistryEnchantmentTagsProvider extends EnchantmentTagsProvider {
 
         tag(EnchantmentTags.ARMOR_EXCLUSIVE).add(GemistryEnchantments.FROST_PROTECTION);
         tag(EnchantmentTags.DAMAGE_EXCLUSIVE).add(GemistryEnchantments.VIGILANTE);
+        tag(GemistryTags.EXCLUSIVE_SET_ASPECT).add(Enchantments.FIRE_ASPECT).add(GemistryEnchantments.VENOMOUS_ASPECT).add(GemistryEnchantments.FROST_ASPECT);
     }
 }

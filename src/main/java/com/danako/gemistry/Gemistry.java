@@ -3,7 +3,7 @@ package com.danako.gemistry;
 import com.danako.gemistry.common.block.GemistryBlocks;
 import com.danako.gemistry.common.block.entity.GemistryBlockEntities;
 import com.danako.gemistry.common.menu.GemistryMenuTypes;
-import com.danako.gemistry.config.GemistryConfig;
+import com.danako.gemistry.core.config.GemistryConfig;
 import com.danako.gemistry.common.item.GemistryItems;
 import com.danako.gemistry.core.enchantment.GemistryEntityEffects;
 import com.danako.gemistry.core.enchantment.GemistryFreezeTracker;

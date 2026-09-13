@@ -1,6 +1,6 @@
 package com.danako.gemistry.core.worldgen;
 
-import com.danako.gemistry.config.GemistryConfig;
+import com.danako.gemistry.core.config.GemistryConfig;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;

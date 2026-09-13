@@ -1,4 +1,4 @@
-package com.danako.gemistry.config;
+package com.danako.gemistry.core.config;
 
 import net.neoforged.neoforge.common.ModConfigSpec;
 

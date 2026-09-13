@@ -5,6 +5,8 @@ import com.danako.gemistry.common.block.entity.GemistryBlockEntities;
 import com.danako.gemistry.common.menu.GemistryMenuTypes;
 import com.danako.gemistry.config.GemistryConfig;
 import com.danako.gemistry.common.item.GemistryItems;
+import com.danako.gemistry.core.GemistryEntityEffects;
+import com.danako.gemistry.core.GemistryFreezeTracker;
 import com.danako.gemistry.core.GemistryTabs;
 import com.danako.gemistry.datagen.DataGenerators;
 import com.danako.gemistry.loot.GemistryLootModifierSerializers;
@@ -34,7 +36,8 @@ public class Gemistry {
         GemistryBlockEntities.register(modEventBus);
         DataGenerators.register(modEventBus);
         GemistryMenuTypes.MENU_TYPES.register(modEventBus);
-
+        GemistryEntityEffects.register(modEventBus);
+        net.neoforged.neoforge.common.NeoForge.EVENT_BUS.register(GemistryFreezeTracker.class);
         modContainer.registerConfig(ModConfig.Type.COMMON, GemistryConfig.SPEC);
     }
 

@@ -1,15 +1,21 @@
 package com.danako.gemistry.core;
 
 import com.danako.gemistry.Gemistry;
+import com.danako.gemistry.tag.GemistryTags;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EquipmentSlotGroup;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.enchantment.Enchantment;
+import net.minecraft.world.item.enchantment.EnchantmentEffectComponents;
+import net.minecraft.world.item.enchantment.EnchantmentTarget;
+import net.minecraft.world.item.enchantment.LevelBasedValue;
+
 
 public class GemistryEnchantments {
 
@@ -25,28 +31,45 @@ public class GemistryEnchantments {
 
     public static void bootstrap(BootstrapContext<Enchantment> context) {
         HolderGetter<Item> items = context.lookup(Registries.ITEM);
+        HolderGetter<Enchantment> enchantments = context.lookup(Registries.ENCHANTMENT); // add this
 
         register(context, VENOMOUS_ASPECT, Enchantment.enchantment(
-                Enchantment.definition(
-                        items.getOrThrow(ItemTags.FIRE_ASPECT_ENCHANTABLE),
-                        2, 2,
-                        Enchantment.dynamicCost(10, 20),
-                        Enchantment.dynamicCost(60, 20),
-                        4,
-                        new EquipmentSlotGroup[]{EquipmentSlotGroup.MAINHAND}
-                )
-        ));
+                        Enchantment.definition(
+                                items.getOrThrow(GemistryTags.GEMISTRY_ASPECT_ENCHANTABLE),
+                                2, 2,
+                                Enchantment.dynamicCost(10, 20),
+                                Enchantment.dynamicCost(60, 20),
+                                4,
+                                EquipmentSlotGroup.MAINHAND)
+                ).exclusiveWith(enchantments.getOrThrow(GemistryTags.EXCLUSIVE_SET_ASPECT))
+                .withEffect(
+                        EnchantmentEffectComponents.POST_ATTACK,
+                        EnchantmentTarget.ATTACKER,
+                        EnchantmentTarget.VICTIM,
+                        new GemistryEntityEffects.ApplyMobEffectScaled(
+                                MobEffects.POISON,
+                                LevelBasedValue.perLevel(60.0F, 40.0F),
+                                LevelBasedValue.constant(0.0F)
+                        )
+                ));
 
         register(context, FROST_ASPECT, Enchantment.enchantment(
-                Enchantment.definition(
-                        items.getOrThrow(ItemTags.FIRE_ASPECT_ENCHANTABLE),
-                        2, 2,
-                        Enchantment.dynamicCost(10, 20),
-                        Enchantment.dynamicCost(60, 20),
-                        4,
-                        new EquipmentSlotGroup[]{EquipmentSlotGroup.MAINHAND}
-                )
-        ));
+                        Enchantment.definition(
+                                items.getOrThrow(GemistryTags.GEMISTRY_ASPECT_ENCHANTABLE),
+                                2, 2,
+                                Enchantment.dynamicCost(10, 20),
+                                Enchantment.dynamicCost(60, 20),
+                                4,
+                                EquipmentSlotGroup.MAINHAND)
+                ).exclusiveWith(enchantments.getOrThrow(GemistryTags.EXCLUSIVE_SET_ASPECT))
+                .withEffect(
+                        EnchantmentEffectComponents.POST_ATTACK,
+                        EnchantmentTarget.ATTACKER,
+                        EnchantmentTarget.VICTIM,
+                        new GemistryEntityEffects.IncreaseFreezeTicks(
+                                LevelBasedValue.perLevel(80.0F, 60.0F)
+                        )
+                ));
 
         register(context, FROST_PROTECTION, Enchantment.enchantment(
                 Enchantment.definition(
@@ -55,8 +78,7 @@ public class GemistryEnchantments {
                         Enchantment.dynamicCost(10, 8),
                         Enchantment.dynamicCost(18, 8),
                         2,
-                        new EquipmentSlotGroup[]{EquipmentSlotGroup.ARMOR}
-                )
+                        EquipmentSlotGroup.ARMOR)
         ));
 
         register(context, PURIFICATION, Enchantment.enchantment(
@@ -66,8 +88,7 @@ public class GemistryEnchantments {
                         Enchantment.dynamicCost(15, 9),
                         Enchantment.dynamicCost(65, 9),
                         4,
-                        new EquipmentSlotGroup[]{EquipmentSlotGroup.ARMOR}
-                )
+                        EquipmentSlotGroup.ARMOR)
         ));
 
         register(context, VITALITY, Enchantment.enchantment(
@@ -77,8 +98,7 @@ public class GemistryEnchantments {
                         Enchantment.dynamicCost(20, 9),
                         Enchantment.dynamicCost(70, 9),
                         4,
-                        new EquipmentSlotGroup[]{EquipmentSlotGroup.ARMOR}
-                )
+                        EquipmentSlotGroup.ARMOR)
         ));
 
         register(context, SOULBOUND, Enchantment.enchantment(
@@ -88,8 +108,7 @@ public class GemistryEnchantments {
                         Enchantment.constantCost(25),
                         Enchantment.constantCost(50),
                         8,
-                        new EquipmentSlotGroup[]{EquipmentSlotGroup.ANY}
-                )
+                        EquipmentSlotGroup.ANY)
         ));
 
         register(context, LEECHING, Enchantment.enchantment(
@@ -99,8 +118,7 @@ public class GemistryEnchantments {
                         Enchantment.dynamicCost(15, 9),
                         Enchantment.dynamicCost(65, 9),
                         4,
-                        new EquipmentSlotGroup[]{EquipmentSlotGroup.MAINHAND}
-                )
+                        EquipmentSlotGroup.MAINHAND)
         ));
 
         register(context, VIGILANTE, Enchantment.enchantment(
@@ -111,8 +129,7 @@ public class GemistryEnchantments {
                         Enchantment.dynamicCost(5, 8),
                         Enchantment.dynamicCost(25, 8),
                         2,
-                        new EquipmentSlotGroup[]{EquipmentSlotGroup.MAINHAND}
-                )
+                        EquipmentSlotGroup.MAINHAND)
         ));
 
         register(context, INSIGHT, Enchantment.enchantment(
@@ -123,8 +140,7 @@ public class GemistryEnchantments {
                         Enchantment.dynamicCost(15, 9),
                         Enchantment.dynamicCost(65, 9),
                         4,
-                        new EquipmentSlotGroup[]{EquipmentSlotGroup.MAINHAND}
-                )
+                        EquipmentSlotGroup.MAINHAND)
         ));
     }
 

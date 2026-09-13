@@ -3,6 +3,25 @@
   "description": {
     "translate": "enchantment.gemistry.venomous_aspect"
   },
+  "effects": {
+    "minecraft:post_attack": [
+      {
+        "affected": "victim",
+        "effect": {
+          "type": "gemistry:apply_mob_effect_scaled",
+          "amplifier": 0.0,
+          "duration": {
+            "type": "minecraft:linear",
+            "base": 60.0,
+            "per_level_above_first": 40.0
+          },
+          "effect": "minecraft:poison"
+        },
+        "enchanted": "attacker"
+      }
+    ]
+  },
+  "exclusive_set": "#gemistry:exclusive_set/aspect",
   "max_cost": {
     "base": 60,
     "per_level_above_first": 20
@@ -15,6 +34,6 @@
   "slots": [
     "mainhand"
   ],
-  "supported_items": "#minecraft:enchantable/fire_aspect",
+  "supported_items": "#gemistry:enchantable/gemistry_aspect",
   "weight": 2
 }

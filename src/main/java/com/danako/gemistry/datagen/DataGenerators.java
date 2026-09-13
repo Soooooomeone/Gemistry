@@ -1,6 +1,6 @@
 package com.danako.gemistry.datagen;
 
-import com.danako.gemistry.core.GemistryEnchantments;
+import com.danako.gemistry.enchantment.GemistryEnchantments;
 import com.danako.gemistry.core.GemistryTrimMaterials;
 import com.danako.gemistry.loot.GemistryGlobalLootModifierProvider;
 import com.danako.gemistry.loot.GemistryLootTableProvider;

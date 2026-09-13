@@ -1,4 +1,4 @@
-package com.danako.gemistry.core;
+package com.danako.gemistry.enchantment;
 
 import com.danako.gemistry.Gemistry;
 import com.danako.gemistry.tag.GemistryTags;

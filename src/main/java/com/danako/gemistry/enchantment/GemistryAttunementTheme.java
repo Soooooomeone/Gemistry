@@ -1,4 +1,4 @@
-package com.danako.gemistry.core;
+package com.danako.gemistry.enchantment;
 
 import com.danako.gemistry.tag.GemistryTags;
 import net.minecraft.tags.TagKey;

@@ -1,4 +1,4 @@
-package com.danako.gemistry.core;
+package com.danako.gemistry.enchantment;
 
 import java.util.concurrent.ConcurrentHashMap;
 import net.minecraft.world.entity.Entity;

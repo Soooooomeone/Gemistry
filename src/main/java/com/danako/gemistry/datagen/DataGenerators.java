@@ -1,6 +1,7 @@
 package com.danako.gemistry.datagen;
 
 import com.danako.gemistry.core.enchantment.GemistryEnchantments;
+import com.danako.gemistry.core.tag.GemistryMobEffectTagsProvider;
 import com.danako.gemistry.core.trim_material.GemistryTrimMaterials;
 import com.danako.gemistry.core.loot.GemistryGlobalLootModifierProvider;
 import com.danako.gemistry.core.loot.GemistryLootTableProvider;
@@ -32,6 +33,6 @@ public class DataGenerators {
         event.createProvider(GemistryLootTableProvider::new);
         event.createProvider(GemistryGlobalLootModifierProvider::new);
         event.createProvider(GemistryRecipeProvider.Runner::new);
-
+        event.createProvider(output -> new GemistryMobEffectTagsProvider(output, event.getLookupProvider()));
     }
 }

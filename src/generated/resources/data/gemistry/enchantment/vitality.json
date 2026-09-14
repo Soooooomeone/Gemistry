@@ -3,6 +3,27 @@
   "description": {
     "translate": "enchantment.gemistry.vitality"
   },
+  "effects": {
+    "minecraft:tick": [
+      {
+        "effect": {
+          "type": "gemistry:regenerate_health",
+          "amount": {
+            "type": "minecraft:linear",
+            "base": 0.5,
+            "per_level_above_first": 0.25
+          }
+        },
+        "requirements": {
+          "condition": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "periodic_tick": 100
+          }
+        }
+      }
+    ]
+  },
   "max_cost": {
     "base": 70,
     "per_level_above_first": 9

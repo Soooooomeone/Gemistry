@@ -3,6 +3,23 @@
   "description": {
     "translate": "enchantment.gemistry.leeching"
   },
+  "effects": {
+    "minecraft:post_attack": [
+      {
+        "affected": "attacker",
+        "effect": {
+          "type": "gemistry:lifesteal_effect",
+          "amount": {
+            "type": "minecraft:linear",
+            "base": 0.75,
+            "per_level_above_first": 0.75
+          },
+          "max_heal_per_hit": 3.0
+        },
+        "enchanted": "attacker"
+      }
+    ]
+  },
   "max_cost": {
     "base": 65,
     "per_level_above_first": 9

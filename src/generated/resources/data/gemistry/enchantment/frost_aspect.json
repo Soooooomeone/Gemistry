@@ -12,7 +12,7 @@
           "ticks": {
             "type": "minecraft:linear",
             "base": 400.0,
-            "per_level_above_first": 20.0
+            "per_level_above_first": 200.0
           }
         },
         "enchanted": "attacker"
@@ -32,6 +32,6 @@
   "slots": [
     "mainhand"
   ],
-  "supported_items": "#gemistry:enchantable/gemistry_aspect",
+  "supported_items": "#minecraft:enchantable/weapon",
   "weight": 2
 }

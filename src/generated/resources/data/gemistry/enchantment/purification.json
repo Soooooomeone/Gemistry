@@ -3,6 +3,27 @@
   "description": {
     "translate": "enchantment.gemistry.purification"
   },
+  "effects": {
+    "minecraft:tick": [
+      {
+        "effect": {
+          "type": "gemistry:purify_effects",
+          "reduction_per_tick": {
+            "type": "minecraft:linear",
+            "base": 10.0,
+            "per_level_above_first": 5.0
+          }
+        },
+        "requirements": {
+          "condition": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "periodic_tick": 20
+          }
+        }
+      }
+    ]
+  },
   "max_cost": {
     "base": 65,
     "per_level_above_first": 9

@@ -5,6 +5,7 @@ import com.danako.gemistry.Gemistry;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.Identifier;
 import net.minecraft.tags.TagKey;
+import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.level.block.Block;
@@ -38,8 +39,8 @@ public final class GemistryTags {
     public static final TagKey<Enchantment> ATTUNEMENT_MIASMIC = TagKey.create(Registries.ENCHANTMENT, Identifier.fromNamespaceAndPath(Gemistry.MODID, "attunement/miasmic"));
     public static final TagKey<Enchantment> ATTUNEMENT_ABYSSAL = TagKey.create(Registries.ENCHANTMENT, Identifier.fromNamespaceAndPath(Gemistry.MODID, "attunement/abyssal"));
     public static final TagKey<Enchantment> ATTUNEMENT_UMBRAL = TagKey.create(Registries.ENCHANTMENT, Identifier.fromNamespaceAndPath(Gemistry.MODID, "attunement/umbral"));
-    public static final TagKey<Item> GEMISTRY_ASPECT_ENCHANTABLE = TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(Gemistry.MODID, "enchantable/gemistry_aspect"));
     public static final TagKey<Enchantment> EXCLUSIVE_SET_ASPECT = TagKey.create(Registries.ENCHANTMENT, Identifier.fromNamespaceAndPath(Gemistry.MODID, "exclusive_set/aspect"));
+    public static final TagKey<MobEffect> PURIFIABLE_EFFECTS = TagKey.create(Registries.MOB_EFFECT, Identifier.fromNamespaceAndPath(Gemistry.MODID, "purifiable_effects"));
     private GemistryTags() {
     }
 }

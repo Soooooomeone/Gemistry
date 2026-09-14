@@ -33,115 +33,23 @@ public class GemistryEnchantments {
         HolderGetter<Item> items = context.lookup(Registries.ITEM);
         HolderGetter<Enchantment> enchantments = context.lookup(Registries.ENCHANTMENT); // add this
 
-        register(context, VENOMOUS_ASPECT, Enchantment.enchantment(
-                        Enchantment.definition(
-                                items.getOrThrow(GemistryTags.GEMISTRY_ASPECT_ENCHANTABLE),
-                                2, 2,
-                                Enchantment.dynamicCost(10, 20),
-                                Enchantment.dynamicCost(60, 20),
-                                4,
-                                EquipmentSlotGroup.MAINHAND)
-                ).exclusiveWith(enchantments.getOrThrow(GemistryTags.EXCLUSIVE_SET_ASPECT))
-                .withEffect(
-                        EnchantmentEffectComponents.POST_ATTACK,
-                        EnchantmentTarget.ATTACKER,
-                        EnchantmentTarget.VICTIM,
-                        new GemistryEntityEffects.ApplyMobEffectScaled(
-                                MobEffects.POISON,
-                                LevelBasedValue.perLevel(60.0F, 40.0F),
-                                LevelBasedValue.constant(0.0F)
-                        )
-                ));
+        register(context, VENOMOUS_ASPECT, Enchantment.enchantment(Enchantment.definition(items.getOrThrow(GemistryTags.GEMISTRY_ASPECT_ENCHANTABLE), 2, 2, Enchantment.dynamicCost(10, 20), Enchantment.dynamicCost(60, 20), 4, EquipmentSlotGroup.MAINHAND)).exclusiveWith(enchantments.getOrThrow(GemistryTags.EXCLUSIVE_SET_ASPECT)).withEffect(EnchantmentEffectComponents.POST_ATTACK, EnchantmentTarget.ATTACKER, EnchantmentTarget.VICTIM, new GemistryEntityEffects.ApplyMobEffectScaled(MobEffects.POISON, LevelBasedValue.perLevel(60.0F, 40.0F), LevelBasedValue.constant(0.0F))));
 
-        register(context, FROST_ASPECT, Enchantment.enchantment(
-                        Enchantment.definition(
-                                items.getOrThrow(GemistryTags.GEMISTRY_ASPECT_ENCHANTABLE),
-                                2, 2,
-                                Enchantment.dynamicCost(10, 20),
-                                Enchantment.dynamicCost(60, 20),
-                                4,
-                                EquipmentSlotGroup.MAINHAND)
-                ).exclusiveWith(enchantments.getOrThrow(GemistryTags.EXCLUSIVE_SET_ASPECT))
-                .withEffect(
-                        EnchantmentEffectComponents.POST_ATTACK,
-                        EnchantmentTarget.ATTACKER,
-                        EnchantmentTarget.VICTIM,
-                        new GemistryEntityEffects.IncreaseFreezeTicks(
-                                LevelBasedValue.perLevel(80.0F, 60.0F)
-                        )
-                ));
+        register(context, FROST_ASPECT, Enchantment.enchantment(Enchantment.definition(items.getOrThrow(GemistryTags.GEMISTRY_ASPECT_ENCHANTABLE), 2, 2, Enchantment.dynamicCost(10, 20), Enchantment.dynamicCost(60, 20), 4, EquipmentSlotGroup.MAINHAND)).exclusiveWith(enchantments.getOrThrow(GemistryTags.EXCLUSIVE_SET_ASPECT)).withEffect(EnchantmentEffectComponents.POST_ATTACK, EnchantmentTarget.ATTACKER, EnchantmentTarget.VICTIM, new GemistryEntityEffects.IncreaseFreezeTicks(LevelBasedValue.perLevel(400.0F, 200.0F))));
 
-        register(context, FROST_PROTECTION, Enchantment.enchantment(
-                Enchantment.definition(
-                        items.getOrThrow(ItemTags.ARMOR_ENCHANTABLE),
-                        5, 4,
-                        Enchantment.dynamicCost(10, 8),
-                        Enchantment.dynamicCost(18, 8),
-                        2,
-                        EquipmentSlotGroup.ARMOR)
-        ));
+        register(context, FROST_PROTECTION, Enchantment.enchantment(Enchantment.definition(items.getOrThrow(ItemTags.ARMOR_ENCHANTABLE), 5, 4, Enchantment.dynamicCost(10, 8), Enchantment.dynamicCost(18, 8), 2, EquipmentSlotGroup.ARMOR)));
 
-        register(context, PURIFICATION, Enchantment.enchantment(
-                Enchantment.definition(
-                        items.getOrThrow(ItemTags.ARMOR_ENCHANTABLE),
-                        2, 3,
-                        Enchantment.dynamicCost(15, 9),
-                        Enchantment.dynamicCost(65, 9),
-                        4,
-                        EquipmentSlotGroup.ARMOR)
-        ));
+        register(context, PURIFICATION, Enchantment.enchantment(Enchantment.definition(items.getOrThrow(ItemTags.ARMOR_ENCHANTABLE), 2, 3, Enchantment.dynamicCost(15, 9), Enchantment.dynamicCost(65, 9), 4, EquipmentSlotGroup.ARMOR)));
 
-        register(context, VITALITY, Enchantment.enchantment(
-                Enchantment.definition(
-                        items.getOrThrow(ItemTags.ARMOR_ENCHANTABLE),
-                        2, 3,
-                        Enchantment.dynamicCost(20, 9),
-                        Enchantment.dynamicCost(70, 9),
-                        4,
-                        EquipmentSlotGroup.ARMOR)
-        ));
+        register(context, VITALITY, Enchantment.enchantment(Enchantment.definition(items.getOrThrow(ItemTags.ARMOR_ENCHANTABLE), 2, 3, Enchantment.dynamicCost(20, 9), Enchantment.dynamicCost(70, 9), 4, EquipmentSlotGroup.ARMOR)));
 
-        register(context, SOULBOUND, Enchantment.enchantment(
-                Enchantment.definition(
-                        items.getOrThrow(ItemTags.DURABILITY_ENCHANTABLE),
-                        1, 1,
-                        Enchantment.constantCost(25),
-                        Enchantment.constantCost(50),
-                        8,
-                        EquipmentSlotGroup.ANY)
-        ));
+        register(context, SOULBOUND, Enchantment.enchantment(Enchantment.definition(items.getOrThrow(ItemTags.DURABILITY_ENCHANTABLE), 1, 1, Enchantment.constantCost(25), Enchantment.constantCost(50), 8, EquipmentSlotGroup.ANY)));
 
-        register(context, LEECHING, Enchantment.enchantment(
-                Enchantment.definition(
-                        items.getOrThrow(ItemTags.MELEE_WEAPON_ENCHANTABLE),
-                        2, 3,
-                        Enchantment.dynamicCost(15, 9),
-                        Enchantment.dynamicCost(65, 9),
-                        4,
-                        EquipmentSlotGroup.MAINHAND)
-        ));
+        register(context, LEECHING, Enchantment.enchantment(Enchantment.definition(items.getOrThrow(ItemTags.MELEE_WEAPON_ENCHANTABLE), 2, 3, Enchantment.dynamicCost(15, 9), Enchantment.dynamicCost(65, 9), 4, EquipmentSlotGroup.MAINHAND)));
 
-        register(context, VIGILANTE, Enchantment.enchantment(
-                Enchantment.definition(
-                        items.getOrThrow(ItemTags.WEAPON_ENCHANTABLE),
-                        items.getOrThrow(ItemTags.MELEE_WEAPON_ENCHANTABLE),
-                        5, 5,
-                        Enchantment.dynamicCost(5, 8),
-                        Enchantment.dynamicCost(25, 8),
-                        2,
-                        EquipmentSlotGroup.MAINHAND)
-        ));
+        register(context, VIGILANTE, Enchantment.enchantment(Enchantment.definition(items.getOrThrow(ItemTags.WEAPON_ENCHANTABLE), items.getOrThrow(ItemTags.MELEE_WEAPON_ENCHANTABLE), 5, 5, Enchantment.dynamicCost(5, 8), Enchantment.dynamicCost(25, 8), 2, EquipmentSlotGroup.MAINHAND)));
 
-        register(context, INSIGHT, Enchantment.enchantment(
-                Enchantment.definition(
-                        items.getOrThrow(ItemTags.MINING_ENCHANTABLE),
-                        items.getOrThrow(ItemTags.WEAPON_ENCHANTABLE),
-                        2, 3,
-                        Enchantment.dynamicCost(15, 9),
-                        Enchantment.dynamicCost(65, 9),
-                        4,
-                        EquipmentSlotGroup.MAINHAND)
-        ));
+        register(context, INSIGHT, Enchantment.enchantment(Enchantment.definition(items.getOrThrow(ItemTags.MINING_ENCHANTABLE), items.getOrThrow(ItemTags.WEAPON_ENCHANTABLE), 2, 3, Enchantment.dynamicCost(15, 9), Enchantment.dynamicCost(65, 9), 4, EquipmentSlotGroup.MAINHAND)));
     }
 
     private static void register(BootstrapContext<Enchantment> context, ResourceKey<Enchantment> key, Enchantment.Builder builder) {

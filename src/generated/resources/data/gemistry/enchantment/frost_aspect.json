@@ -11,8 +11,8 @@
           "type": "gemistry:increase_freeze_ticks",
           "ticks": {
             "type": "minecraft:linear",
-            "base": 80.0,
-            "per_level_above_first": 60.0
+            "base": 400.0,
+            "per_level_above_first": 20.0
           }
         },
         "enchanted": "attacker"

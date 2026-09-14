@@ -20,29 +20,23 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 
 public class GemistryEntityEffects {
 
-    public static final DeferredRegister<MapCodec<? extends EnchantmentEntityEffect>> ENTITY_EFFECTS =
-            DeferredRegister.create(Registries.ENCHANTMENT_ENTITY_EFFECT_TYPE, Gemistry.MODID);
+    public static final DeferredRegister<MapCodec<? extends EnchantmentEntityEffect>> ENTITY_EFFECTS = DeferredRegister.create(Registries.ENCHANTMENT_ENTITY_EFFECT_TYPE, Gemistry.MODID);
 
-    public static final DeferredHolder<MapCodec<? extends EnchantmentEntityEffect>, MapCodec<IncreaseFreezeTicks>> INCREASE_FREEZE_TICKS =
-            ENTITY_EFFECTS.register("increase_freeze_ticks", () -> IncreaseFreezeTicks.CODEC);
+    public static final DeferredHolder<MapCodec<? extends EnchantmentEntityEffect>, MapCodec<IncreaseFreezeTicks>> INCREASE_FREEZE_TICKS = ENTITY_EFFECTS.register("increase_freeze_ticks", () -> IncreaseFreezeTicks.CODEC);
 
-    public static final DeferredHolder<MapCodec<? extends EnchantmentEntityEffect>, MapCodec<ApplyMobEffectScaled>> APPLY_MOB_EFFECT_SCALED =
-            ENTITY_EFFECTS.register("apply_mob_effect_scaled", () -> ApplyMobEffectScaled.CODEC);
+    public static final DeferredHolder<MapCodec<? extends EnchantmentEntityEffect>, MapCodec<ApplyMobEffectScaled>> APPLY_MOB_EFFECT_SCALED = ENTITY_EFFECTS.register("apply_mob_effect_scaled", () -> ApplyMobEffectScaled.CODEC);
 
     public static void register(IEventBus modBus) {
         ENTITY_EFFECTS.register(modBus);
     }
 
     public record IncreaseFreezeTicks(LevelBasedValue ticks) implements EnchantmentEntityEffect {
-        public static final MapCodec<IncreaseFreezeTicks> CODEC = RecordCodecBuilder.mapCodec(i -> i.group(
-                LevelBasedValue.CODEC.fieldOf("ticks").forGetter(IncreaseFreezeTicks::ticks)
-        ).apply(i, IncreaseFreezeTicks::new));
+        public static final MapCodec<IncreaseFreezeTicks> CODEC = RecordCodecBuilder.mapCodec(i -> i.group(LevelBasedValue.CODEC.fieldOf("ticks").forGetter(IncreaseFreezeTicks::ticks)).apply(i, IncreaseFreezeTicks::new));
 
         @Override
         public void apply(ServerLevel level, int enchantLevel, EnchantedItemInUse item, Entity target, Vec3 position) {
             int add = Math.round(this.ticks.calculate(enchantLevel));
-            int capped = Math.min(target.getTicksFrozen() + add, target.getTicksRequiredToFreeze());
-            target.setTicksFrozen(capped);
+            target.setTicksFrozen(target.getTicksFrozen() + add);
             if (target.canFreeze()) {
                 GemistryFreezeTracker.chill(target, 30);
             }
@@ -56,11 +50,7 @@ public class GemistryEntityEffects {
 
     public record ApplyMobEffectScaled(Holder<MobEffect> effect, LevelBasedValue duration,
                                        LevelBasedValue amplifier) implements EnchantmentEntityEffect {
-        public static final MapCodec<ApplyMobEffectScaled> CODEC = RecordCodecBuilder.mapCodec(i -> i.group(
-                MobEffect.CODEC.fieldOf("effect").forGetter(ApplyMobEffectScaled::effect),
-                LevelBasedValue.CODEC.fieldOf("duration").forGetter(ApplyMobEffectScaled::duration),
-                LevelBasedValue.CODEC.fieldOf("amplifier").forGetter(ApplyMobEffectScaled::amplifier)
-        ).apply(i, ApplyMobEffectScaled::new));
+        public static final MapCodec<ApplyMobEffectScaled> CODEC = RecordCodecBuilder.mapCodec(i -> i.group(MobEffect.CODEC.fieldOf("effect").forGetter(ApplyMobEffectScaled::effect), LevelBasedValue.CODEC.fieldOf("duration").forGetter(ApplyMobEffectScaled::duration), LevelBasedValue.CODEC.fieldOf("amplifier").forGetter(ApplyMobEffectScaled::amplifier)).apply(i, ApplyMobEffectScaled::new));
 
         @Override
         public void apply(ServerLevel level, int enchantLevel, EnchantedItemInUse item, Entity target, Vec3 position) {

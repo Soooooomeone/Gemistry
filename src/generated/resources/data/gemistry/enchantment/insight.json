@@ -12,10 +12,9 @@
     "base": 15,
     "per_level_above_first": 9
   },
-  "primary_items": "#minecraft:enchantable/weapon",
   "slots": [
     "mainhand"
   ],
-  "supported_items": "#minecraft:enchantable/mining",
+  "supported_items": "#gemistry:enchantable/insight",
   "weight": 2
 }

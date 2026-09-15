@@ -110,12 +110,9 @@ public class GemistryEnchantmentTagsProvider extends EnchantmentTagsProvider {
                 .add(Enchantments.SILK_TOUCH)
                 .add(Enchantments.LOOTING)
                 .add(Enchantments.SOUL_SPEED)
-                .add(Enchantments.BINDING_CURSE)
-                .add(Enchantments.VANISHING_CURSE)
                 .add(Enchantments.FORTUNE)
                 .add(GemistryEnchantments.VENOMOUS_ASPECT)
-                .add(GemistryEnchantments.PURIFICATION)
-                .add(GemistryEnchantments.INSIGHT
+                .add(GemistryEnchantments.PURIFICATION
                 );
 
         tag(attunementTag("umbral"))
@@ -132,19 +129,12 @@ public class GemistryEnchantmentTagsProvider extends EnchantmentTagsProvider {
 
     private void addVanillaTagIntegration() {
         tag(EnchantmentTags.TREASURE).add(
-                GemistryEnchantments.VENOMOUS_ASPECT,
-                GemistryEnchantments.FROST_ASPECT,
-                GemistryEnchantments.FROST_PROTECTION,
-                GemistryEnchantments.PURIFICATION,
-                GemistryEnchantments.VITALITY,
-                GemistryEnchantments.LEECHING,
-                GemistryEnchantments.VIGILANTE,
                 GemistryEnchantments.INSIGHT,
                 GemistryEnchantments.SOULBOUND
         );
 
         tag(EnchantmentTags.ARMOR_EXCLUSIVE).add(GemistryEnchantments.FROST_PROTECTION);
         tag(EnchantmentTags.DAMAGE_EXCLUSIVE).add(GemistryEnchantments.VIGILANTE);
-        tag(GemistryTags.EXCLUSIVE_SET_ASPECT).add(Enchantments.FIRE_ASPECT).add(GemistryEnchantments.VENOMOUS_ASPECT).add(GemistryEnchantments.FROST_ASPECT);
+        tag(GemistryTags.ASPECT_EXCLUSIVE).add(Enchantments.FIRE_ASPECT).add(GemistryEnchantments.VENOMOUS_ASPECT).add(GemistryEnchantments.FROST_ASPECT);
     }
 }

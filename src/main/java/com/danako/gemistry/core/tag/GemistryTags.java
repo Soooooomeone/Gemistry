@@ -39,8 +39,9 @@ public final class GemistryTags {
     public static final TagKey<Enchantment> ATTUNEMENT_MIASMIC = TagKey.create(Registries.ENCHANTMENT, Identifier.fromNamespaceAndPath(Gemistry.MODID, "attunement/miasmic"));
     public static final TagKey<Enchantment> ATTUNEMENT_ABYSSAL = TagKey.create(Registries.ENCHANTMENT, Identifier.fromNamespaceAndPath(Gemistry.MODID, "attunement/abyssal"));
     public static final TagKey<Enchantment> ATTUNEMENT_UMBRAL = TagKey.create(Registries.ENCHANTMENT, Identifier.fromNamespaceAndPath(Gemistry.MODID, "attunement/umbral"));
-    public static final TagKey<Enchantment> EXCLUSIVE_SET_ASPECT = TagKey.create(Registries.ENCHANTMENT, Identifier.fromNamespaceAndPath(Gemistry.MODID, "exclusive_set/aspect"));
+    public static final TagKey<Enchantment> ASPECT_EXCLUSIVE = TagKey.create(Registries.ENCHANTMENT, Identifier.fromNamespaceAndPath(Gemistry.MODID, "exclusive_set/aspect"));
     public static final TagKey<MobEffect> PURIFIABLE_EFFECTS = TagKey.create(Registries.MOB_EFFECT, Identifier.fromNamespaceAndPath(Gemistry.MODID, "purifiable_effects"));
+    public static final TagKey<Item> INSIGHT_ENCHANTABLE = TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(Gemistry.MODID, "enchantable/insight"));
     private GemistryTags() {
     }
 }

@@ -11,11 +11,13 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.equipment.trim.TrimMaterial;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.data.ItemTagsProvider;
 
+import java.util.Collection;
 import java.util.concurrent.CompletableFuture;
 
 public class GemistryItemTagsProvider extends ItemTagsProvider {
@@ -109,7 +111,10 @@ public class GemistryItemTagsProvider extends ItemTagsProvider {
         tag(ItemTags.DURABILITY_ENCHANTABLE).add(GemistryItems.RUBY_SWORD.get()).add(GemistryItems.RUBY_SPEAR.get()).add(GemistryItems.RUBY_PICKAXE.get()).add(GemistryItems.RUBY_AXE.get()).add(GemistryItems.RUBY_SHOVEL.get()).add(GemistryItems.RUBY_HOE.get()).add(GemistryItems.RUBY_HELMET.get()).add(GemistryItems.RUBY_CHESTPLATE.get()).add(GemistryItems.RUBY_LEGGINGS.get()).add(GemistryItems.RUBY_BOOTS.get()).add(GemistryItems.RUBY_HORSE_ARMOR.get()).add(GemistryItems.RUBY_NAUTILUS_ARMOR.get()).add(GemistryItems.SAPPHIRE_SWORD.get()).add(GemistryItems.SAPPHIRE_SPEAR.get()).add(GemistryItems.SAPPHIRE_PICKAXE.get()).add(GemistryItems.SAPPHIRE_AXE.get()).add(GemistryItems.SAPPHIRE_SHOVEL.get()).add(GemistryItems.SAPPHIRE_HOE.get()).add(GemistryItems.SAPPHIRE_HELMET.get()).add(GemistryItems.SAPPHIRE_CHESTPLATE.get()).add(GemistryItems.SAPPHIRE_LEGGINGS.get()).add(GemistryItems.SAPPHIRE_BOOTS.get()).add(GemistryItems.SAPPHIRE_HORSE_ARMOR.get()).add(GemistryItems.SAPPHIRE_NAUTILUS_ARMOR.get()).add(GemistryItems.AQUAMARINE_SWORD.get()).add(GemistryItems.AQUAMARINE_SPEAR.get()).add(GemistryItems.AQUAMARINE_PICKAXE.get()).add(GemistryItems.AQUAMARINE_AXE.get()).add(GemistryItems.AQUAMARINE_SHOVEL.get()).add(GemistryItems.AQUAMARINE_HOE.get()).add(GemistryItems.AQUAMARINE_HELMET.get()).add(GemistryItems.AQUAMARINE_CHESTPLATE.get()).add(GemistryItems.AQUAMARINE_LEGGINGS.get()).add(GemistryItems.AQUAMARINE_BOOTS.get()).add(GemistryItems.AQUAMARINE_HORSE_ARMOR.get()).add(GemistryItems.AQUAMARINE_NAUTILUS_ARMOR.get()).add(GemistryItems.AMBER_SWORD.get()).add(GemistryItems.AMBER_SPEAR.get()).add(GemistryItems.AMBER_PICKAXE.get()).add(GemistryItems.AMBER_AXE.get()).add(GemistryItems.AMBER_SHOVEL.get()).add(GemistryItems.AMBER_HOE.get()).add(GemistryItems.AMBER_HELMET.get()).add(GemistryItems.AMBER_CHESTPLATE.get()).add(GemistryItems.AMBER_LEGGINGS.get()).add(GemistryItems.AMBER_BOOTS.get()).add(GemistryItems.AMBER_HORSE_ARMOR.get()).add(GemistryItems.AMBER_NAUTILUS_ARMOR.get()).add(GemistryItems.ONYX_SWORD.get()).add(GemistryItems.ONYX_SPEAR.get()).add(GemistryItems.ONYX_PICKAXE.get()).add(GemistryItems.ONYX_AXE.get()).add(GemistryItems.ONYX_SHOVEL.get()).add(GemistryItems.ONYX_HOE.get()).add(GemistryItems.ONYX_HELMET.get()).add(GemistryItems.ONYX_CHESTPLATE.get()).add(GemistryItems.ONYX_LEGGINGS.get()).add(GemistryItems.ONYX_BOOTS.get()).add(GemistryItems.ONYX_HORSE_ARMOR.get()).add(GemistryItems.ONYX_NAUTILUS_ARMOR.get());
 
         tag(ItemTags.VANISHING_ENCHANTABLE).addTag(ItemTags.DURABILITY_ENCHANTABLE);
+
+        tag(GemistryTags.INSIGHT_ENCHANTABLE).addTag(ItemTags.MINING_LOOT_ENCHANTABLE).addTag(ItemTags.SHARP_WEAPON_ENCHANTABLE);
     }
+
 
     private void addNeoForgeConventionTags() {
 

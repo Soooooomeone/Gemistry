@@ -2,6 +2,9 @@ package com.danako.gemistry.common.item;
 
 import com.danako.gemistry.Gemistry;
 import com.danako.gemistry.common.block.GemistryBlocks;
+import com.danako.gemistry.common.item.gem.GemCatalyst;
+import com.danako.gemistry.common.item.gem.GemItem;
+import com.danako.gemistry.common.item.gem.GemTier;
 import com.danako.gemistry.core.gear.GemistryArmorMaterial;
 import com.danako.gemistry.core.gear.GemistryToolMaterial;
 import com.danako.gemistry.core.trim_material.GemistryTrimMaterials;
@@ -15,7 +18,7 @@ public final class GemistryItems {
 
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(Gemistry.MODID);
 
-    public static final DeferredItem<Item> RUBY = ITEMS.registerItem("ruby", properties -> new Item(properties.delayedHolderComponent(DataComponents.PROVIDES_TRIM_MATERIAL, GemistryTrimMaterials.RUBY)));
+    public static final DeferredItem<Item> RUBY = ITEMS.registerItem("ruby", properties -> new GemItem(properties.delayedHolderComponent(DataComponents.PROVIDES_TRIM_MATERIAL, GemistryTrimMaterials.RUBY), GemTier.RARE, GemCatalyst.PYRIC));
     public static final DeferredItem<BlockItem> RUBY_ORE = ITEMS.registerSimpleBlockItem(GemistryBlocks.RUBY_ORE);
     public static final DeferredItem<BlockItem> DEEPSLATE_RUBY_ORE = ITEMS.registerSimpleBlockItem(GemistryBlocks.DEEPSLATE_RUBY_ORE);
     public static final DeferredItem<BlockItem> RUBY_BLOCK = ITEMS.registerSimpleBlockItem(GemistryBlocks.RUBY_BLOCK);
@@ -31,7 +34,7 @@ public final class GemistryItems {
     public static final DeferredItem<Item> RUBY_BOOTS = ITEMS.registerItem("ruby_boots", properties -> new Item(properties.humanoidArmor(GemistryArmorMaterial.RUBY, ArmorType.BOOTS)));
     public static final DeferredItem<Item> RUBY_HORSE_ARMOR = ITEMS.registerItem("ruby_horse_armor", properties -> new Item(properties.horseArmor(GemistryArmorMaterial.RUBY)));
     public static final DeferredItem<Item> RUBY_NAUTILUS_ARMOR = ITEMS.registerItem("ruby_nautilus_armor", properties -> new Item(properties.nautilusArmor(GemistryArmorMaterial.RUBY)));
-    public static final DeferredItem<Item> SAPPHIRE = ITEMS.registerItem("sapphire", properties -> new Item(properties.delayedHolderComponent(DataComponents.PROVIDES_TRIM_MATERIAL, GemistryTrimMaterials.SAPPHIRE)));
+    public static final DeferredItem<Item> SAPPHIRE = ITEMS.registerItem("sapphire", properties -> new GemItem(properties.delayedHolderComponent(DataComponents.PROVIDES_TRIM_MATERIAL, GemistryTrimMaterials.SAPPHIRE), GemTier.RARE, GemCatalyst.BOREAL));
     public static final DeferredItem<BlockItem> SAPPHIRE_ORE = ITEMS.registerSimpleBlockItem(GemistryBlocks.SAPPHIRE_ORE);
     public static final DeferredItem<BlockItem> DEEPSLATE_SAPPHIRE_ORE = ITEMS.registerSimpleBlockItem(GemistryBlocks.DEEPSLATE_SAPPHIRE_ORE);
     public static final DeferredItem<BlockItem> SAPPHIRE_BLOCK = ITEMS.registerSimpleBlockItem(GemistryBlocks.SAPPHIRE_BLOCK);
@@ -47,7 +50,7 @@ public final class GemistryItems {
     public static final DeferredItem<Item> SAPPHIRE_BOOTS = ITEMS.registerItem("sapphire_boots", properties -> new Item(properties.humanoidArmor(GemistryArmorMaterial.SAPPHIRE, ArmorType.BOOTS)));
     public static final DeferredItem<Item> SAPPHIRE_HORSE_ARMOR = ITEMS.registerItem("sapphire_horse_armor", properties -> new Item(properties.horseArmor(GemistryArmorMaterial.SAPPHIRE)));
     public static final DeferredItem<Item> SAPPHIRE_NAUTILUS_ARMOR = ITEMS.registerItem("sapphire_nautilus_armor", properties -> new Item(properties.nautilusArmor(GemistryArmorMaterial.SAPPHIRE)));
-    public static final DeferredItem<Item> AQUAMARINE = ITEMS.registerItem("aquamarine", properties -> new Item(properties.delayedHolderComponent(DataComponents.PROVIDES_TRIM_MATERIAL, GemistryTrimMaterials.AQUAMARINE)));
+    public static final DeferredItem<Item> AQUAMARINE = ITEMS.registerItem("aquamarine", properties -> new GemItem(properties.delayedHolderComponent(DataComponents.PROVIDES_TRIM_MATERIAL, GemistryTrimMaterials.AQUAMARINE), GemTier.UNCOMMON, GemCatalyst.ABYSSAL));
     public static final DeferredItem<BlockItem> AQUAMARINE_ORE = ITEMS.registerSimpleBlockItem(GemistryBlocks.AQUAMARINE_ORE);
     public static final DeferredItem<BlockItem> DEEPSLATE_AQUAMARINE_ORE = ITEMS.registerSimpleBlockItem(GemistryBlocks.DEEPSLATE_AQUAMARINE_ORE);
     public static final DeferredItem<BlockItem> AQUAMARINE_BLOCK = ITEMS.registerSimpleBlockItem(GemistryBlocks.AQUAMARINE_BLOCK);
@@ -63,7 +66,7 @@ public final class GemistryItems {
     public static final DeferredItem<Item> AQUAMARINE_BOOTS = ITEMS.registerItem("aquamarine_boots", properties -> new Item(properties.humanoidArmor(GemistryArmorMaterial.AQUAMARINE, ArmorType.BOOTS)));
     public static final DeferredItem<Item> AQUAMARINE_HORSE_ARMOR = ITEMS.registerItem("aquamarine_horse_armor", properties -> new Item(properties.horseArmor(GemistryArmorMaterial.AQUAMARINE)));
     public static final DeferredItem<Item> AQUAMARINE_NAUTILUS_ARMOR = ITEMS.registerItem("aquamarine_nautilus_armor", properties -> new Item(properties.nautilusArmor(GemistryArmorMaterial.AQUAMARINE)));
-    public static final DeferredItem<Item> AMBER = ITEMS.registerItem("amber", properties -> new Item(properties.delayedHolderComponent(DataComponents.PROVIDES_TRIM_MATERIAL, GemistryTrimMaterials.AMBER)));
+    public static final DeferredItem<Item> AMBER = ITEMS.registerItem("amber", properties -> new GemItem(properties.delayedHolderComponent(DataComponents.PROVIDES_TRIM_MATERIAL, GemistryTrimMaterials.AMBER), GemTier.COMMON, GemCatalyst.MIASMIC));
     public static final DeferredItem<BlockItem> AMBER_ORE = ITEMS.registerSimpleBlockItem(GemistryBlocks.AMBER_ORE);
     public static final DeferredItem<BlockItem> DEEPSLATE_AMBER_ORE = ITEMS.registerSimpleBlockItem(GemistryBlocks.DEEPSLATE_AMBER_ORE);
     public static final DeferredItem<BlockItem> AMBER_BLOCK = ITEMS.registerSimpleBlockItem(GemistryBlocks.AMBER_BLOCK);
@@ -79,7 +82,7 @@ public final class GemistryItems {
     public static final DeferredItem<Item> AMBER_BOOTS = ITEMS.registerItem("amber_boots", properties -> new Item(properties.humanoidArmor(GemistryArmorMaterial.AMBER, ArmorType.BOOTS)));
     public static final DeferredItem<Item> AMBER_HORSE_ARMOR = ITEMS.registerItem("amber_horse_armor", properties -> new Item(properties.horseArmor(GemistryArmorMaterial.AMBER)));
     public static final DeferredItem<Item> AMBER_NAUTILUS_ARMOR = ITEMS.registerItem("amber_nautilus_armor", properties -> new Item(properties.nautilusArmor(GemistryArmorMaterial.AMBER)));
-    public static final DeferredItem<Item> ONYX = ITEMS.registerItem("onyx", properties -> new Item(properties.delayedHolderComponent(DataComponents.PROVIDES_TRIM_MATERIAL, GemistryTrimMaterials.ONYX)));
+    public static final DeferredItem<Item> ONYX = ITEMS.registerItem("onyx", properties -> new GemItem(properties.delayedHolderComponent(DataComponents.PROVIDES_TRIM_MATERIAL, GemistryTrimMaterials.ONYX), GemTier.EPIC, GemCatalyst.UMBRAL));
     public static final DeferredItem<BlockItem> ONYX_ORE = ITEMS.registerSimpleBlockItem(GemistryBlocks.ONYX_ORE);
     public static final DeferredItem<BlockItem> DEEPSLATE_ONYX_ORE = ITEMS.registerSimpleBlockItem(GemistryBlocks.DEEPSLATE_ONYX_ORE);
     public static final DeferredItem<BlockItem> ONYX_BLOCK = ITEMS.registerSimpleBlockItem(GemistryBlocks.ONYX_BLOCK);

@@ -104,6 +104,7 @@ public class GemistryLanguageProvider extends LanguageProvider {
         addConfigTranslations();
         addEnchantmentTranslations();
         addTrimMaterialTranslations();
+        addTooltipTranslations();
     }
 
     private void addConfigTranslations() {
@@ -146,5 +147,21 @@ public class GemistryLanguageProvider extends LanguageProvider {
         add("trim_material.gemistry.aquamarine", "Aquamarine");
         add("trim_material.gemistry.amber", "Amber");
         add("trim_material.gemistry.onyx", "Onyx");
+    }
+
+    private void addTooltipTranslations() {
+        add("tooltip.gemistry.gem_tier", "Gem Tier");
+        add("tooltip.gemistry.gem_catalyst", "Catalyst");
+        add("tooltip.gemistry.gem_catalyst.none", "None");
+        add("tooltip.gemistry.gem_catalyst.pyric", "Pyric");
+        add("tooltip.gemistry.gem_catalyst.boreal", "Boreal");
+        add("tooltip.gemistry.gem_catalyst.abyssal", "Abyssal");
+        add("tooltip.gemistry.gem_catalyst.miasmic", "Miasmic");
+        add("tooltip.gemistry.gem_catalyst.umbral", "Umbral");
+        add("tooltip.gemistry.gem_tier.common", "Common");
+        add("tooltip.gemistry.gem_tier.uncommon", "Uncommon");
+        add("tooltip.gemistry.gem_tier.rare", "Rare");
+        add("tooltip.gemistry.gem_tier.epic", "Epic");
+        add("tooltip.gemistry.gem_tier.legendary", "Legendary");
     }
 }

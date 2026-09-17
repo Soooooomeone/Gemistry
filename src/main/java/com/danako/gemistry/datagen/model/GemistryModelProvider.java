@@ -26,7 +26,14 @@ public class GemistryModelProvider extends ModelProvider {
             TextureSlot.TOP, TextureSlot.SIDE, TextureSlot.BOTTOM, TextureSlot.PARTICLE
     );
 
+    private static final ModelTemplate LAPIDARY_BENCH_TEMPLATE = new ModelTemplate(
+            Optional.of(Identifier.fromNamespaceAndPath(Gemistry.MODID, "block/template_lapidary_bench")),
+            Optional.empty(),
+            TextureSlot.TOP, TextureSlot.SIDE, TextureSlot.BOTTOM, TextureSlot.PARTICLE
+    );
+
     private Identifier attunementTableModel;
+    private Identifier lapidaryBenchModel;
 
     public GemistryModelProvider(PackOutput output) {
         super(output, Gemistry.MODID);
@@ -65,6 +72,7 @@ public class GemistryModelProvider extends ModelProvider {
         blockModels.createTrivialCube(GemistryBlocks.ONYX_BLOCK.get());
 
         registerAttunementTable(blockModels);
+        registerLapidaryBench(blockModels);
     }
 
     private void registerAttunementTable(BlockModelGenerators blockModels) {
@@ -82,8 +90,24 @@ public class GemistryModelProvider extends ModelProvider {
         this.attunementTableModel = modelLocation;
     }
 
+    private void registerLapidaryBench(BlockModelGenerators blockModels) {
+        Block block = GemistryBlocks.LAPIDARY_BENCH.get();
+
+        TextureMapping mapping = new TextureMapping()
+                .put(TextureSlot.TOP, TextureMapping.getBlockTexture(block, "_top"))
+                .put(TextureSlot.SIDE, TextureMapping.getBlockTexture(block, "_side"))
+                .put(TextureSlot.BOTTOM, TextureMapping.getBlockTexture(block, "_bottom"))
+                .put(TextureSlot.PARTICLE, TextureMapping.getBlockTexture(block, "_base"));
+
+        Identifier modelLocation = LAPIDARY_BENCH_TEMPLATE.create(block, mapping, blockModels.modelOutput);
+        blockModels.blockStateOutput.accept(BlockModelGenerators.createSimpleBlock(block, BlockModelGenerators.plainVariant(modelLocation)));
+
+        this.lapidaryBenchModel = modelLocation;
+    }
+
     private void registerItemModels(ItemModelGenerators itemModels) {
         itemModels.itemModelOutput.accept(GemistryItems.ATTUNEMENT_TABLE.get(), ItemModelUtils.plainModel(attunementTableModel));
+        itemModels.itemModelOutput.accept(GemistryItems.LAPIDARY_BENCH.get(), ItemModelUtils.plainModel(lapidaryBenchModel));
 
         itemModels.generateFlatItem(GemistryItems.RUBY.get(), ModelTemplates.FLAT_ITEM);
 

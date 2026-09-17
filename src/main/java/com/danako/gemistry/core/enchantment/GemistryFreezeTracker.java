@@ -1,10 +1,11 @@
 package com.danako.gemistry.core.enchantment;
 
-import java.util.concurrent.ConcurrentHashMap;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.neoforge.event.tick.EntityTickEvent;
+
+import java.util.concurrent.ConcurrentHashMap;
 
 public class GemistryFreezeTracker {
     private static final ConcurrentHashMap<Integer, Integer> CHILLED = new ConcurrentHashMap<>();

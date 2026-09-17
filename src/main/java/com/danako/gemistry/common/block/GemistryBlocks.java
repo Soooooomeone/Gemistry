@@ -12,12 +12,11 @@ import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
 public final class GemistryBlocks {
-    private static final UniformInt RUBY_XP = UniformInt.of(3, 7);
+    public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(Gemistry.MODID);    private static final UniformInt RUBY_XP = UniformInt.of(3, 7);
     private static final UniformInt SAPPHIRE_XP = UniformInt.of(3, 7);
     private static final UniformInt AQUAMARINE_XP = UniformInt.of(3, 7);
     private static final UniformInt AMBER_XP = UniformInt.of(3, 7);
     private static final UniformInt ONYX_XP = UniformInt.of(3, 7);
-    public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(Gemistry.MODID);
     public static final DeferredBlock<Block> RUBY_ORE = BLOCKS.registerBlock("ruby_ore", properties -> new DropExperienceBlock(RUBY_XP, properties), () -> Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(3.0F, 3.0F));
     public static final DeferredBlock<Block> DEEPSLATE_RUBY_ORE = BLOCKS.registerBlock("deepslate_ruby_ore", properties -> new DropExperienceBlock(RUBY_XP, properties), () -> Properties.of().mapColor(MapColor.DEEPSLATE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(4.5F, 3.0F).sound(SoundType.DEEPSLATE));
     public static final DeferredBlock<Block> RUBY_BLOCK = BLOCKS.registerBlock("ruby_block", Block::new, () -> Properties.of().mapColor(MapColor.COLOR_RED).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(5.0F, 6.0F).sound(SoundType.METAL));
@@ -34,7 +33,7 @@ public final class GemistryBlocks {
     public static final DeferredBlock<Block> DEEPSLATE_ONYX_ORE = BLOCKS.registerBlock("deepslate_onyx_ore", properties -> new DropExperienceBlock(ONYX_XP, properties), () -> Properties.of().mapColor(MapColor.DEEPSLATE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(5.0F, 3.5F).sound(SoundType.DEEPSLATE));
     public static final DeferredBlock<Block> ONYX_BLOCK = BLOCKS.registerBlock("onyx_block", Block::new, () -> Properties.of().mapColor(MapColor.COLOR_BLACK).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(5.5F, 6.5F).sound(SoundType.METAL));
     public static final DeferredBlock<Block> ATTUNEMENT_TABLE = BLOCKS.registerBlock("attunement_table", AttunementTableBlock::new, () -> Properties.of().mapColor(MapColor.COLOR_BLACK).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(50.0F, 1200.0F).noOcclusion().sound(SoundType.STONE));
-
+    public static final DeferredBlock<Block> LAPIDARY_BENCH = BLOCKS.registerBlock("lapidary_bench", LapidaryBenchBlock::new, () -> Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(3.5F, 3.5F).noOcclusion().sound(SoundType.STONE));
     private GemistryBlocks() {
     }
 }

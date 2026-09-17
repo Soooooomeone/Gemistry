@@ -14,6 +14,8 @@ public class GemistryBlockEntities {
 
     public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<AttunementTableBlockEntity>> ATTUNEMENT_TABLE = BLOCK_ENTITY_TYPES.register("attunement_table", () -> new BlockEntityType<>(AttunementTableBlockEntity::new, GemistryBlocks.ATTUNEMENT_TABLE.get()));
 
+    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<LapidaryBenchBlockEntity>> LAPIDARY_BENCH = BLOCK_ENTITY_TYPES.register("lapidary_bench", () -> new BlockEntityType<>(LapidaryBenchBlockEntity::new, GemistryBlocks.LAPIDARY_BENCH.get()));
+
     public static void register(IEventBus modEventBus) {
         BLOCK_ENTITY_TYPES.register(modEventBus);
     }

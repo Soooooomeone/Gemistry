@@ -39,6 +39,7 @@ public class GemistryBlockLootSubProvider extends BlockLootSubProvider {
         dropSelf(GemistryBlocks.ONYX_BLOCK.get());
 
         dropSelf(GemistryBlocks.ATTUNEMENT_TABLE.get());
+        dropSelf(GemistryBlocks.LAPIDARY_BENCH.get());
     }
 
     @Override

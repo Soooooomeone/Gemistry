@@ -60,7 +60,8 @@ public class GemistryEnchantments {
 
         register(context, VIGILANTE, Enchantment.enchantment(Enchantment.definition(items.getOrThrow(ItemTags.WEAPON_ENCHANTABLE), items.getOrThrow(ItemTags.MELEE_WEAPON_ENCHANTABLE), 5, 5, Enchantment.dynamicCost(5, 8), Enchantment.dynamicCost(25, 8), 2, EquipmentSlotGroup.MAINHAND)).withEffect(EnchantmentEffectComponents.DAMAGE, new AddValue(LevelBasedValue.perLevel(2.5F)), LootItemEntityPropertyCondition.hasProperties(LootContext.EntityTarget.THIS, EntityPredicate.Builder.entity().entityType(EntityTypePredicate.of(entityTypes, EntityTypeTags.RAIDERS)))));
 
-        register(context, INSIGHT, Enchantment.enchantment(Enchantment.definition(items.getOrThrow(GemistryTags.INSIGHT_ENCHANTABLE), 2, 3, Enchantment.dynamicCost(15, 9), Enchantment.dynamicCost(65, 9), 4, EquipmentSlotGroup.MAINHAND)));    }
+        register(context, INSIGHT, Enchantment.enchantment(Enchantment.definition(items.getOrThrow(GemistryTags.INSIGHT_ENCHANTABLE), 2, 3, Enchantment.dynamicCost(15, 9), Enchantment.dynamicCost(65, 9), 4, EquipmentSlotGroup.MAINHAND)));
+    }
 
     private static void register(BootstrapContext<Enchantment> context, ResourceKey<Enchantment> key, Enchantment.Builder builder) {
         context.register(key, builder.build(key.identifier()));

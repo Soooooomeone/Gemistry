@@ -2,9 +2,9 @@ package com.danako.gemistry.common.item;
 
 import com.danako.gemistry.Gemistry;
 import com.danako.gemistry.common.block.GemistryBlocks;
-import com.danako.gemistry.core.trim_material.GemistryTrimMaterials;
 import com.danako.gemistry.core.gear.GemistryArmorMaterial;
 import com.danako.gemistry.core.gear.GemistryToolMaterial;
+import com.danako.gemistry.core.trim_material.GemistryTrimMaterials;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.equipment.ArmorType;
@@ -96,6 +96,7 @@ public final class GemistryItems {
     public static final DeferredItem<Item> ONYX_HORSE_ARMOR = ITEMS.registerItem("onyx_horse_armor", properties -> new Item(properties.horseArmor(GemistryArmorMaterial.ONYX)));
     public static final DeferredItem<Item> ONYX_NAUTILUS_ARMOR = ITEMS.registerItem("onyx_nautilus_armor", properties -> new Item(properties.nautilusArmor(GemistryArmorMaterial.ONYX)));
     public static final DeferredItem<BlockItem> ATTUNEMENT_TABLE = ITEMS.registerSimpleBlockItem(GemistryBlocks.ATTUNEMENT_TABLE);
+    public static final DeferredItem<BlockItem> LAPIDARY_BENCH = ITEMS.registerSimpleBlockItem(GemistryBlocks.LAPIDARY_BENCH);
 
     private GemistryItems() {
     }

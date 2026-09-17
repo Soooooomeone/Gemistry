@@ -1,0 +1,9 @@
+{
+  "parent": "gemistry:block/template_lapidary_bench",
+  "textures": {
+    "bottom": "gemistry:block/lapidary_bench_bottom",
+    "particle": "gemistry:block/lapidary_bench_base",
+    "side": "gemistry:block/lapidary_bench_side",
+    "top": "gemistry:block/lapidary_bench_top"
+  }
+}

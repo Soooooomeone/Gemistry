@@ -16,6 +16,7 @@ public final class GemistryTabs {
 
     public static final Supplier<CreativeModeTab> GEMISTRY_TAB = CREATIVE_MODE_TABS.register("gemistry", () -> CreativeModeTab.builder().title(Component.translatable("itemGroup." + Gemistry.MODID + ".gemistry")).icon(() -> new ItemStack(GemistryItems.AMBER.get())).displayItems((parameters, output) -> {
         output.accept(GemistryItems.ATTUNEMENT_TABLE.get());
+        output.accept(GemistryItems.LAPIDARY_BENCH.get());
         output.accept(GemistryItems.RUBY.get());
         output.accept(GemistryItems.RUBY_ORE.get());
         output.accept(GemistryItems.DEEPSLATE_RUBY_ORE.get());

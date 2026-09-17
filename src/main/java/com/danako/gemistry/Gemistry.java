@@ -2,15 +2,15 @@ package com.danako.gemistry;
 
 import com.danako.gemistry.common.block.GemistryBlocks;
 import com.danako.gemistry.common.block.entity.GemistryBlockEntities;
+import com.danako.gemistry.common.item.GemistryItems;
 import com.danako.gemistry.common.menu.GemistryMenuTypes;
 import com.danako.gemistry.core.config.GemistryConfig;
-import com.danako.gemistry.common.item.GemistryItems;
+import com.danako.gemistry.core.creative_tab.GemistryTabs;
 import com.danako.gemistry.core.enchantment.GemistryEntityEffects;
 import com.danako.gemistry.core.enchantment.GemistryFreezeTracker;
-import com.danako.gemistry.core.creative_tab.GemistryTabs;
-import com.danako.gemistry.datagen.DataGenerators;
 import com.danako.gemistry.core.loot.GemistryLootModifierSerializers;
 import com.danako.gemistry.core.worldgen.GemistryBiomeModifierSerializers;
+import com.danako.gemistry.datagen.DataGenerators;
 import com.mojang.logging.LogUtils;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;

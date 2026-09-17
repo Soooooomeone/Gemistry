@@ -6,13 +6,14 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class GemistryConfig {
-    private static final ModConfigSpec.Builder BUILDER = new ModConfigSpec.Builder();
-
     public static final ModConfigSpec.BooleanValue GENERATE_RUBY_ORE;
     public static final ModConfigSpec.BooleanValue GENERATE_SAPPHIRE_ORE;
     public static final ModConfigSpec.BooleanValue GENERATE_AQUAMARINE_ORE;
     public static final ModConfigSpec.BooleanValue GENERATE_AMBER_ORE;
     public static final ModConfigSpec.BooleanValue GENERATE_ONYX_ORE;
+    private static final ModConfigSpec.Builder BUILDER = new ModConfigSpec.Builder();
+    public static final ModConfigSpec SPEC = BUILDER.build();
+    private static final Map<String, ModConfigSpec.BooleanValue> ORE_GENERATION_TOGGLES = new HashMap<>();
 
     static {
         BUILDER.comment("Detailed settings").push("detailed");
@@ -43,10 +44,6 @@ public class GemistryConfig {
         BUILDER.pop();
         BUILDER.pop();
     }
-
-    public static final ModConfigSpec SPEC = BUILDER.build();
-
-    private static final Map<String, ModConfigSpec.BooleanValue> ORE_GENERATION_TOGGLES = new HashMap<>();
 
     static {
         ORE_GENERATION_TOGGLES.put("ruby", GENERATE_RUBY_ORE);

@@ -99,6 +99,7 @@ public class GemistryLanguageProvider extends LanguageProvider {
         addItem(GemistryItems.ONYX_HORSE_ARMOR, "Onyx Horse Armor");
         addItem(GemistryItems.ONYX_NAUTILUS_ARMOR, "Onyx Nautilus Armor");
         addBlock(GemistryBlocks.ATTUNEMENT_TABLE, "Attunement Table");
+        addBlock(GemistryBlocks.LAPIDARY_BENCH, "Lapidary Bench");
 
         addConfigTranslations();
         addEnchantmentTranslations();

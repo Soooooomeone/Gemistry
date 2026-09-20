@@ -42,6 +42,10 @@ public final class GemistryTags {
     public static final TagKey<Enchantment> ASPECT_EXCLUSIVE = TagKey.create(Registries.ENCHANTMENT, Identifier.fromNamespaceAndPath(Gemistry.MODID, "exclusive_set/aspect"));
     public static final TagKey<MobEffect> PURIFIABLE_EFFECTS = TagKey.create(Registries.MOB_EFFECT, Identifier.fromNamespaceAndPath(Gemistry.MODID, "purifiable_effects"));
     public static final TagKey<Item> INSIGHT_ENCHANTABLE = TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(Gemistry.MODID, "enchantable/insight"));
+    public static final TagKey<Item> ADORNMENT_FRAMES = TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(Gemistry.MODID, "adornment_frames"));
+    public static final TagKey<Item> ADORNMENT_FRAMES_RING = TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(Gemistry.MODID, "adornment_frames/ring"));
+    public static final TagKey<Item> ADORNMENT_FRAMES_BRACELET = TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(Gemistry.MODID, "adornment_frames/bracelet"));
+    public static final TagKey<Item> ADORNMENT_FRAMES_BELT = TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(Gemistry.MODID, "adornment_frames/belt"));
 
     private GemistryTags() {
     }

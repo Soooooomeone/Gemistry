@@ -43,6 +43,7 @@ public class GemistryItemTagsProvider extends ItemTagsProvider {
         addCustomTags();
         addTrimMaterialTags();
         addAttunementCatalystTags();
+        addAdornmentFrameTags();
     }
 
     private void addVanillaToolTypeTags() {
@@ -196,4 +197,15 @@ public class GemistryItemTagsProvider extends ItemTagsProvider {
         tag(GemistryTags.ATTUNEMENT_CATALYSTS_AMBER).add(GemistryItems.AMBER.get());
         tag(GemistryTags.ATTUNEMENT_CATALYSTS_ONYX).add(GemistryItems.ONYX.get());
     }
+
+    private void addAdornmentFrameTags() {
+        tag(GemistryTags.ADORNMENT_FRAMES).addTag(GemistryTags.ADORNMENT_FRAMES_RING).addTag(GemistryTags.ADORNMENT_FRAMES_BRACELET).addTag(GemistryTags.ADORNMENT_FRAMES_BELT);
+
+        tag(GemistryTags.ADORNMENT_FRAMES_RING).add(GemistryItems.COPPER_RING_FRAME.get()).add(GemistryItems.IRON_RING_FRAME.get()).add(GemistryItems.GOLD_RING_FRAME.get()).add(GemistryItems.NETHERITE_RING_FRAME.get());
+
+        tag(GemistryTags.ADORNMENT_FRAMES_BRACELET).add(GemistryItems.COPPER_BRACELET_FRAME.get()).add(GemistryItems.IRON_BRACELET_FRAME.get()).add(GemistryItems.GOLD_BRACELET_FRAME.get()).add(GemistryItems.NETHERITE_BRACELET_FRAME.get());
+
+        tag(GemistryTags.ADORNMENT_FRAMES_BELT).add(GemistryItems.COPPER_BELT_FRAME.get()).add(GemistryItems.IRON_BELT_FRAME.get()).add(GemistryItems.GOLD_BELT_FRAME.get()).add(GemistryItems.NETHERITE_BELT_FRAME.get());
+    }
+
 }

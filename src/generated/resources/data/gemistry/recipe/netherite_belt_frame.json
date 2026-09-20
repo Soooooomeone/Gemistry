@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "F": "gemistry:gold_belt_frame",
+    "N": "minecraft:netherite_ingot"
+  },
+  "pattern": [
+    "N",
+    "F"
+  ],
+  "result": {
+    "id": "gemistry:netherite_belt_frame"
+  }
+}

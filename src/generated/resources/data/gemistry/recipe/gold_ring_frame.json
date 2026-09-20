@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "X": "minecraft:gold_ingot"
+  },
+  "pattern": [
+    " X ",
+    "X X",
+    " X "
+  ],
+  "result": {
+    "id": "gemistry:gold_ring_frame"
+  }
+}

@@ -169,6 +169,19 @@ public class GemistryModelProvider extends ModelProvider {
         itemModels.generateFlatItem(GemistryItems.ONYX_HORSE_ARMOR.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(GemistryItems.ONYX_NAUTILUS_ARMOR.get(), ModelTemplates.FLAT_ITEM);
 
+        itemModels.generateFlatItem(GemistryItems.COPPER_RING_FRAME.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(GemistryItems.COPPER_BRACELET_FRAME.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(GemistryItems.COPPER_BELT_FRAME.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(GemistryItems.IRON_RING_FRAME.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(GemistryItems.IRON_BRACELET_FRAME.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(GemistryItems.IRON_BELT_FRAME.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(GemistryItems.GOLD_RING_FRAME.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(GemistryItems.GOLD_BRACELET_FRAME.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(GemistryItems.GOLD_BELT_FRAME.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(GemistryItems.NETHERITE_RING_FRAME.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(GemistryItems.NETHERITE_BRACELET_FRAME.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(GemistryItems.NETHERITE_BELT_FRAME.get(), ModelTemplates.FLAT_ITEM);
+
         generateTrimmableItemWithGems(itemModels, GemistryItems.RUBY_HELMET.get(), ItemModelGenerators.TRIM_PREFIX_HELMET);
         generateTrimmableItemWithGems(itemModels, GemistryItems.RUBY_CHESTPLATE.get(), ItemModelGenerators.TRIM_PREFIX_CHESTPLATE);
         generateTrimmableItemWithGems(itemModels, GemistryItems.RUBY_LEGGINGS.get(), ItemModelGenerators.TRIM_PREFIX_LEGGINGS);

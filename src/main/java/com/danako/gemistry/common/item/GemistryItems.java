@@ -2,6 +2,9 @@ package com.danako.gemistry.common.item;
 
 import com.danako.gemistry.Gemistry;
 import com.danako.gemistry.common.block.GemistryBlocks;
+import com.danako.gemistry.common.item.adornment.AdornmentType;
+import com.danako.gemistry.common.item.adornment.FrameItem;
+import com.danako.gemistry.common.item.adornment.FrameMaterial;
 import com.danako.gemistry.common.item.gem.GemCatalyst;
 import com.danako.gemistry.common.item.gem.GemItem;
 import com.danako.gemistry.common.item.gem.GemTier;
@@ -100,6 +103,22 @@ public final class GemistryItems {
     public static final DeferredItem<Item> ONYX_NAUTILUS_ARMOR = ITEMS.registerItem("onyx_nautilus_armor", properties -> new Item(properties.nautilusArmor(GemistryArmorMaterial.ONYX)));
     public static final DeferredItem<BlockItem> ATTUNEMENT_TABLE = ITEMS.registerSimpleBlockItem(GemistryBlocks.ATTUNEMENT_TABLE);
     public static final DeferredItem<BlockItem> LAPIDARY_BENCH = ITEMS.registerSimpleBlockItem(GemistryBlocks.LAPIDARY_BENCH);
+
+    public static final DeferredItem<Item> COPPER_RING_FRAME = ITEMS.registerItem("copper_ring_frame", properties -> new FrameItem(properties, FrameMaterial.COPPER, AdornmentType.RING));
+    public static final DeferredItem<Item> COPPER_BRACELET_FRAME = ITEMS.registerItem("copper_bracelet_frame", properties -> new FrameItem(properties, FrameMaterial.COPPER, AdornmentType.BRACELET));
+    public static final DeferredItem<Item> COPPER_BELT_FRAME = ITEMS.registerItem("copper_belt_frame", properties -> new FrameItem(properties, FrameMaterial.COPPER, AdornmentType.BELT));
+
+    public static final DeferredItem<Item> IRON_RING_FRAME = ITEMS.registerItem("iron_ring_frame", properties -> new FrameItem(properties, FrameMaterial.IRON, AdornmentType.RING));
+    public static final DeferredItem<Item> IRON_BRACELET_FRAME = ITEMS.registerItem("iron_bracelet_frame", properties -> new FrameItem(properties, FrameMaterial.IRON, AdornmentType.BRACELET));
+    public static final DeferredItem<Item> IRON_BELT_FRAME = ITEMS.registerItem("iron_belt_frame", properties -> new FrameItem(properties, FrameMaterial.IRON, AdornmentType.BELT));
+
+    public static final DeferredItem<Item> GOLD_RING_FRAME = ITEMS.registerItem("gold_ring_frame", properties -> new FrameItem(properties, FrameMaterial.GOLD, AdornmentType.RING));
+    public static final DeferredItem<Item> GOLD_BRACELET_FRAME = ITEMS.registerItem("gold_bracelet_frame", properties -> new FrameItem(properties, FrameMaterial.GOLD, AdornmentType.BRACELET));
+    public static final DeferredItem<Item> GOLD_BELT_FRAME = ITEMS.registerItem("gold_belt_frame", properties -> new FrameItem(properties, FrameMaterial.GOLD, AdornmentType.BELT));
+
+    public static final DeferredItem<Item> NETHERITE_RING_FRAME = ITEMS.registerItem("netherite_ring_frame", properties -> new FrameItem(properties, FrameMaterial.NETHERITE, AdornmentType.RING));
+    public static final DeferredItem<Item> NETHERITE_BRACELET_FRAME = ITEMS.registerItem("netherite_bracelet_frame", properties -> new FrameItem(properties, FrameMaterial.NETHERITE, AdornmentType.BRACELET));
+    public static final DeferredItem<Item> NETHERITE_BELT_FRAME = ITEMS.registerItem("netherite_belt_frame", properties -> new FrameItem(properties, FrameMaterial.NETHERITE, AdornmentType.BELT));
 
     private GemistryItems() {
     }

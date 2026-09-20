@@ -8,11 +8,7 @@ import java.util.Locale;
 
 public enum GemCatalyst {
 
-    PYRIC(GemistryAttunementTheme.PYRIC, 0xFF0000),
-    BOREAL(GemistryAttunementTheme.BOREAL, 0x2E9BF0),
-    ABYSSAL(GemistryAttunementTheme.ABYSSAL, 0x0099A8),
-    MIASMIC(GemistryAttunementTheme.MIASMIC, 0xFF8C00),
-    UMBRAL(GemistryAttunementTheme.UMBRAL, 0x123B3D);
+    PYRIC(GemistryAttunementTheme.PYRIC, 0xFF0000), BOREAL(GemistryAttunementTheme.BOREAL, 0x2E9BF0), ABYSSAL(GemistryAttunementTheme.ABYSSAL, 0x0099A8), MIASMIC(GemistryAttunementTheme.MIASMIC, 0xFF8C00), UMBRAL(GemistryAttunementTheme.UMBRAL, 0x123B3D);
 
     private final GemistryAttunementTheme theme;
     private final int color;
@@ -22,6 +18,16 @@ public enum GemCatalyst {
         this.theme = theme;
         this.color = color;
         this.translationKey = "tooltip.gemistry.gem_catalyst." + this.name().toLowerCase(Locale.ROOT);
+    }
+
+    @Nullable
+    public static GemCatalyst fromTheme(GemistryAttunementTheme theme) {
+        for (GemCatalyst catalyst : values()) {
+            if (catalyst.theme == theme) {
+                return catalyst;
+            }
+        }
+        return null;
     }
 
     public GemistryAttunementTheme theme() {
@@ -34,15 +40,5 @@ public enum GemCatalyst {
 
     public Component displayName() {
         return Component.translatable(this.translationKey);
-    }
-
-    @Nullable
-    public static GemCatalyst fromTheme(GemistryAttunementTheme theme) {
-        for (GemCatalyst catalyst : values()) {
-            if (catalyst.theme == theme) {
-                return catalyst;
-            }
-        }
-        return null;
     }
 }

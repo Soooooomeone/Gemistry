@@ -10,9 +10,10 @@ import java.util.List;
 @EventBusSubscriber(modid = Gemistry.MODID)
 public final class GemistryTooltipHandler {
 
-    private static final List<TooltipSection> SECTIONS = List.of(
-            new GemTooltipSection()
-    );
+    private static final List<TooltipSection> SECTIONS = List.of(new GemTooltipSection(), new FrameTooltipSection());
+
+    private GemistryTooltipHandler() {
+    }
 
     @SubscribeEvent
     public static void onItemTooltip(ItemTooltipEvent event) {
@@ -21,8 +22,5 @@ public final class GemistryTooltipHandler {
                 section.appendTooltip(event.getItemStack(), event.getContext(), event.getFlags(), event.getToolTip());
             }
         }
-    }
-
-    private GemistryTooltipHandler() {
     }
 }

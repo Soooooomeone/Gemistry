@@ -1,5 +1,6 @@
 package com.danako.gemistry.common.item.tooltip;
 
+import com.danako.gemistry.common.item.Potency;
 import com.danako.gemistry.common.item.gem.GemCatalyst;
 import com.danako.gemistry.common.item.gem.GemProperties;
 import com.danako.gemistry.common.item.gem.GemRegistry;
@@ -26,28 +27,6 @@ public final class GemTooltipSection implements TooltipSection {
     private static final String HOLLOW_STAR = "\u2606"; // ☆
     private static final int HOLLOW_COLOR = 0x545454;
     private static final String CATALYST_BULLET = "\u25CF "; // ●
-
-    @Override
-    public boolean appliesTo(ItemStack stack) {
-        return GemRegistry.isGem(stack);
-    }
-
-    @Override
-    public void appendTooltip(ItemStack stack, Item.TooltipContext context, TooltipFlag flag, List<Component> lines) {
-        Optional<GemProperties> properties = GemRegistry.get(stack);
-        if (properties.isEmpty()) {
-            return;
-        }
-
-        GemProperties gem = properties.get();
-        lines.add(CommonComponents.EMPTY);
-        lines.add(tierLine(gem.tier()));
-        lines.add(catalystLine(gem.catalyst()));
-
-        if (flag.isAdvanced()) {
-            lines.add(advancedLine(gem));
-        }
-    }
 
     private static Component tierLine(GemTier tier) {
         MutableComponent line = Component.translatable("tooltip.gemistry.gem_tier").withStyle(LABEL_STYLE);
@@ -79,7 +58,31 @@ public final class GemTooltipSection implements TooltipSection {
 
     private static Component advancedLine(GemProperties gem) {
         String catalystId = gem.hasCatalyst() ? gem.catalyst().theme().name() : "none";
-        return Component.literal("Tier " + gem.tier().tier() + "/" + GemTier.MAX_TIER + " (" + gem.tier().stars() + "\u2605) \u2022 Catalyst: " + catalystId)
-                .withStyle(ADVANCED_STYLE);
+        return Component.literal("Tier " + gem.tier().tier() + "/" + GemTier.MAX_TIER + " (" + gem.tier().stars() + "\u2605) \u2022 Potency: " + Potency.format(gem.tier().potency()) + "/" + Potency.format(Potency.MAX) + " \u2022 Catalyst: " + catalystId).withStyle(ADVANCED_STYLE);
+    }
+
+    @Override
+    public boolean appliesTo(ItemStack stack) {
+        return GemRegistry.isGem(stack);
+    }
+
+    @Override
+    public void appendTooltip(ItemStack stack, Item.TooltipContext context, TooltipFlag flag, List<Component> lines) {
+        Optional<GemProperties> properties = GemRegistry.get(stack);
+        if (properties.isEmpty()) {
+            return;
+        }
+
+        GemProperties gem = properties.get();
+        lines.add(CommonComponents.EMPTY);
+        lines.add(tierLine(gem.tier()));
+        lines.add(Potency.line(gem.tier().potency()));
+        lines.add(catalystLine(gem.catalyst()));
+        lines.add(CommonComponents.EMPTY);
+        lines.add(Potency.hint());
+
+        if (flag.isAdvanced()) {
+            lines.add(advancedLine(gem));
+        }
     }
 }

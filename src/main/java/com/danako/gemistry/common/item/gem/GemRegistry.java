@@ -9,10 +9,10 @@ import java.util.Optional;
 
 public final class GemRegistry {
 
-    private static final Map<Item, GemProperties> VANILLA_GEMS = Map.of(
-            Items.EMERALD, new GemProperties(GemTier.COMMON, null),
-            Items.DIAMOND, new GemProperties(GemTier.UNCOMMON, null)
-    );
+    private static final Map<Item, GemProperties> VANILLA_GEMS = Map.of(Items.EMERALD, new GemProperties(GemTier.COMMON, null), Items.DIAMOND, new GemProperties(GemTier.UNCOMMON, null));
+
+    private GemRegistry() {
+    }
 
     public static Optional<GemProperties> get(Item item) {
         if (item instanceof GemItem gemItem) {
@@ -27,8 +27,5 @@ public final class GemRegistry {
 
     public static boolean isGem(ItemStack stack) {
         return get(stack).isPresent();
-    }
-
-    private GemRegistry() {
     }
 }

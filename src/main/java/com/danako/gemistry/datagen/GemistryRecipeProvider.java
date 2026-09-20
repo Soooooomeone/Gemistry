@@ -28,6 +28,7 @@ public class GemistryRecipeProvider extends RecipeProvider {
         buildTools();
         buildArmor();
         buildMisc();
+        buildAdornmentFrames();
     }
 
     private void buildStorage() {
@@ -146,6 +147,32 @@ public class GemistryRecipeProvider extends RecipeProvider {
         ShapedRecipeBuilder.shaped(items, RecipeCategory.DECORATIONS, GemistryItems.ATTUNEMENT_TABLE.get()).pattern("RDR").pattern("OEO").pattern("OOO").define('R', GemistryItems.RUBY.get()).define('D', Items.BLACK_DYE).define('E', Items.ENCHANTING_TABLE).define('O', Items.CRYING_OBSIDIAN).unlockedBy("has_ruby", has(GemistryItems.RUBY.get())).save(output);
     }
 
+
+    private void buildAdornmentFrames() {
+        ShapedRecipeBuilder.shaped(items, RecipeCategory.MISC, GemistryItems.COPPER_RING_FRAME.get()).pattern(" X ").pattern("X X").pattern(" X ").define('X', Items.COPPER_INGOT).unlockedBy("has_copper_ingot", has(Items.COPPER_INGOT)).save(output);
+
+        ShapedRecipeBuilder.shaped(items, RecipeCategory.MISC, GemistryItems.COPPER_BRACELET_FRAME.get()).pattern("XXX").pattern("X X").define('X', Items.COPPER_INGOT).unlockedBy("has_copper_ingot", has(Items.COPPER_INGOT)).save(output);
+
+        ShapedRecipeBuilder.shaped(items, RecipeCategory.MISC, GemistryItems.COPPER_BELT_FRAME.get()).pattern("XXX").pattern("X X").pattern("XXX").define('X', Items.COPPER_INGOT).unlockedBy("has_copper_ingot", has(Items.COPPER_INGOT)).save(output);
+
+        ShapedRecipeBuilder.shaped(items, RecipeCategory.MISC, GemistryItems.IRON_RING_FRAME.get()).pattern(" X ").pattern("X X").pattern(" X ").define('X', Items.IRON_INGOT).unlockedBy("has_iron_ingot", has(Items.IRON_INGOT)).save(output);
+
+        ShapedRecipeBuilder.shaped(items, RecipeCategory.MISC, GemistryItems.IRON_BRACELET_FRAME.get()).pattern("XXX").pattern("X X").define('X', Items.IRON_INGOT).unlockedBy("has_iron_ingot", has(Items.IRON_INGOT)).save(output);
+
+        ShapedRecipeBuilder.shaped(items, RecipeCategory.MISC, GemistryItems.IRON_BELT_FRAME.get()).pattern("XXX").pattern("X X").pattern("XXX").define('X', Items.IRON_INGOT).unlockedBy("has_iron_ingot", has(Items.IRON_INGOT)).save(output);
+
+        ShapedRecipeBuilder.shaped(items, RecipeCategory.MISC, GemistryItems.GOLD_RING_FRAME.get()).pattern(" X ").pattern("X X").pattern(" X ").define('X', Items.GOLD_INGOT).unlockedBy("has_gold_ingot", has(Items.GOLD_INGOT)).save(output);
+
+        ShapedRecipeBuilder.shaped(items, RecipeCategory.MISC, GemistryItems.GOLD_BRACELET_FRAME.get()).pattern("XXX").pattern("X X").define('X', Items.GOLD_INGOT).unlockedBy("has_gold_ingot", has(Items.GOLD_INGOT)).save(output);
+
+        ShapedRecipeBuilder.shaped(items, RecipeCategory.MISC, GemistryItems.GOLD_BELT_FRAME.get()).pattern("XXX").pattern("X X").pattern("XXX").define('X', Items.GOLD_INGOT).unlockedBy("has_gold_ingot", has(Items.GOLD_INGOT)).save(output);
+
+        ShapedRecipeBuilder.shaped(items, RecipeCategory.MISC, GemistryItems.NETHERITE_RING_FRAME.get()).pattern("N").pattern("F").define('N', Items.NETHERITE_INGOT).define('F', GemistryItems.GOLD_RING_FRAME.get()).unlockedBy("has_netherite_ingot", has(Items.NETHERITE_INGOT)).save(output);
+
+        ShapedRecipeBuilder.shaped(items, RecipeCategory.MISC, GemistryItems.NETHERITE_BRACELET_FRAME.get()).pattern("N").pattern("F").define('N', Items.NETHERITE_INGOT).define('F', GemistryItems.GOLD_BRACELET_FRAME.get()).unlockedBy("has_netherite_ingot", has(Items.NETHERITE_INGOT)).save(output);
+
+        ShapedRecipeBuilder.shaped(items, RecipeCategory.MISC, GemistryItems.NETHERITE_BELT_FRAME.get()).pattern("N").pattern("F").define('N', Items.NETHERITE_INGOT).define('F', GemistryItems.GOLD_BELT_FRAME.get()).unlockedBy("has_netherite_ingot", has(Items.NETHERITE_INGOT)).save(output);
+    }
 
     public static class Runner extends RecipeProvider.Runner {
 

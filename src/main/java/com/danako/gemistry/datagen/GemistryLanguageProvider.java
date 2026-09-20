@@ -101,6 +101,22 @@ public class GemistryLanguageProvider extends LanguageProvider {
         addBlock(GemistryBlocks.ATTUNEMENT_TABLE, "Attunement Table");
         addBlock(GemistryBlocks.LAPIDARY_BENCH, "Lapidary Bench");
 
+        addItem(GemistryItems.COPPER_RING_FRAME, "Copper Ring Frame");
+        addItem(GemistryItems.COPPER_BRACELET_FRAME, "Copper Bracelet Frame");
+        addItem(GemistryItems.COPPER_BELT_FRAME, "Copper Belt Frame");
+
+        addItem(GemistryItems.IRON_RING_FRAME, "Iron Ring Frame");
+        addItem(GemistryItems.IRON_BRACELET_FRAME, "Iron Bracelet Frame");
+        addItem(GemistryItems.IRON_BELT_FRAME, "Iron Belt Frame");
+
+        addItem(GemistryItems.GOLD_RING_FRAME, "Gold Ring Frame");
+        addItem(GemistryItems.GOLD_BRACELET_FRAME, "Gold Bracelet Frame");
+        addItem(GemistryItems.GOLD_BELT_FRAME, "Gold Belt Frame");
+
+        addItem(GemistryItems.NETHERITE_RING_FRAME, "Netherite Ring Frame");
+        addItem(GemistryItems.NETHERITE_BRACELET_FRAME, "Netherite Bracelet Frame");
+        addItem(GemistryItems.NETHERITE_BELT_FRAME, "Netherite Belt Frame");
+
         addConfigTranslations();
         addEnchantmentTranslations();
         addTrimMaterialTranslations();
@@ -163,5 +179,22 @@ public class GemistryLanguageProvider extends LanguageProvider {
         add("tooltip.gemistry.gem_tier.rare", "Rare");
         add("tooltip.gemistry.gem_tier.epic", "Epic");
         add("tooltip.gemistry.gem_tier.legendary", "Legendary");
+
+        add("tooltip.gemistry.potency", "Potency");
+        add("tooltip.gemistry.potency.hint", "Frame and gem Potency stack, up to %s.");
+
+        add("tooltip.gemistry.adornment", "Adornment");
+        add("tooltip.gemistry.adornment.ring", "Ring");
+        add("tooltip.gemistry.adornment.bracelet", "Bracelet");
+        add("tooltip.gemistry.adornment.belt", "Belt");
+
+        add("tooltip.gemistry.frame_material", "Frame");
+        add("tooltip.gemistry.frame_material.copper", "Copper");
+        add("tooltip.gemistry.frame_material.iron", "Iron");
+        add("tooltip.gemistry.frame_material.gold", "Gold");
+        add("tooltip.gemistry.frame_material.netherite", "Netherite");
+
+        add("tooltip.gemistry.frame_gem", "Gem");
+        add("tooltip.gemistry.frame_gem.empty", "Empty");
     }
 }
